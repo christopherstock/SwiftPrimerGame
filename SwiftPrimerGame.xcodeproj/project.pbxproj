@@ -134,12 +134,28 @@
 		E941AA7B2181DEFF001EEDEB /* de.mayflower.swiftprimergame */ = {
 			isa = PBXGroup;
 			children = (
-				E90FCE2A2181DBD4001F4808 /* SpgViewController.swift */,
-				E941AA7F2181EC54001EEDEB /* SpgView.swift */,
-				E941AA812181F541001EEDEB /* SpgDrawing.swift */,
-				E941AA8321822F7E001EEDEB /* SvgGame.swift */,
+				E9DEFAD02182441900D68D0A /* main */,
+				E9DEFACF218243A800D68D0A /* ui */,
 			);
 			path = de.mayflower.swiftprimergame;
+			sourceTree = "<group>";
+		};
+		E9DEFACF218243A800D68D0A /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				E941AA7F2181EC54001EEDEB /* SpgView.swift */,
+				E90FCE2A2181DBD4001F4808 /* SpgViewController.swift */,
+				E941AA812181F541001EEDEB /* SpgDrawing.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		E9DEFAD02182441900D68D0A /* main */ = {
+			isa = PBXGroup;
+			children = (
+				E941AA8321822F7E001EEDEB /* SvgGame.swift */,
+			);
+			path = main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

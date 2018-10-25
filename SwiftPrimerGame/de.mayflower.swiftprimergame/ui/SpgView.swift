@@ -19,8 +19,8 @@ class SpgView : UIView
             ctx: ctx,
             x: 0,
             y: 0,
-            width:  SpgViewController.game.VIEW_WIDTH  / 2,
-            height: SpgViewController.game.VIEW_HEIGHT / 2,
+            width:  SpgViewController.game.VIEW_WIDTH,
+            height: SpgViewController.game.VIEW_HEIGHT,
             col: UIColor.black
         )
 

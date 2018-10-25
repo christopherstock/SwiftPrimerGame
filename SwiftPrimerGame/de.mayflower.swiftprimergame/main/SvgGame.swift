@@ -6,10 +6,10 @@ import QuartzCore
  *  Manages the game with all game components.
  *
  *  TODO Improve static access to SpgGame instance? Enable static access to ViewController or AppDelegate?
- *  TODO Structure all classes to packages.
  *  TODO Limit draw area to inner bounds?
  *  TODO Add example game logic.
- *  TODO Add UI controls via dragging.
+ *  TODO Add class 'SpgSettings.
+ *  TODO Add UI controls for dragging.
  */
 class SpgGame
 {
@@ -71,6 +71,8 @@ class SpgGame
         // render this game tick
         self.render()
 
+        // check pointer input
+
 
         // repaint the view
         view.setNeedsDisplay()
@@ -84,6 +86,7 @@ class SpgGame
         // animate rect .. Temporarily!
         self.x += 1
 
+        // render more ..
 
     }
 }
