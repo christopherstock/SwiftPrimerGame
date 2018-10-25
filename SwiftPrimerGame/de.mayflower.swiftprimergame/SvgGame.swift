@@ -5,7 +5,7 @@ import QuartzCore
 /**
  *  Manages the game with all game components.
  *
- *  TODO Add documentation for all elements.
+ *  TODO Improve static access to SpgGame instance? Enable static access to ViewController or AppDelegate?
  *  TODO Structure all classes to packages.
  *  TODO Limit draw area to inner bounds?
  *  TODO Add example game logic.
@@ -24,6 +24,7 @@ class SpgGame
     /** The singleton instance of the extended UIView. */
     private     var     view                :SpgView!                   = nil
 
+    /** Temporary animation value. */
     public      var     x                   :Int                        = 10
 
     /**
