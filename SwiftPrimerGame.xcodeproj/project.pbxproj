@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				E90FCE282181DBD4001F4808 /* AppDelegate.swift */,
-				E90FCE2A2181DBD4001F4808 /* ViewController.swift */,
+				E941AA7B2181DEFF001EEDEB /* de.mayflower.swiftprimergame */,
 				E90FCE2C2181DBD4001F4808 /* Main.storyboard */,
 				E90FCE2F2181DBD7001F4808 /* Assets.xcassets */,
 				E90FCE312181DBD7001F4808 /* LaunchScreen.storyboard */,
@@ -123,6 +123,14 @@
 				E90FCE4A2181DBD8001F4808 /* Info.plist */,
 			);
 			path = SwiftPrimerGameUITests;
+			sourceTree = "<group>";
+		};
+		E941AA7B2181DEFF001EEDEB /* de.mayflower.swiftprimergame */ = {
+			isa = PBXGroup;
+			children = (
+				E90FCE2A2181DBD4001F4808 /* ViewController.swift */,
+			);
+			path = de.mayflower.swiftprimergame;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
