@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		E90FCE292181DBD4001F4808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FCE282181DBD4001F4808 /* AppDelegate.swift */; };
-		E90FCE2B2181DBD4001F4808 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FCE2A2181DBD4001F4808 /* ViewController.swift */; };
-		E90FCE2E2181DBD4001F4808 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90FCE2C2181DBD4001F4808 /* Main.storyboard */; };
+		E90FCE2B2181DBD4001F4808 /* SpgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FCE2A2181DBD4001F4808 /* SpgViewController.swift */; };
 		E90FCE302181DBD7001F4808 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90FCE2F2181DBD7001F4808 /* Assets.xcassets */; };
 		E90FCE332181DBD7001F4808 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90FCE312181DBD7001F4808 /* LaunchScreen.storyboard */; };
 		E90FCE3E2181DBD8001F4808 /* SwiftPrimerGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FCE3D2181DBD8001F4808 /* SwiftPrimerGameTests.swift */; };
 		E90FCE492181DBD8001F4808 /* SwiftPrimerGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FCE482181DBD8001F4808 /* SwiftPrimerGameUITests.swift */; };
+		E941AA7D2181E0BF001EEDEB /* SpgMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E941AA7C2181E0BF001EEDEB /* SpgMain.swift */; };
+		E941AA7E2181E2C6001EEDEB /* Spg.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90FCE2C2181DBD4001F4808 /* Spg.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +37,8 @@
 /* Begin PBXFileReference section */
 		E90FCE252181DBD4001F4808 /* SwiftPrimerGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftPrimerGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90FCE282181DBD4001F4808 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E90FCE2A2181DBD4001F4808 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E90FCE2D2181DBD4001F4808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E90FCE2A2181DBD4001F4808 /* SpgViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgViewController.swift; sourceTree = "<group>"; };
+		E90FCE2D2181DBD4001F4808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Spg.storyboard; sourceTree = "<group>"; };
 		E90FCE2F2181DBD7001F4808 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E90FCE322181DBD7001F4808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E90FCE342181DBD7001F4808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +48,7 @@
 		E90FCE442181DBD8001F4808 /* SwiftPrimerGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftPrimerGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90FCE482181DBD8001F4808 /* SwiftPrimerGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftPrimerGameUITests.swift; sourceTree = "<group>"; };
 		E90FCE4A2181DBD8001F4808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E941AA7C2181E0BF001EEDEB /* SpgMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgMain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +101,7 @@
 			children = (
 				E90FCE282181DBD4001F4808 /* AppDelegate.swift */,
 				E941AA7B2181DEFF001EEDEB /* de.mayflower.swiftprimergame */,
-				E90FCE2C2181DBD4001F4808 /* Main.storyboard */,
+				E90FCE2C2181DBD4001F4808 /* Spg.storyboard */,
 				E90FCE2F2181DBD7001F4808 /* Assets.xcassets */,
 				E90FCE312181DBD7001F4808 /* LaunchScreen.storyboard */,
 				E90FCE342181DBD7001F4808 /* Info.plist */,
@@ -128,7 +130,8 @@
 		E941AA7B2181DEFF001EEDEB /* de.mayflower.swiftprimergame */ = {
 			isa = PBXGroup;
 			children = (
-				E90FCE2A2181DBD4001F4808 /* ViewController.swift */,
+				E90FCE2A2181DBD4001F4808 /* SpgViewController.swift */,
+				E941AA7C2181E0BF001EEDEB /* SpgMain.swift */,
 			);
 			path = de.mayflower.swiftprimergame;
 			sourceTree = "<group>";
@@ -237,9 +240,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E941AA7E2181E2C6001EEDEB /* Spg.storyboard in Resources */,
 				E90FCE332181DBD7001F4808 /* LaunchScreen.storyboard in Resources */,
 				E90FCE302181DBD7001F4808 /* Assets.xcassets in Resources */,
-				E90FCE2E2181DBD4001F4808 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,8 +267,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E90FCE2B2181DBD4001F4808 /* ViewController.swift in Sources */,
+				E90FCE2B2181DBD4001F4808 /* SpgViewController.swift in Sources */,
 				E90FCE292181DBD4001F4808 /* AppDelegate.swift in Sources */,
+				E941AA7D2181E0BF001EEDEB /* SpgMain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,12 +305,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E90FCE2C2181DBD4001F4808 /* Main.storyboard */ = {
+		E90FCE2C2181DBD4001F4808 /* Spg.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E90FCE2D2181DBD4001F4808 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Spg.storyboard;
 			sourceTree = "<group>";
 		};
 		E90FCE312181DBD7001F4808 /* LaunchScreen.storyboard */ = {

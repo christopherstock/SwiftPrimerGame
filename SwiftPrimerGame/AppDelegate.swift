@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
         print( "Welcome to SwiftPrimerGame, v. [0.0.1]" )
 
+        SpgMain.main()
 
 
 
