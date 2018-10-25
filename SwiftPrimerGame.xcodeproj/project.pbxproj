@@ -16,6 +16,7 @@
 		E941AA7D2181E0BF001EEDEB /* SpgMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E941AA7C2181E0BF001EEDEB /* SpgMain.swift */; };
 		E941AA7E2181E2C6001EEDEB /* Spg.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90FCE2C2181DBD4001F4808 /* Spg.storyboard */; };
 		E941AA802181EC54001EEDEB /* SpgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E941AA7F2181EC54001EEDEB /* SpgView.swift */; };
+		E941AA822181F541001EEDEB /* SpgDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E941AA812181F541001EEDEB /* SpgDrawing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		E90FCE4A2181DBD8001F4808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E941AA7C2181E0BF001EEDEB /* SpgMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgMain.swift; sourceTree = "<group>"; };
 		E941AA7F2181EC54001EEDEB /* SpgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgView.swift; sourceTree = "<group>"; };
+		E941AA812181F541001EEDEB /* SpgDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgDrawing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				E90FCE2A2181DBD4001F4808 /* SpgViewController.swift */,
 				E941AA7C2181E0BF001EEDEB /* SpgMain.swift */,
 				E941AA7F2181EC54001EEDEB /* SpgView.swift */,
+				E941AA812181F541001EEDEB /* SpgDrawing.swift */,
 			);
 			path = de.mayflower.swiftprimergame;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			files = (
 				E90FCE2B2181DBD4001F4808 /* SpgViewController.swift in Sources */,
 				E941AA802181EC54001EEDEB /* SpgView.swift in Sources */,
+				E941AA822181F541001EEDEB /* SpgDrawing.swift in Sources */,
 				E90FCE292181DBD4001F4808 /* AppDelegate.swift in Sources */,
 				E941AA7D2181E0BF001EEDEB /* SpgMain.swift in Sources */,
 			);
