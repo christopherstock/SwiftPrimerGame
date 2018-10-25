@@ -1,4 +1,3 @@
-import UIKit
 import Foundation
 import QuartzCore
 
@@ -6,10 +5,10 @@ import QuartzCore
  *  Manages the game with all game components.
  *
  *  TODO Improve static access to SpgGame instance? Enable static access to ViewController or AppDelegate?
- *  TODO Limit draw area to inner bounds?
  *  TODO Add example game logic.
- *  TODO Add class 'SpgSettings.
  *  TODO Add UI controls for dragging.
+ *
+ *  TODO MINOR Limit draw area to inner bounds? (without navbar and statusbar)
  */
 class SpgGame
 {

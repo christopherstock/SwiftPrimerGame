@@ -17,6 +17,7 @@
 		E941AA802181EC54001EEDEB /* SpgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E941AA7F2181EC54001EEDEB /* SpgView.swift */; };
 		E941AA822181F541001EEDEB /* SpgDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E941AA812181F541001EEDEB /* SpgDrawing.swift */; };
 		E941AA8421822F7E001EEDEB /* SvgGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E941AA8321822F7E001EEDEB /* SvgGame.swift */; };
+		E9DEFAD22182516F00D68D0A /* SvgSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFAD12182516F00D68D0A /* SvgSetting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		E941AA7F2181EC54001EEDEB /* SpgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgView.swift; sourceTree = "<group>"; };
 		E941AA812181F541001EEDEB /* SpgDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgDrawing.swift; sourceTree = "<group>"; };
 		E941AA8321822F7E001EEDEB /* SvgGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvgGame.swift; sourceTree = "<group>"; };
+		E9DEFAD12182516F00D68D0A /* SvgSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvgSetting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				E941AA8321822F7E001EEDEB /* SvgGame.swift */,
+				E9DEFAD12182516F00D68D0A /* SvgSetting.swift */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				E941AA802181EC54001EEDEB /* SpgView.swift in Sources */,
 				E941AA822181F541001EEDEB /* SpgDrawing.swift in Sources */,
 				E90FCE292181DBD4001F4808 /* AppDelegate.swift in Sources */,
+				E9DEFAD22182516F00D68D0A /* SvgSetting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
