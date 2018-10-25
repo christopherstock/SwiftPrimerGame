@@ -8,10 +8,10 @@ import QuartzCore
 class SpgViewController : UIViewController
 {
     /** The singleton game instance. */
-    var game :SpgGame! = nil
+    public          static          var         game            :SpgGame!               = nil
 
     /**
-     *  Being invoked when the view is loaded completely.
+     *  Being invoked when the view is fully loaded.
      */
     override func viewDidLoad()
     {
@@ -20,27 +20,7 @@ class SpgViewController : UIViewController
         print( "SpgViewController.viewDidLoad() being invoked" )
 
         // init game engine and start the main loop
-        self.game = SpgGame( viewController: self )
-        self.game.startGameLoop()
-
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    func testViewController()
-    {
-        print( "SpgViewController.testViewController() being invoked!" )
-    }
-
-    func testView()
-    {
-        print( "SpgViewController.testView() being invoked!" )
-
-        // guard let view :SpgView = self.view as? SpgView else { return }
-        let view :SpgView = self.view as! SpgView
-        view.test()
-
-
-
-
+        SpgViewController.game = SpgGame( viewController: self )
+        SpgViewController.game.startGameLoop()
     }
 }

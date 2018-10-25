@@ -8,29 +8,29 @@ class SpgView : UIView
 {
     var x : Int = 10
 
+    /**
+     *  Draws all game items on the UIView for the current game tick.
+     */
     override func draw( _ rect : CGRect )
     {
-        print( "SpgView.draw(rect) being invoked" )
-
-        let WIDTH  :CGFloat = self.frame.size.width
-        let HEIGHT :CGFloat = self.frame.size.height
-        print( " View dimensions are [" + WIDTH.description + "]x[" + HEIGHT.description + "]" )
-
+        // get drawing context
         guard let ctx :CGContext = UIGraphicsGetCurrentContext() else { return }
 
+        // clear screen
+        SpgDrawing.drawRect(
+            ctx: ctx,
+            x: 0,
+            y: 0,
+            width:  SpgViewController.game.VIEW_WIDTH  / 2,
+            height: SpgViewController.game.VIEW_HEIGHT / 2,
+            col: UIColor.black
+        )
+
+        // draw moving rect
         SpgDrawing.drawRect( ctx: ctx, x: self.x,      y: 20, width: 100, height: 200, col: UIColor.red  )
         SpgDrawing.fillRect( ctx: ctx, x: self.x + 20, y: 40, width: 100, height: 200, col: UIColor.gray )
 
+        // animate rect .. Temporarily!
         self.x += 1
-
-    }
-
-    func test()
-    {
-        print( "SpgView.test() being invoked!" )
-
-
-
-
     }
 }
