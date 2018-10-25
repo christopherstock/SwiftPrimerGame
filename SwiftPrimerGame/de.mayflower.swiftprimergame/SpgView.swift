@@ -1,6 +1,9 @@
 import UIKit
 import Foundation
 
+/**
+ *  The view class that's displayed in the View Controller.
+ */
 class SpgView : UIView
 {
     var x : Int = 10

@@ -2,52 +2,26 @@ import UIKit
 import Foundation
 import QuartzCore
 
+/**
+ *  The main view controller that holds the singleton UIView.
+ */
 class SpgViewController : UIViewController
 {
+    /** The singleton game instance. */
+    var game :SpgGame! = nil
+
+    /**
+     *  Being invoked when the view is loaded completely.
+     */
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
         print( "SpgViewController.viewDidLoad() being invoked" )
 
-        print( " View Frame size:" )
-        print( self.view.frame  )
-        print( self.view.bounds )
-
-        print( "Welcome to SwiftPrimerGame, v. [0.0.1]" )
-        SpgMain.main( viewController: self )
-
-
-
-
-
-        // try main thread
-        DispatchQueue.global( qos: .background ).async
-        {
-            print("==> This is run on the background queue")
-
-            DispatchQueue.main.async
-            {
-                print("==> This is run on the main queue, after the previous code in outer block")
-            }
-        }
-
-
-
-        // try game loop?
-/*
-        var updater = CADisplayLink(target: self, selector: Selector("gameLoop"))
-        updater.preferredFramesPerSecond = 25
-        updater.addToRunLoop(RunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
-*/
-
-        /*
-        self.view.setNeedsDisplay()
-        self.view.setNeedsDisplay()
-        self.view.setNeedsDisplay()
-        self.view.setNeedsDisplay()
-*/
-        self.startGameLoop()
+        // init game engine and start the main loop
+        self.game = SpgGame( viewController: self )
+        self.game.startGameLoop()
 
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -67,30 +41,6 @@ class SpgViewController : UIViewController
 
 
 
-
-    }
-
-    func startGameLoop()
-    {
-        let displaylink = CADisplayLink(
-            target: self,
-            selector: #selector( self.step )
-        )
-
-        displaylink.preferredFramesPerSecond = 25
-        displaylink.add(
-            to: .current,
-            forMode: RunLoop.Mode.default
-        )
-    }
-
-    @objc
-    func step( displaylink: CADisplayLink )
-    {
-        print(displaylink.timestamp)
-
-        let view :SpgView = self.view as! SpgView
-        view.setNeedsDisplay()
 
     }
 }
