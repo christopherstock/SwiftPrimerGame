@@ -3,6 +3,8 @@ import Foundation
 
 class SpgView : UIView
 {
+    var x : Int = 10
+
     override func draw( _ rect : CGRect )
     {
         print( "SpgView.draw(rect) being invoked" )
@@ -13,8 +15,11 @@ class SpgView : UIView
 
         guard let ctx :CGContext = UIGraphicsGetCurrentContext() else { return }
 
-        SpgDrawing.drawRect( ctx: ctx, x: 10, y: 20, width: 100, height: 200, col: UIColor.red  )
-        SpgDrawing.fillRect( ctx: ctx, x: 30, y: 40, width: 100, height: 200, col: UIColor.gray )
+        SpgDrawing.drawRect( ctx: ctx, x: self.x,      y: 20, width: 100, height: 200, col: UIColor.red  )
+        SpgDrawing.fillRect( ctx: ctx, x: self.x + 20, y: 40, width: 100, height: 200, col: UIColor.gray )
+
+        self.x += 1
+
     }
 
     func test()
