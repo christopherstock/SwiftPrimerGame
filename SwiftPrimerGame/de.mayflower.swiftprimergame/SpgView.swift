@@ -16,4 +16,13 @@ class SpgView : UIView
         SpgDrawing.drawRect( ctx: ctx, x: 10, y: 20, width: 100, height: 200, col: UIColor.red  )
         SpgDrawing.fillRect( ctx: ctx, x: 30, y: 40, width: 100, height: 200, col: UIColor.gray )
     }
+
+    func test()
+    {
+        print( "SpgView.test() being invoked!" )
+
+
+
+
+    }
 }

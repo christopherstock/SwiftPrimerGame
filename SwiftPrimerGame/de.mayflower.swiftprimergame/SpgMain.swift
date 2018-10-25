@@ -14,9 +14,17 @@ import UIKit
  */
 class SpgMain
 {
-    public static func main()
+    /**
+     *  The main method being invoked when the viewController is operative.
+     *
+     *  @param viewController The view controller instance.
+     */
+    public static func main( viewController: SpgViewController )
     {
-        print( "SpgMain.main() being invoked" )
+        print( "SpgMain.main(viewController) being invoked" )
+
+        viewController.testViewController()
+        viewController.testView()
 
 
 
