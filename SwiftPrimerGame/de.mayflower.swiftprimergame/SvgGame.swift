@@ -21,8 +21,10 @@ class SpgGame
     /** The singleton instance of the view controller */
     private     var     viewController      :SpgViewController!         = nil
 
-    /** Th singleton instance of the extended UIView. */
+    /** The singleton instance of the extended UIView. */
     private     var     view                :SpgView!                   = nil
+
+    public      var     x                   :Int                        = 10
 
     /**
      *  Inits all game components from scratch.
@@ -78,6 +80,8 @@ class SpgGame
      */
     private func render() -> Void
     {
+        // animate rect .. Temporarily!
+        self.x += 1
 
 
     }

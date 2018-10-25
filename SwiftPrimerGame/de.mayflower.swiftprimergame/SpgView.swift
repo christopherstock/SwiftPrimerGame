@@ -6,18 +6,16 @@ import Foundation
  */
 class SpgView : UIView
 {
-    var x : Int = 10
-
     /**
      *  Draws all game items on the UIView for the current game tick.
      */
     override func draw( _ rect : CGRect )
     {
         // get drawing context
-        guard let ctx :CGContext = UIGraphicsGetCurrentContext() else { return }
+        let ctx :CGContext = UIGraphicsGetCurrentContext()!
 
         // clear screen
-        SpgDrawing.drawRect(
+        SpgDrawing.fillRect(
             ctx: ctx,
             x: 0,
             y: 0,
@@ -27,10 +25,7 @@ class SpgView : UIView
         )
 
         // draw moving rect
-        SpgDrawing.drawRect( ctx: ctx, x: self.x,      y: 20, width: 100, height: 200, col: UIColor.red  )
-        SpgDrawing.fillRect( ctx: ctx, x: self.x + 20, y: 40, width: 100, height: 200, col: UIColor.gray )
-
-        // animate rect .. Temporarily!
-        self.x += 1
+        SpgDrawing.drawRect( ctx: ctx, x: SpgViewController.game.x,      y: 20, width: 100, height: 200, col: UIColor.red  )
+        SpgDrawing.fillRect( ctx: ctx, x: SpgViewController.game.x + 20, y: 40, width: 100, height: 200, col: UIColor.gray )
     }
 }
