@@ -22,7 +22,7 @@ class SpgGame
     public  var x              :Int                = 10
 
     /** Manages the touch logic. */
-    public  var touch          :SvgTouch!          = nil
+    public  var touch          :SpgTouch!          = nil
 
     /** The singleton instance of the view controller */
     private var viewController :SpgViewController! = nil
@@ -44,7 +44,7 @@ class SpgGame
         self.VIEW_WIDTH     = Int( self.view.frame.size.width  )
         self.VIEW_HEIGHT    = Int( self.view.frame.size.height )
 
-        self.touch          = SvgTouch()
+        self.touch          = SpgTouch()
     }
 
     /**

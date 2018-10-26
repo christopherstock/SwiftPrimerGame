@@ -3,7 +3,7 @@ import Foundation
 /**
  *  Manages the touch input.
  */
-class SvgTouch
+class SpgTouch
 {
     /**
      *  Being invoked when the touch is down.

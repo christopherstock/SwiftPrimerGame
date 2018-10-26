@@ -16,9 +16,9 @@
 		E941AA7E2181E2C6001EEDEB /* Spg.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90FCE2C2181DBD4001F4808 /* Spg.storyboard */; };
 		E941AA802181EC54001EEDEB /* SpgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E941AA7F2181EC54001EEDEB /* SpgView.swift */; };
 		E941AA822181F541001EEDEB /* SpgDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E941AA812181F541001EEDEB /* SpgDrawing.swift */; };
-		E941AA8421822F7E001EEDEB /* SvgGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E941AA8321822F7E001EEDEB /* SvgGame.swift */; };
-		E9DEFAD22182516F00D68D0A /* SvgSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFAD12182516F00D68D0A /* SvgSetting.swift */; };
-		E9DEFAD52182F0E800D68D0A /* SvgTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFAD42182F0E800D68D0A /* SvgTouch.swift */; };
+		E941AA8421822F7E001EEDEB /* SpgGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E941AA8321822F7E001EEDEB /* SpgGame.swift */; };
+		E9DEFAD22182516F00D68D0A /* SpgSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFAD12182516F00D68D0A /* SpgSetting.swift */; };
+		E9DEFAD52182F0E800D68D0A /* SpgTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFAD42182F0E800D68D0A /* SpgTouch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +54,9 @@
 		E90FCE4A2181DBD8001F4808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E941AA7F2181EC54001EEDEB /* SpgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgView.swift; sourceTree = "<group>"; };
 		E941AA812181F541001EEDEB /* SpgDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgDrawing.swift; sourceTree = "<group>"; };
-		E941AA8321822F7E001EEDEB /* SvgGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvgGame.swift; sourceTree = "<group>"; };
-		E9DEFAD12182516F00D68D0A /* SvgSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvgSetting.swift; sourceTree = "<group>"; };
-		E9DEFAD42182F0E800D68D0A /* SvgTouch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvgTouch.swift; sourceTree = "<group>"; };
+		E941AA8321822F7E001EEDEB /* SpgGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgGame.swift; sourceTree = "<group>"; };
+		E9DEFAD12182516F00D68D0A /* SpgSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgSetting.swift; sourceTree = "<group>"; };
+		E9DEFAD42182F0E800D68D0A /* SpgTouch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgTouch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,8 +158,8 @@
 		E9DEFAD02182441900D68D0A /* main */ = {
 			isa = PBXGroup;
 			children = (
-				E941AA8321822F7E001EEDEB /* SvgGame.swift */,
-				E9DEFAD12182516F00D68D0A /* SvgSetting.swift */,
+				E941AA8321822F7E001EEDEB /* SpgGame.swift */,
+				E9DEFAD12182516F00D68D0A /* SpgSetting.swift */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -167,7 +167,7 @@
 		E9DEFAD32182F0B300D68D0A /* hid */ = {
 			isa = PBXGroup;
 			children = (
-				E9DEFAD42182F0E800D68D0A /* SvgTouch.swift */,
+				E9DEFAD42182F0E800D68D0A /* SpgTouch.swift */,
 			);
 			path = hid;
 			sourceTree = "<group>";
@@ -303,13 +303,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E941AA8421822F7E001EEDEB /* SvgGame.swift in Sources */,
-				E9DEFAD52182F0E800D68D0A /* SvgTouch.swift in Sources */,
+				E941AA8421822F7E001EEDEB /* SpgGame.swift in Sources */,
+				E9DEFAD52182F0E800D68D0A /* SpgTouch.swift in Sources */,
 				E90FCE2B2181DBD4001F4808 /* SpgViewController.swift in Sources */,
 				E941AA802181EC54001EEDEB /* SpgView.swift in Sources */,
 				E941AA822181F541001EEDEB /* SpgDrawing.swift in Sources */,
 				E90FCE292181DBD4001F4808 /* AppDelegate.swift in Sources */,
-				E9DEFAD22182516F00D68D0A /* SvgSetting.swift in Sources */,
+				E9DEFAD22182516F00D68D0A /* SpgSetting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

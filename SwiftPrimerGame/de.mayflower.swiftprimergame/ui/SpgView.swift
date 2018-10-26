@@ -45,6 +45,10 @@ class SpgView : UIView
     override func touchesBegan( _ touches: Set<UITouch>, with event: UIEvent? )
     {
         SpgViewController.game.touch.onTouchDown()
+
+
+        print( event!.allTouches!.first?.location(in: self) )
+
     }
 
     /**
@@ -53,6 +57,12 @@ class SpgView : UIView
     override func touchesMoved( _ touches: Set<UITouch>, with event: UIEvent? )
     {
         SpgViewController.game.touch.onTouchMove()
+
+        // print( touches )
+
+        print( event!.allTouches!.first?.location(in: self) )
+
+
     }
 
     /**
@@ -61,5 +71,8 @@ class SpgView : UIView
     override func touchesEnded( _ touches: Set<UITouch>, with event: UIEvent? )
     {
         SpgViewController.game.touch.onTouchUp()
+
+
+        print( event!.allTouches!.first?.location(in: self) )
     }
 }
