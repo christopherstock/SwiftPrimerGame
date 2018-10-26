@@ -8,7 +8,7 @@ import QuartzCore
 class SpgViewController : UIViewController
 {
     /** The singleton game instance. */
-    public          static          var         game            :SpgGame!               = nil
+    public static var game :SpgGame! = nil
 
     /**
      *  Being invoked when the view is fully loaded.
@@ -17,7 +17,7 @@ class SpgViewController : UIViewController
     {
         super.viewDidLoad()
 
-        print( "SpgViewController.viewDidLoad() being invoked" )
+        print( "Welcome to [" + SpgSetting.TITLE + "] v. [" + SpgSetting.VERSION + "]" )
 
         // init game engine and start the main loop
         SpgViewController.game = SpgGame( viewController: self )

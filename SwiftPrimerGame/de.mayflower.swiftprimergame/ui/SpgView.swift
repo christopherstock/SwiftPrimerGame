@@ -9,33 +9,33 @@ class SpgView : UIView
     /**
      *  Draws all game items on the UIView for the current game tick.
      */
-    override func draw( _ rect : CGRect )
+    override func draw( _ rect:CGRect )
     {
         // get drawing context
         let ctx :CGContext = UIGraphicsGetCurrentContext()!
 
         // clear safe area
-        SpgDrawing.fillRect(
-            ctx: ctx,
-            x: 0,
-            y: 0,
-            width:  SpgViewController.game.VIEW_WIDTH,
-            height: SpgViewController.game.VIEW_HEIGHT,
-            col: UIColor.black
-        )
-/*
-        // clear screen
-        SpgDrawing.fillRect(
-            ctx: ctx,
-            x: 0,
-            y: 0,
-            width:  SpgViewController.game.VIEW_WIDTH,
-            height: SpgViewController.game.VIEW_HEIGHT,
-            col: UIColor.black
-        )
-*/
+        self.clearScreen( ctx: ctx )
+
         // draw moving rect
         SpgDrawing.drawRect( ctx: ctx, x: SpgViewController.game.x,      y: 20, width: 100, height: 200, col: UIColor.red  )
         SpgDrawing.fillRect( ctx: ctx, x: SpgViewController.game.x + 20, y: 40, width: 100, height: 200, col: UIColor.gray )
+    }
+
+    /**
+     *  Paints the entire screen with black color.
+     *
+     *  @param ctx The current drawing context.
+     */
+    private func clearScreen( ctx:CGContext ) -> Void
+    {
+        SpgDrawing.fillRect(
+            ctx:    ctx,
+            x:      0,
+            y:      0,
+            width:  SpgViewController.game.VIEW_WIDTH,
+            height: SpgViewController.game.VIEW_HEIGHT,
+            col:    UIColor.black
+        )
     }
 }

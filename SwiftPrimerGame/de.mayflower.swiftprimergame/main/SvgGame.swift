@@ -4,27 +4,26 @@ import QuartzCore
 /**
  *  Manages the game with all game components.
  *
- *  TODO Improve static access to SpgGame instance? Enable static access to ViewController or AppDelegate?
- *  TODO Add example game logic.
  *  TODO Add UI controls for dragging.
+ *  TODO Add example game logic.
  *
+ *  TODO MINOR Improve static access to SpgGame instance? Enable static access to ViewController or AppDelegate?
  *  TODO MINOR Limit draw area to inner bounds? (without navbar and statusbar)
  */
 class SpgGame
 {
     /** The width of the singleton view. */
-    public      var     VIEW_WIDTH          :Int                        = 0
+    public  var VIEW_WIDTH     :Int                = 0
     /** The height of the singleton view. */
-    public      var     VIEW_HEIGHT         :Int                        = 0
-
-    /** The singleton instance of the view controller */
-    private     var     viewController      :SpgViewController!         = nil
-
-    /** The singleton instance of the extended UIView. */
-    private     var     view                :SpgView!                   = nil
+    public  var VIEW_HEIGHT    :Int                = 0
 
     /** Temporary animation value. */
-    public      var     x                   :Int                        = 10
+    public  var x              :Int                = 10
+
+    /** The singleton instance of the view controller */
+    private var viewController :SpgViewController! = nil
+    /** The singleton instance of the extended UIView. */
+    private var view           :SpgView!           = nil
 
     /**
      *  Inits all game components from scratch.
