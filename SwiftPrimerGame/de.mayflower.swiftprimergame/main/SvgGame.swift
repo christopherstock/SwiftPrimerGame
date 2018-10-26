@@ -6,6 +6,7 @@ import QuartzCore
  *
  *  TODO Add UI controls for dragging.
  *  TODO Add example game logic.
+ *  TODO Svg => Spg
  *
  *  TODO MINOR Improve static access to SpgGame instance? Enable static access to ViewController or AppDelegate?
  *  TODO MINOR Limit draw area to inner bounds? (without navbar and statusbar)
@@ -19,6 +20,9 @@ class SpgGame
 
     /** Temporary animation value. */
     public  var x              :Int                = 10
+
+    /** Manages the touch logic. */
+    public  var touch          :SvgTouch!          = nil
 
     /** The singleton instance of the view controller */
     private var viewController :SpgViewController! = nil
@@ -39,6 +43,8 @@ class SpgGame
 
         self.VIEW_WIDTH     = Int( self.view.frame.size.width  )
         self.VIEW_HEIGHT    = Int( self.view.frame.size.height )
+
+        self.touch          = SvgTouch()
     }
 
     /**

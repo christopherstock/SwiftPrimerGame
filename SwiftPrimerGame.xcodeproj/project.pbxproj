@@ -18,6 +18,7 @@
 		E941AA822181F541001EEDEB /* SpgDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E941AA812181F541001EEDEB /* SpgDrawing.swift */; };
 		E941AA8421822F7E001EEDEB /* SvgGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E941AA8321822F7E001EEDEB /* SvgGame.swift */; };
 		E9DEFAD22182516F00D68D0A /* SvgSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFAD12182516F00D68D0A /* SvgSetting.swift */; };
+		E9DEFAD52182F0E800D68D0A /* SvgTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFAD42182F0E800D68D0A /* SvgTouch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		E941AA812181F541001EEDEB /* SpgDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgDrawing.swift; sourceTree = "<group>"; };
 		E941AA8321822F7E001EEDEB /* SvgGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvgGame.swift; sourceTree = "<group>"; };
 		E9DEFAD12182516F00D68D0A /* SvgSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvgSetting.swift; sourceTree = "<group>"; };
+		E9DEFAD42182F0E800D68D0A /* SvgTouch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvgTouch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 		E941AA7B2181DEFF001EEDEB /* de.mayflower.swiftprimergame */ = {
 			isa = PBXGroup;
 			children = (
+				E9DEFAD32182F0B300D68D0A /* hid */,
 				E9DEFAD02182441900D68D0A /* main */,
 				E9DEFACF218243A800D68D0A /* ui */,
 			);
@@ -159,6 +162,14 @@
 				E9DEFAD12182516F00D68D0A /* SvgSetting.swift */,
 			);
 			path = main;
+			sourceTree = "<group>";
+		};
+		E9DEFAD32182F0B300D68D0A /* hid */ = {
+			isa = PBXGroup;
+			children = (
+				E9DEFAD42182F0E800D68D0A /* SvgTouch.swift */,
+			);
+			path = hid;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E941AA8421822F7E001EEDEB /* SvgGame.swift in Sources */,
+				E9DEFAD52182F0E800D68D0A /* SvgTouch.swift in Sources */,
 				E90FCE2B2181DBD4001F4808 /* SpgViewController.swift in Sources */,
 				E941AA802181EC54001EEDEB /* SpgView.swift in Sources */,
 				E941AA822181F541001EEDEB /* SpgDrawing.swift in Sources */,

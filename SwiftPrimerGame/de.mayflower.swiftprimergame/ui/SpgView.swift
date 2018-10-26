@@ -38,4 +38,28 @@ class SpgView : UIView
             col:    UIColor.black
         )
     }
+
+    /**
+     *  Being invoked from the system when a touch operation has started.
+     */
+    override func touchesBegan( _ touches: Set<UITouch>, with event: UIEvent? )
+    {
+        SpgViewController.game.touch.onTouchDown()
+    }
+
+    /**
+     *  Being invoked from the system when a touch operation has ended.
+     */
+    override func touchesMoved( _ touches: Set<UITouch>, with event: UIEvent? )
+    {
+        SpgViewController.game.touch.onTouchMove()
+    }
+
+    /**
+     *  Being invoked from the system when a touch operation is moving.
+     */
+    override func touchesEnded( _ touches: Set<UITouch>, with event: UIEvent? )
+    {
+        SpgViewController.game.touch.onTouchUp()
+    }
 }
