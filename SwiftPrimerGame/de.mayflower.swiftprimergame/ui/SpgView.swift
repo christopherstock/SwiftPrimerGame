@@ -44,11 +44,9 @@ class SpgView : UIView
      */
     override func touchesBegan( _ touches: Set<UITouch>, with event: UIEvent? )
     {
-        SpgViewController.game.touch.onTouchDown()
-
-
-        print( event!.allTouches!.first?.location(in: self) )
-
+        SpgViewController.game.touch.onTouchDown(
+            point: event!.allTouches!.first!.location( in: self )
+        )
     }
 
     /**
@@ -56,13 +54,9 @@ class SpgView : UIView
      */
     override func touchesMoved( _ touches: Set<UITouch>, with event: UIEvent? )
     {
-        SpgViewController.game.touch.onTouchMove()
-
-        // print( touches )
-
-        print( event!.allTouches!.first?.location(in: self) )
-
-
+        SpgViewController.game.touch.onTouchMove(
+            point: event!.allTouches!.first!.location( in: self )
+        )
     }
 
     /**
@@ -70,9 +64,18 @@ class SpgView : UIView
      */
     override func touchesEnded( _ touches: Set<UITouch>, with event: UIEvent? )
     {
-        SpgViewController.game.touch.onTouchUp()
+        SpgViewController.game.touch.onTouchUp(
+            point: event!.allTouches!.first!.location( in: self )
+        )
+    }
 
-
-        print( event!.allTouches!.first?.location(in: self) )
+    /**
+     *  Being invoked from the system when a touch operation is cancelled.
+     */
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?)
+    {
+        SpgViewController.game.touch.onTouchUp(
+            point: event!.allTouches!.first!.location( in: self )
+        )
     }
 }
