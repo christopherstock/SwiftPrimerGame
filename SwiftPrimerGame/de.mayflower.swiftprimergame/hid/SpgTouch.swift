@@ -6,8 +6,13 @@ import CoreGraphics
  */
 class SpgTouch
 {
-    private var swipedLeft  :Bool = false
-    private var swipedRight :Bool = false
+    /** Indicates swipe left. */
+    public  var swipedLeft  :Bool = false
+    /** Indicates swipe right. */
+    public  var swipedRight :Bool = false
+
+    /** Stores the last touch location point. */
+    private var lastTouchLocation :CGPoint! = nil
 
     /**
      *  Being invoked when the touch is down.
@@ -16,9 +21,11 @@ class SpgTouch
      */
     public func onTouchDown( point:CGPoint ) -> Void
     {
-        print( "onTouchDown [" + point.debugDescription + "]" )
+        //bprint( "onTouchDown [" + point.debugDescription + "]" )
 
-        
+        self.lastTouchLocation = point
+        self.swipedLeft        = false
+        self.swipedRight       = false
     }
 
     /**
@@ -28,9 +35,11 @@ class SpgTouch
      */
     public func onTouchUp( point:CGPoint ) -> Void
     {
-        print( "onTouchUp [" + point.debugDescription + "]" )
+        // print( "onTouchUp [" + point.debugDescription + "]" )
 
-
+        self.lastTouchLocation = nil
+        self.swipedLeft        = false
+        self.swipedRight       = false
     }
 
     /**
@@ -40,8 +49,23 @@ class SpgTouch
      */
     public func onTouchMove( point:CGPoint ) -> Void
     {
-        print( "onTouchMove [" + point.debugDescription + "]" )
+        // print( "onTouchMove [" + point.debugDescription + "]" )
 
+        self.swipedLeft  = false
+        self.swipedRight = false
 
+        if ( self.lastTouchLocation != nil )
+        {
+            if ( point.x < self.lastTouchLocation.x )
+            {
+                self.swipedLeft = true
+            }
+            else if ( point.x > self.lastTouchLocation.x )
+            {
+                self.swipedRight = true
+            }
+        }
+
+        self.lastTouchLocation = point
     }
 }

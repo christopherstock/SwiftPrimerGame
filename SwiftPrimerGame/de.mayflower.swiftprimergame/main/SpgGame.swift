@@ -1,5 +1,7 @@
-import Foundation
 import QuartzCore
+/*
+ import Foundation
+*/
 
 /**
  *  Manages the game with all game components.
@@ -20,6 +22,8 @@ class SpgGame
 
     /** Temporary animation value. */
     public  var x              :Int                = 10
+    /** Temporary animation value. */
+    public  var y              :Int                = 0
 
     /** Manages the touch logic. */
     public  var touch          :SpgTouch!          = nil
@@ -57,7 +61,7 @@ class SpgGame
             selector: #selector( self.tick )
         )
 
-        displaylink.preferredFramesPerSecond = 25
+        displaylink.preferredFramesPerSecond = 20
         displaylink.add(
             to: .current,
             forMode: RunLoop.Mode.default
@@ -72,14 +76,36 @@ class SpgGame
     @objc
     private func tick( displaylink: CADisplayLink ) -> Void
     {
-        // render this game tick
+        self.handleTouchInput()
         self.render()
+        self.repaintView()
+    }
 
-        // check pointer input
+    /**
+     *  Renders one tick of the game logic.
+     */
+    private func handleTouchInput() -> Void
+    {
+        // animate rect .. Temporarily!
+        if ( self.touch.swipedLeft  )
+        {
+            self.x -= 1
 
+            print( "Move LEFT" )
+        }
+        else if ( self.touch.swipedRight )
+        {
+            self.x += 1
 
-        // repaint the view
-        view.setNeedsDisplay()
+            print( "Move RIGHT" )
+        }
+        else
+        {
+            print( "No move" )
+        }
+
+        // render more ..
+
     }
 
     /**
@@ -88,9 +114,17 @@ class SpgGame
     private func render() -> Void
     {
         // animate rect .. Temporarily!
-        self.x += 1
+        self.y += 1
 
         // render more ..
 
+    }
+
+    /**
+     *  Forces an immediate repaint of the view.
+     */
+    private func repaintView() -> Void
+    {
+        self.view.setNeedsDisplay()
     }
 }
