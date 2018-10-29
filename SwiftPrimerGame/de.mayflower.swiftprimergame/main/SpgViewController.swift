@@ -5,7 +5,6 @@ import QuartzCore
 /**
  *  The main view controller holding the singleton UIView.
  *
- *  TODO Fix CGRect Float / Int chaos?
  *  TODO Add image system.
  *  TODO Add images for game objects.
  *  TODO Add sprites and sprite system.

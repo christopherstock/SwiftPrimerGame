@@ -6,11 +6,14 @@ import QuartzCore
 class SpgGame
 {
     /** The singleton level instance. */
-    private var level  :SpgLevel!  = nil
+    private var level           :SpgLevel!  = nil
     /** The singleton player instance. */
-    private var player :SpgPlayer! = nil
+    private var player          :SpgPlayer! = nil
     /** The singleton camera instance. */
-    private var camera :SpgCamera! = nil
+    private var camera          :SpgCamera! = nil
+
+    /** Flags if the player reached the level end. */
+    private var levelEndReached :Bool       = false
 
     /**
      *  Inits all game components from scratch.
@@ -40,14 +43,18 @@ class SpgGame
      */
     public func handleTouchInput( touch:SpgTouch ) -> Void
     {
-        // move player horizontally
-        if ( touch.swipedLeft )
+        // only move if the level end is not reached
+        if ( !self.levelEndReached )
         {
-            self.player.moveLeft()
-        }
-        else if ( touch.swipedRight )
-        {
-            self.player.moveRight( level: self.level )
+            // move player horizontally
+            if ( touch.swipedLeft )
+            {
+                self.player.moveLeft()
+            }
+            else if ( touch.swipedRight )
+            {
+                self.player.moveRight( level: self.level )
+            }
         }
     }
 
@@ -56,8 +63,19 @@ class SpgGame
      */
     public func render() -> Void
     {
-        self.player.moveForward()
+        // check if the level end is reached
+        if ( self.player.rect.y >= self.level.height - self.player.rect.height )
+        {
+            self.levelEndReached = true
+        }
 
+        // move player forward if the level end is not reached
+        if ( !self.levelEndReached )
+        {
+            self.player.moveForward()
+        }
+
+        // update the camera scrolling offsets
         self.camera.update()
     }
 }
