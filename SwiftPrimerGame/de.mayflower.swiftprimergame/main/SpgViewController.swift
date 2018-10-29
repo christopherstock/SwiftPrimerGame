@@ -6,6 +6,7 @@ import QuartzCore
  *  The main view controller holding the singleton UIView.
  *
  *  TODO Add scrolling.
+ *  TODO Level and Player to camera init. Precalc bounds etc.
  *  TODO Fix CGRect Float / Int chaos?
  *  TODO Add deug class and mode and debug logs.
  *  TODO Add images for game objects.
