@@ -19,6 +19,7 @@
 		E941AA8421822F7E001EEDEB /* SpgGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E941AA8321822F7E001EEDEB /* SpgGame.swift */; };
 		E9DEFAD22182516F00D68D0A /* SpgSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFAD12182516F00D68D0A /* SpgSetting.swift */; };
 		E9DEFAD52182F0E800D68D0A /* SpgTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFAD42182F0E800D68D0A /* SpgTouch.swift */; };
+		E9DEFB4B2184FB2F00D68D0A /* SpgPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFB4A2184FB2F00D68D0A /* SpgPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		E941AA8321822F7E001EEDEB /* SpgGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgGame.swift; sourceTree = "<group>"; };
 		E9DEFAD12182516F00D68D0A /* SpgSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgSetting.swift; sourceTree = "<group>"; };
 		E9DEFAD42182F0E800D68D0A /* SpgTouch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgTouch.swift; sourceTree = "<group>"; };
+		E9DEFB4A2184FB2F00D68D0A /* SpgPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 		E941AA7B2181DEFF001EEDEB /* de.mayflower.swiftprimergame */ = {
 			isa = PBXGroup;
 			children = (
+				E9DEFB492184FB0D00D68D0A /* game */,
 				E9DEFAD32182F0B300D68D0A /* hid */,
 				E9DEFAD02182441900D68D0A /* main */,
 				E9DEFACF218243A800D68D0A /* ui */,
@@ -170,6 +173,14 @@
 				E9DEFAD42182F0E800D68D0A /* SpgTouch.swift */,
 			);
 			path = hid;
+			sourceTree = "<group>";
+		};
+		E9DEFB492184FB0D00D68D0A /* game */ = {
+			isa = PBXGroup;
+			children = (
+				E9DEFB4A2184FB2F00D68D0A /* SpgPlayer.swift */,
+			);
+			path = game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E941AA8421822F7E001EEDEB /* SpgGame.swift in Sources */,
+				E9DEFB4B2184FB2F00D68D0A /* SpgPlayer.swift in Sources */,
 				E9DEFAD52182F0E800D68D0A /* SpgTouch.swift in Sources */,
 				E90FCE2B2181DBD4001F4808 /* SpgViewController.swift in Sources */,
 				E941AA802181EC54001EEDEB /* SpgView.swift in Sources */,

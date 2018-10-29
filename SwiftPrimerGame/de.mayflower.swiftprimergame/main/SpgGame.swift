@@ -1,12 +1,9 @@
 import QuartzCore
-/*
- import Foundation
-*/
 
 /**
  *  Manages the game with all game components.
  *
- *  TODO Add UI controls for dragging.
+ *  TODO Update entire screen on repainting?
  *  TODO Add example game logic.
  *  TODO Svg => Spg
  *
@@ -20,11 +17,6 @@ class SpgGame
     /** The height of the singleton view. */
     public  var VIEW_HEIGHT    :Int                = 0
 
-    /** Temporary animation value. */
-    public  var x              :Int                = 10
-    /** Temporary animation value. */
-    public  var y              :Int                = 0
-
     /** Manages the touch logic. */
     public  var touch          :SpgTouch!          = nil
 
@@ -32,6 +24,9 @@ class SpgGame
     private var viewController :SpgViewController! = nil
     /** The singleton instance of the extended UIView. */
     private var view           :SpgView!           = nil
+
+    /** The singleton player instance. */
+    private var player         :SpgPlayer!         = nil
 
     /**
      *  Inits all game components from scratch.
@@ -49,6 +44,8 @@ class SpgGame
         self.VIEW_HEIGHT    = Int( self.view.frame.size.height )
 
         self.touch          = SpgTouch()
+
+        self.player         = SpgPlayer()
     }
 
     /**
@@ -66,6 +63,16 @@ class SpgGame
             to: .current,
             forMode: RunLoop.Mode.default
         )
+    }
+
+    /**
+     *  Paints the entire game screen.
+     *
+     *  @param ctx The current drawing context.
+     */
+    public func drawGameScreen( ctx:CGContext ) -> Void
+    {
+        self.player.draw( ctx: ctx )
     }
 
     /**
@@ -89,23 +96,12 @@ class SpgGame
         // animate rect .. Temporarily!
         if ( self.touch.swipedLeft  )
         {
-            self.x -= 1
-
-            print( "Move LEFT" )
+            self.player.moveLeft()
         }
         else if ( self.touch.swipedRight )
         {
-            self.x += 1
-
-            print( "Move RIGHT" )
+            self.player.moveRight()
         }
-        else
-        {
-            print( "No move" )
-        }
-
-        // render more ..
-
     }
 
     /**
@@ -113,11 +109,6 @@ class SpgGame
      */
     private func render() -> Void
     {
-        // animate rect .. Temporarily!
-        self.y += 1
-
-        // render more ..
-
     }
 
     /**

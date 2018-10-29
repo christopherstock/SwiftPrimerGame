@@ -11,35 +11,56 @@ class SpgView : UIView
      */
     override func draw( _ rect:CGRect )
     {
-        print( ">> draw view" )
-
         // get drawing context
         let ctx :CGContext = UIGraphicsGetCurrentContext()!
 
-        // clear safe area
+        // clear screen
         self.clearScreen( ctx: ctx )
+
+        // draw player
+        SpgViewController.game.drawGameScreen( ctx: ctx )
+/*
+        // draw moving rect
+        SpgDrawing.drawRect(
+            ctx:    ctx,
+            x:      SpgViewController.game.x + 150,
+            y:      0,
+            width:  100,
+            height: 900,
+            col:    UIColor.blue
+        )
+        SpgDrawing.fillRect(
+            ctx:    ctx,
+            x:      SpgViewController.game.x + 10 + 150,
+            y:      10,
+            width:  100,
+            height: 900,
+            col:    UIColor.yellow
+        )
 
         // draw moving rect
         SpgDrawing.drawRect(
             ctx:    ctx,
             x:      SpgViewController.game.x,
-            y:      SpgViewController.game.y + 20,
+            y:      SpgViewController.game.y,
             width:  100,
             height: 200,
             col:    UIColor.red
         )
         SpgDrawing.fillRect(
             ctx:    ctx,
-            x:      SpgViewController.game.x + 20,
-            y:      SpgViewController.game.y + 20,
+            x:      SpgViewController.game.x + 10,
+            y:      SpgViewController.game.y + 10,
             width:  100,
             height: 200,
             col:    UIColor.gray
         )
-
+*/
+/*
         // flush all drawing operations
         ctx.flush()
         ctx.synchronize()
+*/
     }
 
     /**
