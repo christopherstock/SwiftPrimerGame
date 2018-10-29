@@ -40,7 +40,7 @@ class SpgPlayer
      */
     public func moveLeft() -> Void
     {
-        self.rect.origin.x -= 5
+        self.rect.origin.x -= CGFloat( SpgSetting.PLAYER_SPEED_X )
         if ( self.rect.origin.x < 0 )
         {
             self.rect.origin.x = 0
@@ -52,10 +52,12 @@ class SpgPlayer
      */
     public func moveRight() -> Void
     {
-        self.rect.origin.x += 5
-        if ( self.rect.origin.x > 400 )
+        let rightBound :CGFloat = CGFloat( SpgViewController.game.level.width ) - self.rect.origin.x
+
+        self.rect.origin.x += CGFloat( SpgSetting.PLAYER_SPEED_X )
+        if ( self.rect.origin.x > rightBound )
         {
-            self.rect.origin.x = 400
+            self.rect.origin.x = rightBound
         }
     }
 }

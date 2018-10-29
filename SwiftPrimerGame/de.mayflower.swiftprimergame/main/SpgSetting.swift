@@ -11,4 +11,7 @@ class SpgSetting
 
     /** The version of the game. */
     public static let VERSION :String = "0.0.1"
+
+    /** The player's moving speed in horizontal direction. */
+    public static let PLAYER_SPEED_X :Int = 5
 }

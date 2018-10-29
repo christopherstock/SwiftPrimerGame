@@ -20,6 +20,7 @@
 		E9DEFAD22182516F00D68D0A /* SpgSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFAD12182516F00D68D0A /* SpgSetting.swift */; };
 		E9DEFAD52182F0E800D68D0A /* SpgTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFAD42182F0E800D68D0A /* SpgTouch.swift */; };
 		E9DEFB4B2184FB2F00D68D0A /* SpgPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFB4A2184FB2F00D68D0A /* SpgPlayer.swift */; };
+		E9DEFB4D2186CBBC00D68D0A /* SpgLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFB4C2186CBBC00D68D0A /* SpgLevel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		E9DEFAD12182516F00D68D0A /* SpgSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgSetting.swift; sourceTree = "<group>"; };
 		E9DEFAD42182F0E800D68D0A /* SpgTouch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgTouch.swift; sourceTree = "<group>"; };
 		E9DEFB4A2184FB2F00D68D0A /* SpgPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgPlayer.swift; sourceTree = "<group>"; };
+		E9DEFB4C2186CBBC00D68D0A /* SpgLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgLevel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				E9DEFB4A2184FB2F00D68D0A /* SpgPlayer.swift */,
+				E9DEFB4C2186CBBC00D68D0A /* SpgLevel.swift */,
 			);
 			path = game;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				E9DEFAD52182F0E800D68D0A /* SpgTouch.swift in Sources */,
 				E90FCE2B2181DBD4001F4808 /* SpgViewController.swift in Sources */,
 				E941AA802181EC54001EEDEB /* SpgView.swift in Sources */,
+				E9DEFB4D2186CBBC00D68D0A /* SpgLevel.swift in Sources */,
 				E941AA822181F541001EEDEB /* SpgDrawing.swift in Sources */,
 				E90FCE292181DBD4001F4808 /* AppDelegate.swift in Sources */,
 				E9DEFAD22182516F00D68D0A /* SpgSetting.swift in Sources */,

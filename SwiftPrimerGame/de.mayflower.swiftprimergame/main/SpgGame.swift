@@ -3,30 +3,29 @@ import QuartzCore
 /**
  *  Manages the game with all game components.
  *
- *  TODO Update entire screen on repainting?
- *  TODO Add example game logic.
- *  TODO Svg => Spg
+ *  TODO Separate engine belongings in this class to SpgEngine
  *
  *  TODO MINOR Improve static access to SpgGame instance? Enable static access to ViewController or AppDelegate?
  *  TODO MINOR Limit draw area to inner bounds? (without navbar and statusbar)
  */
 class SpgGame
 {
+    /** The singleton level instance. */
+    public  var level          :SpgLevel!          = nil
+    /** The singleton player instance. */
+    public  var player         :SpgPlayer!         = nil
+
+    /** Manages the touch logic. */
+    public  var touch          :SpgTouch!          = nil
     /** The width of the singleton view. */
     public  var VIEW_WIDTH     :Int                = 0
     /** The height of the singleton view. */
     public  var VIEW_HEIGHT    :Int                = 0
 
-    /** Manages the touch logic. */
-    public  var touch          :SpgTouch!          = nil
-
     /** The singleton instance of the view controller */
     private var viewController :SpgViewController! = nil
     /** The singleton instance of the extended UIView. */
     private var view           :SpgView!           = nil
-
-    /** The singleton player instance. */
-    private var player         :SpgPlayer!         = nil
 
     /**
      *  Inits all game components from scratch.
@@ -46,6 +45,7 @@ class SpgGame
         self.touch          = SpgTouch()
 
         self.player         = SpgPlayer()
+        self.level          = SpgLevel()
     }
 
     /**
