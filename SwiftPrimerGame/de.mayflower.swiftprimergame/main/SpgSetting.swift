@@ -14,4 +14,6 @@ class SpgSetting
 
     /** The player's moving speed in horizontal direction. */
     public static let PLAYER_SPEED_X :Int = 5
+    /** The player's moving speed in vertical direction. */
+    public static let PLAYER_SPEED_Y :Int = 5
 }

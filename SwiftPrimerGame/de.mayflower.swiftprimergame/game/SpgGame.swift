@@ -53,5 +53,6 @@ class SpgGame
      */
     public func render() -> Void
     {
+        self.player.moveForward()
     }
 }

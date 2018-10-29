@@ -62,4 +62,12 @@ class SpgPlayer
             self.rect.origin.x = rightBound
         }
     }
+
+    /**
+     *  Moves the player forward in the level.
+     */
+    public func moveForward() -> Void
+    {
+        self.rect.origin.y += CGFloat( SpgSetting.PLAYER_SPEED_Y )
+    }
 }

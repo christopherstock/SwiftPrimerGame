@@ -32,25 +32,35 @@ class SpgLevel
      */
     public func draw( ctx:CGContext ) -> Void
     {
+        let SEGMENT_WIDTH  :Int = 100
         let SEGMENT_HEIGHT :Int = 100
 
+        var drawX          :Int  = 0
         var drawY          :Int  = 0
 
         var toggleColor    :Bool = false
 
         while ( drawY < self.height )
         {
-            SpgDrawing.fillRect(
-                ctx:    ctx,
-                x:      0,
-                y:      drawY,
-                width:  self.width,
-                height: SEGMENT_HEIGHT,
-                col:    ( toggleColor ? UIColor.green : UIColor.cyan )
-            )
+            drawX = 0
+            while ( drawX < self.width )
+            {
+                SpgDrawing.fillRect(
+                    ctx:    ctx,
+                    x:      drawX,
+                    y:      drawY,
+                    width:  SEGMENT_WIDTH,
+                    height: SEGMENT_HEIGHT,
+                    col:    ( toggleColor ? UIColor.green : UIColor.cyan )
+                )
+                drawX += SEGMENT_WIDTH
 
-            drawY       += SEGMENT_HEIGHT
-            toggleColor =  !toggleColor
+                toggleColor = !toggleColor
+            }
+
+            toggleColor = !toggleColor
+
+            drawY += SEGMENT_HEIGHT
         }
     }
 }
