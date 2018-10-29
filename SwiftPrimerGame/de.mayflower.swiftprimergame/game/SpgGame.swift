@@ -2,11 +2,6 @@ import QuartzCore
 
 /**
  *  Manages the game with all game components.
- *
- *  TODO Separate engine belongings in this class to SpgEngine
- *
- *  TODO MINOR Improve static access to SpgGame instance? Enable static access to ViewController or AppDelegate?
- *  TODO MINOR Limit draw area to inner bounds? (without navbar and statusbar)
  */
 class SpgGame
 {
@@ -34,8 +29,6 @@ class SpgGame
      */
     public init( viewController :SpgViewController )
     {
-        print( "SpgGame.init() being invoked" )
-
         self.viewController = viewController
         self.view           = viewController.view as? SpgView
 
