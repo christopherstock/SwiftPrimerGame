@@ -7,16 +7,19 @@ import QuartzCore
 class SpgSetting
 {
     /** The global debug switch. */
-    public static let DEBUG_MODE     :Bool   = true
+    public static let DEBUG_MODE        :Bool   = true
 
     /** The title of the game. */
-    public static let TITLE          :String = "SwiftPrimerGame"
+    public static let TITLE             :String = "SwiftPrimerGame"
 
     /** The version of the game. */
-    public static let VERSION        :String = "0.0.1"
+    public static let VERSION           :String = "0.0.1"
+
+    /** The desired frames per second for the UIView to redraw. */
+    public static let FRAMES_PER_SECOND :Int    = 20
 
     /** The player's moving speed in horizontal direction. */
-    public static let PLAYER_SPEED_X :Int    = 5
+    public static let PLAYER_SPEED_X    :Int    = 5
     /** The player's moving speed in vertical direction. */
-    public static let PLAYER_SPEED_Y :Int    = 5
+    public static let PLAYER_SPEED_Y    :Int    = 5
 }

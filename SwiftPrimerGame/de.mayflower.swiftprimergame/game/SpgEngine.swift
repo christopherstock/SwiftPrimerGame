@@ -45,7 +45,7 @@ class SpgEngine
             selector: #selector( self.tick )
         )
 
-        displaylink.preferredFramesPerSecond = 20
+        displaylink.preferredFramesPerSecond = SpgSetting.FRAMES_PER_SECOND
         displaylink.add(
             to:      .current,
             forMode: RunLoop.Mode.default

@@ -57,7 +57,7 @@ class SpgCamera
      */
     private func updateOffsetX() -> Void
     {
-        self.scrollX = Int( self.player.rect.origin.x ) - ( ( SpgViewController.engine.VIEW_WIDTH - Int( self.player.rect.size.width ) ) / 2 )
+        self.scrollX = ( self.player.rect.x - ( ( SpgViewController.engine.VIEW_WIDTH - self.player.rect.width ) / 2 ) )
         if ( self.scrollX < self.minX )
         {
             self.scrollX = self.minX
@@ -73,7 +73,7 @@ class SpgCamera
      */
     private func updateOffsetY() -> Void
     {
-        self.scrollY = Int( self.player.rect.origin.y )
+        self.scrollY = self.player.rect.y
         if ( self.scrollY < self.minY )
         {
             self.scrollY = self.minY

@@ -3,12 +3,12 @@ import CoreGraphics
 import UIKit
 
 /**
- *  Represtns the player that can be controlled by the user.
+ *  Represents the player that can be controlled by the user.
  */
 class SpgPlayer
 {
     /** The rect that represents this player's bounds. */
-    public var rect :CGRect! = nil
+    public var rect :SpgRect! = nil
 
     /**
      *  Inits this player.
@@ -18,7 +18,7 @@ class SpgPlayer
      */
     public init( startX:Int, startY:Int )
     {
-        self.rect = CGRect(
+        self.rect = SpgRect(
             x:      startX,
             y:      startY,
             width:  50,
@@ -36,10 +36,10 @@ class SpgPlayer
     {
         SpgDrawing.fillRect(
             ctx:    ctx,
-            x:      Int( self.rect!.origin.x    ) - camera.scrollX,
-            y:      Int( self.rect!.origin.y    ) - camera.scrollY,
-            width:  Int( self.rect!.size.width  ),
-            height: Int( self.rect!.size.height ),
+            x:      ( self.rect!.x - camera.scrollX ),
+            y:      ( self.rect!.y - camera.scrollY ),
+            width:  self.rect!.width,
+            height: self.rect!.height,
             col:    UIColor.red
         )
     }
@@ -49,10 +49,10 @@ class SpgPlayer
      */
     public func moveLeft() -> Void
     {
-        self.rect.origin.x -= CGFloat( SpgSetting.PLAYER_SPEED_X )
-        if ( self.rect.origin.x < 0 )
+        self.rect.x -= SpgSetting.PLAYER_SPEED_X
+        if ( self.rect.x < 0 )
         {
-            self.rect.origin.x = 0
+            self.rect.x = 0
         }
     }
 
@@ -63,12 +63,12 @@ class SpgPlayer
      */
     public func moveRight( level:SpgLevel ) -> Void
     {
-        let rightBound :CGFloat = CGFloat( level.width ) - self.rect.size.width
+        let rightBound :Int = level.width - self.rect.width
 
-        self.rect.origin.x += CGFloat( SpgSetting.PLAYER_SPEED_X )
-        if ( self.rect.origin.x > rightBound )
+        self.rect.x += SpgSetting.PLAYER_SPEED_X
+        if ( self.rect.x > rightBound )
         {
-            self.rect.origin.x = rightBound
+            self.rect.x = rightBound
         }
     }
 
@@ -77,6 +77,6 @@ class SpgPlayer
      */
     public func moveForward() -> Void
     {
-        self.rect.origin.y += CGFloat( SpgSetting.PLAYER_SPEED_Y )
+        self.rect.y += SpgSetting.PLAYER_SPEED_Y
     }
 }
