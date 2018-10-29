@@ -21,8 +21,6 @@ class SpgTouch
      */
     public func onTouchDown( point:CGPoint ) -> Void
     {
-        //bprint( "onTouchDown [" + point.debugDescription + "]" )
-
         self.lastTouchLocation = point
         self.swipedLeft        = false
         self.swipedRight       = false
@@ -35,8 +33,6 @@ class SpgTouch
      */
     public func onTouchUp( point:CGPoint ) -> Void
     {
-        // print( "onTouchUp [" + point.debugDescription + "]" )
-
         self.lastTouchLocation = nil
         self.swipedLeft        = false
         self.swipedRight       = false
@@ -49,8 +45,6 @@ class SpgTouch
      */
     public func onTouchMove( point:CGPoint ) -> Void
     {
-        // print( "onTouchMove [" + point.debugDescription + "]" )
-
         self.swipedLeft  = false
         self.swipedRight = false
 

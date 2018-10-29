@@ -30,7 +30,7 @@ class SpgViewController : UIViewController
     {
         super.viewDidLoad()
 
-        print( "Welcome to [" + SpgSetting.TITLE + "] v. [" + SpgSetting.VERSION + "]" )
+        SpgDebug.log( "Welcome to [" + SpgSetting.TITLE + "] v. [" + SpgSetting.VERSION + "]" )
 
         // init engine and game
         SpgViewController.engine = SpgEngine( viewController: self )

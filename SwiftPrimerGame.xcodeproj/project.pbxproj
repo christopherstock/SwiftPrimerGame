@@ -23,6 +23,7 @@
 		E9DEFB4D2186CBBC00D68D0A /* SpgLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFB4C2186CBBC00D68D0A /* SpgLevel.swift */; };
 		E9DEFB4F2186D12A00D68D0A /* SpgEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFB4E2186D12A00D68D0A /* SpgEngine.swift */; };
 		E9DEFB512186E7ED00D68D0A /* SpgCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFB502186E7ED00D68D0A /* SpgCamera.swift */; };
+		E9DEFB5421870D8A00D68D0A /* SpgDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFB5321870D8A00D68D0A /* SpgDebug.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		E9DEFB4C2186CBBC00D68D0A /* SpgLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgLevel.swift; sourceTree = "<group>"; };
 		E9DEFB4E2186D12A00D68D0A /* SpgEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgEngine.swift; sourceTree = "<group>"; };
 		E9DEFB502186E7ED00D68D0A /* SpgCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgCamera.swift; sourceTree = "<group>"; };
+		E9DEFB5321870D8A00D68D0A /* SpgDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgDebug.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				E9DEFAD32182F0B300D68D0A /* hid */,
 				E9DEFAD02182441900D68D0A /* main */,
 				E9DEFACF218243A800D68D0A /* ui */,
+				E9DEFB5221870D6000D68D0A /* util */,
 			);
 			path = de.mayflower.swiftprimergame;
 			sourceTree = "<group>";
@@ -169,7 +172,6 @@
 			children = (
 				E90FCE2A2181DBD4001F4808 /* SpgViewController.swift */,
 				E9DEFAD12182516F00D68D0A /* SpgSetting.swift */,
-				E9DEFB4E2186D12A00D68D0A /* SpgEngine.swift */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -185,11 +187,20 @@
 		E9DEFB492184FB0D00D68D0A /* game */ = {
 			isa = PBXGroup;
 			children = (
+				E9DEFB4E2186D12A00D68D0A /* SpgEngine.swift */,
 				E941AA8321822F7E001EEDEB /* SpgGame.swift */,
 				E9DEFB4A2184FB2F00D68D0A /* SpgPlayer.swift */,
 				E9DEFB4C2186CBBC00D68D0A /* SpgLevel.swift */,
 			);
 			path = game;
+			sourceTree = "<group>";
+		};
+		E9DEFB5221870D6000D68D0A /* util */ = {
+			isa = PBXGroup;
+			children = (
+				E9DEFB5321870D8A00D68D0A /* SpgDebug.swift */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +344,7 @@
 				E9DEFB4D2186CBBC00D68D0A /* SpgLevel.swift in Sources */,
 				E941AA822181F541001EEDEB /* SpgDrawing.swift in Sources */,
 				E90FCE292181DBD4001F4808 /* AppDelegate.swift in Sources */,
+				E9DEFB5421870D8A00D68D0A /* SpgDebug.swift in Sources */,
 				E9DEFAD22182516F00D68D0A /* SpgSetting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
