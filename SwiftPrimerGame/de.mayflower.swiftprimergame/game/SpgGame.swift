@@ -15,7 +15,7 @@ class SpgGame
      */
     public init()
     {
-        self.level  = SpgLevel()
+        self.level  = SpgLevel( width: 1000, height: 5000 )
         self.player = SpgPlayer()
     }
 
@@ -26,6 +26,7 @@ class SpgGame
      */
     public func drawGameScreen( ctx:CGContext ) -> Void
     {
+        self.level.draw(  ctx: ctx )
         self.player.draw( ctx: ctx )
     }
 

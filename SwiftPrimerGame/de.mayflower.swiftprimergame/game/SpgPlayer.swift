@@ -21,7 +21,7 @@ class SpgPlayer
     /**
      *  Draws the player onto the given drawing context.
      *
-     *  @param
+     *  @param ctx The drawing context to draw onto.
      */
     public func draw( ctx:CGContext ) -> Void
     {
