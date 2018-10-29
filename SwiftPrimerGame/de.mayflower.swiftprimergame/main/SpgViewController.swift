@@ -5,7 +5,7 @@ import QuartzCore
 /**
  *  The main view controller holding the singleton UIView.
  *
- *  TODO Separate engine belongings in this class to SpgEngine.
+ *  TODO Add scrolling.
  *  TODO Add deug class and mode and debug logs.
  *  TODO Add images for game objects.
  *  TODO Add sprites.

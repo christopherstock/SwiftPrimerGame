@@ -28,9 +28,10 @@ class SpgLevel
     /**
      *  Draws the player onto the given drawing context.
      *
-     *  @param ctx The drawing context to draw onto.
+     *  @param ctx    The drawing context to draw onto.
+     *  @param camera The current camera position.
      */
-    public func draw( ctx:CGContext ) -> Void
+    public func draw( ctx:CGContext, camera:SpgCamera ) -> Void
     {
         let SEGMENT_WIDTH  :Int = 100
         let SEGMENT_HEIGHT :Int = 100
@@ -47,8 +48,8 @@ class SpgLevel
             {
                 SpgDrawing.fillRect(
                     ctx:    ctx,
-                    x:      drawX,
-                    y:      drawY,
+                    x:      drawX + camera.scrollX,
+                    y:      drawY + camera.scrollY,
                     width:  SEGMENT_WIDTH,
                     height: SEGMENT_HEIGHT,
                     col:    ( toggleColor ? UIColor.green : UIColor.cyan )

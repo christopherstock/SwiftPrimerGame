@@ -9,14 +9,17 @@ class SpgGame
     private var level  :SpgLevel!  = nil
     /** The singleton player instance. */
     private var player :SpgPlayer! = nil
+    /** The singleton camera instance. */
+    private var camera :SpgCamera! = nil
 
     /**
      *  Inits all game components from scratch.
      */
     public init()
     {
-        self.level  = SpgLevel( width: 1000, height: 5000 )
+        self.level  = SpgLevel( width: 1000, height: 2000 )
         self.player = SpgPlayer()
+        self.camera = SpgCamera()
     }
 
     /**
@@ -26,8 +29,8 @@ class SpgGame
      */
     public func drawGameScreen( ctx:CGContext ) -> Void
     {
-        self.level.draw(  ctx: ctx )
-        self.player.draw( ctx: ctx )
+        self.level.draw(  ctx: ctx, camera: camera )
+        self.player.draw( ctx: ctx, camera: camera )
     }
 
     /**
@@ -54,5 +57,7 @@ class SpgGame
     public func render() -> Void
     {
         self.player.moveForward()
+
+        self.camera.update()
     }
 }

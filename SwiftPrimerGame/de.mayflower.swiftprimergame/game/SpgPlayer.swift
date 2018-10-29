@@ -21,14 +21,15 @@ class SpgPlayer
     /**
      *  Draws the player onto the given drawing context.
      *
-     *  @param ctx The drawing context to draw onto.
+     *  @param ctx    The drawing context to draw onto.
+     *  @param camera The current camera position.
      */
-    public func draw( ctx:CGContext ) -> Void
+    public func draw( ctx:CGContext, camera:SpgCamera ) -> Void
     {
         SpgDrawing.fillRect(
             ctx:    ctx,
-            x:      Int( self.rect!.origin.x    ),
-            y:      Int( self.rect!.origin.y    ),
+            x:      Int( self.rect!.origin.x    ) + camera.scrollX,
+            y:      Int( self.rect!.origin.y    ) + camera.scrollY,
             width:  Int( self.rect!.size.width  ),
             height: Int( self.rect!.size.height ),
             col:    UIColor.red
