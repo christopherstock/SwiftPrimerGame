@@ -8,7 +8,7 @@ import UIKit
 class SpgPlayer
 {
     /** The rect that represents this player's bounds. */
-    private var rect :CGRect! = nil
+    public var rect :CGRect! = nil
 
     /**
      *  Inits this player.
@@ -28,8 +28,8 @@ class SpgPlayer
     {
         SpgDrawing.fillRect(
             ctx:    ctx,
-            x:      Int( self.rect!.origin.x    ) + camera.scrollX,
-            y:      Int( self.rect!.origin.y    ) + camera.scrollY,
+            x:      Int( self.rect!.origin.x    ) - camera.scrollX,
+            y:      Int( self.rect!.origin.y    ) - camera.scrollY,
             width:  Int( self.rect!.size.width  ),
             height: Int( self.rect!.size.height ),
             col:    UIColor.red

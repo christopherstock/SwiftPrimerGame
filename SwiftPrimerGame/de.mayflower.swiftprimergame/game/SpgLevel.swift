@@ -48,8 +48,8 @@ class SpgLevel
             {
                 SpgDrawing.fillRect(
                     ctx:    ctx,
-                    x:      drawX + camera.scrollX,
-                    y:      drawY + camera.scrollY,
+                    x:      drawX - camera.scrollX,
+                    y:      drawY - camera.scrollY,
                     width:  SEGMENT_WIDTH,
                     height: SEGMENT_HEIGHT,
                     col:    ( toggleColor ? UIColor.green : UIColor.cyan )

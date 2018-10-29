@@ -58,6 +58,6 @@ class SpgGame
     {
         self.player.moveForward()
 
-        self.camera.update()
+        self.camera.update( level: self.level, player: self.player )
     }
 }

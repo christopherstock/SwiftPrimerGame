@@ -21,10 +21,27 @@ class SpgCamera
 
     /**
      *  Updates the current scroll offsets.
+     *
+     *  @param level  The level.
+     *  @param player The player.
      */
-    public func update() -> Void
+    public func update( level:SpgLevel, player:SpgPlayer ) -> Void
     {
+        // calculate scroll offset X
 
-        // self.scrollY =
+
+        // calculate scroll offset Y
+        let SCROLL_Y_MIN :Int = 0
+        let SCROLL_Y_MAX :Int = ( level.height - SpgViewController.engine.VIEW_HEIGHT /* Int( player.rect.size.height ) */ )
+
+        self.scrollY = Int( player.rect.origin.y )
+        if ( self.scrollY < SCROLL_Y_MIN )
+        {
+            self.scrollY = SCROLL_Y_MIN
+        }
+        else if ( self.scrollY > SCROLL_Y_MAX )
+        {
+            self.scrollY = SCROLL_Y_MAX
+        }
     }
 }
