@@ -5,14 +5,14 @@ import QuartzCore
 /**
  *  The main view controller holding the singleton UIView.
  *
- *  TODO Add scrolling.
- *  TODO Level and Player to camera init. Precalc bounds etc.
- *  TODO Fix CGRect Float / Int chaos?
  *  TODO Add deug class and mode and debug logs.
+ *  TODO Fix CGRect Float / Int chaos?
+ *  TODO Add image system.
  *  TODO Add images for game objects.
  *  TODO Add sprites.
  *  TODO Add bg music.
  *
+ *  TODO MINOR Fix simulator lag on touch input.
  *  TODO MINOR Improve static access to SpgGame instance? Enable static access to ViewController or AppDelegate?
  *  TODO MINOR Limit draw area to inner bounds? (without navbar and statusbar)
  */
