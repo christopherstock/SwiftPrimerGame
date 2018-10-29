@@ -9,7 +9,6 @@ class SpgLevel
 {
     /** The width of the accessable area. */
     public var width  :Int = 0
-
     /** The height of the accessable area. */
     public var height :Int = 0
 
