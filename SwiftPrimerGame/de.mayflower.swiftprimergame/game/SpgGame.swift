@@ -6,56 +6,17 @@ import QuartzCore
 class SpgGame
 {
     /** The singleton level instance. */
-    public  var level          :SpgLevel!          = nil
+    private var level  :SpgLevel!  = nil
     /** The singleton player instance. */
-    public  var player         :SpgPlayer!         = nil
-
-    /** Manages the touch logic. */
-    public  var touch          :SpgTouch!          = nil
-    /** The width of the singleton view. */
-    public  var VIEW_WIDTH     :Int                = 0
-    /** The height of the singleton view. */
-    public  var VIEW_HEIGHT    :Int                = 0
-
-    /** The singleton instance of the view controller */
-    private var viewController :SpgViewController! = nil
-    /** The singleton instance of the extended UIView. */
-    private var view           :SpgView!           = nil
+    private var player :SpgPlayer! = nil
 
     /**
      *  Inits all game components from scratch.
-     *
-     *  @param viewController The singleton view controller instance.
      */
-    public init( viewController :SpgViewController )
+    public init()
     {
-        self.viewController = viewController
-        self.view           = viewController.view as? SpgView
-
-        self.VIEW_WIDTH     = Int( self.view.frame.size.width  )
-        self.VIEW_HEIGHT    = Int( self.view.frame.size.height )
-
-        self.touch          = SpgTouch()
-
-        self.player         = SpgPlayer()
-        self.level          = SpgLevel()
-    }
-
-    /**
-     *  Starts the game loop that acts as the application's main thread.
-     */
-    public func startGameLoop() -> Void
-    {
-        let displaylink = CADisplayLink(
-            target: self,
-            selector: #selector( self.tick )
-        )
-
-        displaylink.preferredFramesPerSecond = 20
-        displaylink.add(
-            to: .current,
-            forMode: RunLoop.Mode.default
-        )
+        self.level  = SpgLevel()
+        self.player = SpgPlayer()
     }
 
     /**
@@ -69,46 +30,27 @@ class SpgGame
     }
 
     /**
-     *  The game loop method that is being invoked each game tick.
+     *  Considers the current touch input events.
      *
-     *  @param displayLink The linked display object containing additional information.
+     *  @param touch The instance of the touch input.
      */
-    @objc
-    private func tick( displaylink: CADisplayLink ) -> Void
+    public func handleTouchInput( touch:SpgTouch ) -> Void
     {
-        self.handleTouchInput()
-        self.render()
-        self.repaintView()
-    }
-
-    /**
-     *  Renders one tick of the game logic.
-     */
-    private func handleTouchInput() -> Void
-    {
-        // animate rect .. Temporarily!
-        if ( self.touch.swipedLeft  )
+        // move player horizontally
+        if ( touch.swipedLeft )
         {
             self.player.moveLeft()
         }
-        else if ( self.touch.swipedRight )
+        else if ( touch.swipedRight )
         {
-            self.player.moveRight()
+            self.player.moveRight( level: self.level )
         }
     }
 
     /**
      *  Renders one tick of the game logic.
      */
-    private func render() -> Void
+    public func render() -> Void
     {
-    }
-
-    /**
-     *  Forces an immediate repaint of the view.
-     */
-    private func repaintView() -> Void
-    {
-        self.view.setNeedsDisplay()
     }
 }

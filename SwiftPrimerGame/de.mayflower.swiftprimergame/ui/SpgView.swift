@@ -17,50 +17,8 @@ class SpgView : UIView
         // clear screen
         self.clearScreen( ctx: ctx )
 
-        // draw player
+        // draw game screen
         SpgViewController.game.drawGameScreen( ctx: ctx )
-/*
-        // draw moving rect
-        SpgDrawing.drawRect(
-            ctx:    ctx,
-            x:      SpgViewController.game.x + 150,
-            y:      0,
-            width:  100,
-            height: 900,
-            col:    UIColor.blue
-        )
-        SpgDrawing.fillRect(
-            ctx:    ctx,
-            x:      SpgViewController.game.x + 10 + 150,
-            y:      10,
-            width:  100,
-            height: 900,
-            col:    UIColor.yellow
-        )
-
-        // draw moving rect
-        SpgDrawing.drawRect(
-            ctx:    ctx,
-            x:      SpgViewController.game.x,
-            y:      SpgViewController.game.y,
-            width:  100,
-            height: 200,
-            col:    UIColor.red
-        )
-        SpgDrawing.fillRect(
-            ctx:    ctx,
-            x:      SpgViewController.game.x + 10,
-            y:      SpgViewController.game.y + 10,
-            width:  100,
-            height: 200,
-            col:    UIColor.gray
-        )
-*/
-/*
-        // flush all drawing operations
-        ctx.flush()
-        ctx.synchronize()
-*/
     }
 
     /**
@@ -74,8 +32,8 @@ class SpgView : UIView
             ctx:    ctx,
             x:      0,
             y:      0,
-            width:  SpgViewController.game.VIEW_WIDTH,
-            height: SpgViewController.game.VIEW_HEIGHT,
+            width:  SpgViewController.engine.VIEW_WIDTH,
+            height: SpgViewController.engine.VIEW_HEIGHT,
             col:    UIColor.black
         )
     }
@@ -85,7 +43,7 @@ class SpgView : UIView
      */
     override func touchesBegan( _ touches: Set<UITouch>, with event: UIEvent? )
     {
-        SpgViewController.game.touch.onTouchDown(
+        SpgViewController.engine.touch.onTouchDown(
             point: event!.allTouches!.first!.location( in: self )
         )
     }
@@ -95,7 +53,7 @@ class SpgView : UIView
      */
     override func touchesMoved( _ touches: Set<UITouch>, with event: UIEvent? )
     {
-        SpgViewController.game.touch.onTouchMove(
+        SpgViewController.engine.touch.onTouchMove(
             point: event!.allTouches!.first!.location( in: self )
         )
     }
@@ -105,7 +63,7 @@ class SpgView : UIView
      */
     override func touchesEnded( _ touches: Set<UITouch>, with event: UIEvent? )
     {
-        SpgViewController.game.touch.onTouchUp(
+        SpgViewController.engine.touch.onTouchUp(
             point: event!.allTouches!.first!.location( in: self )
         )
     }
@@ -115,7 +73,7 @@ class SpgView : UIView
      */
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?)
     {
-        SpgViewController.game.touch.onTouchUp(
+        SpgViewController.engine.touch.onTouchUp(
             point: event!.allTouches!.first!.location( in: self )
         )
     }

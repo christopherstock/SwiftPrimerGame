@@ -49,10 +49,12 @@ class SpgPlayer
 
     /**
      *  Moves the player right one tick.
+     *
+     *  @param level The level the player is situated in.
      */
-    public func moveRight() -> Void
+    public func moveRight( level:SpgLevel ) -> Void
     {
-        let rightBound :CGFloat = CGFloat( SpgViewController.game.level.width ) - self.rect.origin.x
+        let rightBound :CGFloat = CGFloat( level.width ) - self.rect.origin.x
 
         self.rect.origin.x += CGFloat( SpgSetting.PLAYER_SPEED_X )
         if ( self.rect.origin.x > rightBound )
