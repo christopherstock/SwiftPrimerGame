@@ -17,9 +17,9 @@ class SpgGame
      */
     public init()
     {
-        self.level  = SpgLevel( width: 1000, height: 2000 )
-        self.player = SpgPlayer()
-        self.camera = SpgCamera()
+        self.level  = SpgLevel(  width: 1000, height: 5000 )
+        self.player = SpgPlayer( startX: 475, startY: 0 )
+        self.camera = SpgCamera( level: self.level, player: self.player )
     }
 
     /**
@@ -58,6 +58,6 @@ class SpgGame
     {
         self.player.moveForward()
 
-        self.camera.update( level: self.level, player: self.player )
+        self.camera.update()
     }
 }

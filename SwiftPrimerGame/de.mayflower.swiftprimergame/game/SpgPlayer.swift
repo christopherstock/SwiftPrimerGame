@@ -12,10 +12,18 @@ class SpgPlayer
 
     /**
      *  Inits this player.
+     *
+     *  @param startX Start position X.
+     *  @param startY Start position Y.
      */
-    public init()
+    public init( startX:Int, startY:Int )
     {
-        self.rect = CGRect( x: 0, y: 0, width: 50, height: 75 )
+        self.rect = CGRect(
+            x:      startX,
+            y:      startY,
+            width:  50,
+            height: 75
+        )
     }
 
     /**
@@ -55,7 +63,7 @@ class SpgPlayer
      */
     public func moveRight( level:SpgLevel ) -> Void
     {
-        let rightBound :CGFloat = CGFloat( level.width ) - self.rect.origin.x
+        let rightBound :CGFloat = CGFloat( level.width ) - self.rect.size.width
 
         self.rect.origin.x += CGFloat( SpgSetting.PLAYER_SPEED_X )
         if ( self.rect.origin.x > rightBound )

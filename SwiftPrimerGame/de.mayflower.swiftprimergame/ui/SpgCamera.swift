@@ -7,71 +7,80 @@ import Foundation
 class SpgCamera
 {
     /** The current scroll offset X. */
-    public var scrollX :Int = 0
+    public  var scrollX :Int        = 0
     /** The current scroll offset Y. */
-    public var scrollY :Int = 0
+    public  var scrollY :Int        = 0
+
+    /** The level instance. */
+    private var level   :SpgLevel!  = nil
+    /** The player instance. */
+    private var player  :SpgPlayer! = nil
+
+    /** Minimum scroll bound X */
+    private var minX    :Int        = 0
+    /** Maximum scroll bound X */
+    private var maxX    :Int        = 0
+    /** Minimum scroll bound Y */
+    private var minY    :Int        = 0
+    /** Maximum scroll bound Y */
+    private var maxY    :Int        = 0
 
     /**
      *  Creates a new camera instance.
+     *
+     *  @param level  The level  instance.
+     *  @param player The player instance.
      */
-    public init(  )
+    public init( level:SpgLevel, player:SpgPlayer )
     {
+        self.level  = level
+        self.player = player
 
+        self.minX   = 0
+        self.maxX   = ( self.level.width - SpgViewController.engine.VIEW_WIDTH )
+
+        self.minY   = 0
+        self.maxY   = ( self.level.height - SpgViewController.engine.VIEW_HEIGHT )
     }
 
     /**
      *  Updates the current scroll offsets.
-     *
-     *  @param level  The level.
-     *  @param player The player.
      */
-    public func update( level:SpgLevel, player:SpgPlayer ) -> Void
+    public func update() -> Void
     {
-        self.updateOffsetX( level: level, player: player )
-        self.updateOffsetY( level: level, player: player )
+        self.updateOffsetX()
+        self.updateOffsetY()
     }
 
     /**
      *  Updates the current scroll offset X.
-     *
-     *  @param level  The level.
-     *  @param player The player.
      */
-    private func updateOffsetX( level:SpgLevel, player:SpgPlayer ) -> Void
+    private func updateOffsetX() -> Void
     {
-        let SCROLL_X_MIN :Int = 0
-        let SCROLL_X_MAX :Int = ( level.width - SpgViewController.engine.VIEW_WIDTH )
-
-        self.scrollX = Int( player.rect.origin.x ) - ( ( SpgViewController.engine.VIEW_WIDTH - Int( player.rect.size.width ) ) / 2 )
-        if ( self.scrollX < SCROLL_X_MIN )
+        self.scrollX = Int( self.player.rect.origin.x ) - ( ( SpgViewController.engine.VIEW_WIDTH - Int( self.player.rect.size.width ) ) / 2 )
+        if ( self.scrollX < self.minX )
         {
-            self.scrollX = SCROLL_X_MIN
+            self.scrollX = self.minX
         }
-        else if ( self.scrollX > SCROLL_X_MAX )
+        else if ( self.scrollX > self.maxX )
         {
-            self.scrollX = SCROLL_X_MAX
+            self.scrollX = self.maxX
         }
     }
 
     /**
      *  Updates the current scroll offset Y.
-     *
-     *  @param level  The level.
-     *  @param player The player.
      */
-    private func updateOffsetY( level:SpgLevel, player:SpgPlayer ) -> Void
+    private func updateOffsetY() -> Void
     {
-        let SCROLL_Y_MIN :Int = 0
-        let SCROLL_Y_MAX :Int = ( level.height - SpgViewController.engine.VIEW_HEIGHT )
-
-        self.scrollY = Int( player.rect.origin.y )
-        if ( self.scrollY < SCROLL_Y_MIN )
+        self.scrollY = Int( self.player.rect.origin.y )
+        if ( self.scrollY < self.minY )
         {
-            self.scrollY = SCROLL_Y_MIN
+            self.scrollY = self.minY
         }
-        else if ( self.scrollY > SCROLL_Y_MAX )
+        else if ( self.scrollY > self.maxY )
         {
-            self.scrollY = SCROLL_Y_MAX
+            self.scrollY = self.maxY
         }
     }
 }
