@@ -19,6 +19,24 @@ class SpgView : UIView
 
         // draw game screen
         SpgViewController.game.drawGameScreen( ctx: ctx )
+
+
+
+
+
+
+
+// example image drawing
+let myImage = UIImage( named: SpgImage.PLAYER.getId() )
+let imagePoint = CGPoint( x: 0, y: 0 )
+//myImage?.draw( at: imagePoint )
+myImage?.draw( in: CGRect( x: 0, y: 0, width: 200, height: 350 ) )
+
+
+
+
+
+
     }
 
     /**
