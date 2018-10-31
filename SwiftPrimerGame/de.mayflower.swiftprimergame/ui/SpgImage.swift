@@ -7,7 +7,7 @@ import UIKit
 class SpgImage
 {
     /** The image for the player. */
-    public static var PLAYER :SpgImage = SpgImage( "example" )
+    public static var PLAYER :SpgImage = SpgImage( "truck" )
 
     /** The internal asset ID of this image. */
     private       var id     :String!  = nil

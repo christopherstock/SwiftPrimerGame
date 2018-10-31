@@ -8,7 +8,10 @@ import UIKit
 class SpgPlayer
 {
     /** The rect that represents this player's bounds. */
-    public var rect :SpgRect! = nil
+    public  var rect  :SpgRect! = nil
+
+    /** The player image. */
+    private var image :UIImage! = nil
 
     /**
      *  Inits this player.
@@ -18,11 +21,13 @@ class SpgPlayer
      */
     public init( startX:Int, startY:Int )
     {
+        self.image = UIImage( named: SpgImage.PLAYER.getId() )
+
         self.rect = SpgRect(
             x:      startX,
             y:      startY,
-            width:  50,
-            height: 75
+            width:  Int( self.image.size.width  ),
+            height: Int( self.image.size.height )
         )
     }
 
@@ -34,14 +39,26 @@ class SpgPlayer
      */
     public func draw( ctx:CGContext, camera:SpgCamera ) -> Void
     {
+        // get player image
+        let myImage :UIImage! = UIImage( named: SpgImage.PLAYER.getId() )
+
+        // get current player draw location
+        let drawX :Int = ( self.rect!.x - camera.scrollX )
+        let drawY :Int = ( self.rect!.y - camera.scrollY )
+
+        // draw debug rect
         SpgDrawing.fillRect(
             ctx:    ctx,
-            x:      ( self.rect!.x - camera.scrollX ),
-            y:      ( self.rect!.y - camera.scrollY ),
-            width:  self.rect!.width,
-            height: self.rect!.height,
+            x:      drawX,
+            y:      drawY,
+            width:  self.rect.width,
+            height: self.rect.height,
             col:    UIColor.red
         )
+
+        // draw player image
+        let imagePoint :CGPoint  = CGPoint( x: drawX, y: drawY )
+        myImage?.draw( at: imagePoint )
     }
 
     /**

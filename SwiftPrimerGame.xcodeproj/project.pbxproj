@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E90FCE292181DBD4001F4808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FCE282181DBD4001F4808 /* AppDelegate.swift */; };
 		E90FCE2B2181DBD4001F4808 /* SpgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FCE2A2181DBD4001F4808 /* SpgViewController.swift */; };
-		E90FCE302181DBD7001F4808 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90FCE2F2181DBD7001F4808 /* Assets.xcassets */; };
 		E90FCE332181DBD7001F4808 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90FCE312181DBD7001F4808 /* LaunchScreen.storyboard */; };
 		E90FCE3E2181DBD8001F4808 /* SwiftPrimerGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FCE3D2181DBD8001F4808 /* SwiftPrimerGameTests.swift */; };
 		E90FCE492181DBD8001F4808 /* SwiftPrimerGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FCE482181DBD8001F4808 /* SwiftPrimerGameUITests.swift */; };
@@ -17,6 +16,7 @@
 		E941AA802181EC54001EEDEB /* SpgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E941AA7F2181EC54001EEDEB /* SpgView.swift */; };
 		E941AA822181F541001EEDEB /* SpgDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E941AA812181F541001EEDEB /* SpgDrawing.swift */; };
 		E941AA8421822F7E001EEDEB /* SpgGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E941AA8321822F7E001EEDEB /* SpgGame.swift */; };
+		E958485E21899C56009BB86D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E958485D21899C56009BB86D /* Assets.xcassets */; };
 		E9DEFAD22182516F00D68D0A /* SpgSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFAD12182516F00D68D0A /* SpgSetting.swift */; };
 		E9DEFAD52182F0E800D68D0A /* SpgTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFAD42182F0E800D68D0A /* SpgTouch.swift */; };
 		E9DEFB4B2184FB2F00D68D0A /* SpgPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFB4A2184FB2F00D68D0A /* SpgPlayer.swift */; };
@@ -50,7 +50,6 @@
 		E90FCE282181DBD4001F4808 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E90FCE2A2181DBD4001F4808 /* SpgViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgViewController.swift; sourceTree = "<group>"; };
 		E90FCE2D2181DBD4001F4808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Spg.storyboard; sourceTree = "<group>"; };
-		E90FCE2F2181DBD7001F4808 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E90FCE322181DBD7001F4808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E90FCE342181DBD7001F4808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E90FCE392181DBD8001F4808 /* SwiftPrimerGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftPrimerGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +61,7 @@
 		E941AA7F2181EC54001EEDEB /* SpgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgView.swift; sourceTree = "<group>"; };
 		E941AA812181F541001EEDEB /* SpgDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgDrawing.swift; sourceTree = "<group>"; };
 		E941AA8321822F7E001EEDEB /* SpgGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgGame.swift; sourceTree = "<group>"; };
+		E958485D21899C56009BB86D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = SwiftPrimerGame/Assets.xcassets; sourceTree = "<group>"; };
 		E9DEFAD12182516F00D68D0A /* SpgSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgSetting.swift; sourceTree = "<group>"; };
 		E9DEFAD42182F0E800D68D0A /* SpgTouch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgTouch.swift; sourceTree = "<group>"; };
 		E9DEFB4A2184FB2F00D68D0A /* SpgPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgPlayer.swift; sourceTree = "<group>"; };
@@ -101,6 +101,7 @@
 		E90FCE1C2181DBD4001F4808 = {
 			isa = PBXGroup;
 			children = (
+				E958485D21899C56009BB86D /* Assets.xcassets */,
 				E90FCE272181DBD4001F4808 /* SwiftPrimerGame */,
 				E90FCE3C2181DBD8001F4808 /* SwiftPrimerGameTests */,
 				E90FCE472181DBD8001F4808 /* SwiftPrimerGameUITests */,
@@ -124,7 +125,6 @@
 				E90FCE282181DBD4001F4808 /* AppDelegate.swift */,
 				E941AA7B2181DEFF001EEDEB /* de.mayflower.swiftprimergame */,
 				E90FCE2C2181DBD4001F4808 /* Spg.storyboard */,
-				E90FCE2F2181DBD7001F4808 /* Assets.xcassets */,
 				E90FCE312181DBD7001F4808 /* LaunchScreen.storyboard */,
 				E90FCE342181DBD7001F4808 /* Info.plist */,
 			);
@@ -314,8 +314,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E941AA7E2181E2C6001EEDEB /* Spg.storyboard in Resources */,
+				E958485E21899C56009BB86D /* Assets.xcassets in Resources */,
 				E90FCE332181DBD7001F4808 /* LaunchScreen.storyboard in Resources */,
-				E90FCE302181DBD7001F4808 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
