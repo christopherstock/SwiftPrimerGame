@@ -7,32 +7,30 @@ import QuartzCore
 class SpgEngine
 {
     /** The width of the singleton view. */
-    public  var VIEW_WIDTH     :Int                = 0
+    public  var VIEW_WIDTH     :Int
     /** The height of the singleton view. */
-    public  var VIEW_HEIGHT    :Int                = 0
+    public  var VIEW_HEIGHT    :Int
 
     /** Manages the touch logic. */
-    public  var touch          :SpgTouch!          = nil
-
+    public  var touch          :SpgTouch
     /** The singleton instance of the view controller */
-    private var viewController :SpgViewController! = nil
+    private var viewController :SpgViewController
     /** The singleton instance of the extended UIView. */
-    private var view           :SpgView!           = nil
+    private var view           :SpgView
 
     /**
      *  Inits all game components from scratch.
      *
-     *  @param viewController The singleton view controller instance.
+     *  @param vc The singleton view controller instance.
      */
-    public init( viewController :SpgViewController )
+    public init( viewController vc :SpgViewController )
     {
-        self.viewController = viewController
-        self.view           = viewController.view as? SpgView
+        viewController = vc
+        view           = self.viewController.view as! SpgView
+        touch          = SpgTouch()
 
-        self.VIEW_WIDTH     = Int( self.view.frame.size.width  )
-        self.VIEW_HEIGHT    = Int( self.view.frame.size.height )
-
-        self.touch          = SpgTouch()
+        VIEW_WIDTH     = Int( self.view.frame.size.width  )
+        VIEW_HEIGHT    = Int( self.view.frame.size.height )
     }
 
     /**
@@ -60,7 +58,7 @@ class SpgEngine
     @objc
     private func tick( displaylink: CADisplayLink ) -> Void
     {
-        SpgViewController.game.handleTouchInput( touch: self.touch )
+        SpgViewController.game.handleTouchInput( touch: touch )
         SpgViewController.game.render()
 
         self.repaintView()

@@ -6,23 +6,30 @@ import QuartzCore
 class SpgGame
 {
     /** The singleton level instance. */
-    private var level           :SpgLevel!  = nil
+    private var level  :SpgLevel
     /** The singleton player instance. */
-    private var player          :SpgPlayer! = nil
+    private var player :SpgPlayer
     /** The singleton camera instance. */
-    private var camera          :SpgCamera! = nil
+    private var camera :SpgCamera
 
     /** Flags if the player reached the level end. */
-    private var levelEndReached :Bool       = false
+    private var levelEndReached :Bool
 
     /**
      *  Inits all game components from scratch.
      */
-    public init()
+    init( x: Int )
     {
-        self.level  = SpgLevel(  width: 1000, height: 5000 )
-        self.player = SpgPlayer( startX: 475, startY: 0 )
-        self.camera = SpgCamera( level: self.level, player: self.player )
+        level  = SpgLevel(  width: 1000, height: 5000 )
+        player = SpgPlayer( startX: x, startY: 0 )
+        camera = SpgCamera( level: self.level, player: self.player )
+
+        levelEndReached = false
+    }
+
+    convenience init()
+    {
+        self.init( x: 475 )
     }
 
     /**

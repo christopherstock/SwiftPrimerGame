@@ -7,7 +7,7 @@ import Foundation
 class SpgView : UIView
 {
     /**
-     *  Draws all game items on the UIView for the current game tick.
+     *  Draws all the game items on the UIView for the current game tick.
      */
     override func draw( _ rect:CGRect )
     {

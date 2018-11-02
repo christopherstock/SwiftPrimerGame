@@ -5,6 +5,8 @@ import QuartzCore
 /**
  *  The main view controller holding the singleton UIView.
  *
+ *  TODO Remove self. everywhere
+ *  TODO Remove redundant variable initializers everywhere!
  *  TODO Add image system.
  *  TODO Add images for game objects.
  *  TODO Add sprites and sprite system.

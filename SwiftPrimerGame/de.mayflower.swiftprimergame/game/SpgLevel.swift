@@ -8,9 +8,9 @@ import UIKit
 class SpgLevel
 {
     /** The width of the accessable area. */
-    public var width  :Int = 0
+    public var width  :Int
     /** The height of the accessable area. */
-    public var height :Int = 0
+    public var height :Int
 
     /**
      *  Creates a new level instance.
