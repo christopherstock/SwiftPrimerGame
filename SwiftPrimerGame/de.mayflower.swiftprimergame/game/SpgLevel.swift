@@ -17,8 +17,10 @@ class SpgLevel
 
     /** The singleton player instance. */
     private var player          :SpgPlayer
-    /** The deco objects. */
+    /** The decoration objects. */
     private var decos           :[SpgDeco]
+    /** The obstacles. */
+    private var obstacles       :[SpgObstacle]
 
     /**
      *  Creates a new level instance.
@@ -59,6 +61,10 @@ class SpgLevel
             SpgDeco( image: SpgImage.ROAD_STRAIGHT, startX: 260, startY: 5592 ),
             SpgDeco( image: SpgImage.FINISH_LINE,   startX: 260, startY: 5469 ),
         ]
+
+        obstacles       = [
+            SpgObstacle( image: SpgImage.CAR_1,     startX: 405, startY: 400  ),
+        ]
     }
 
     /**
@@ -89,6 +95,12 @@ class SpgLevel
         for deco in decos
         {
             deco.draw( ctx: ctx, camera: camera )
+        }
+
+        // draw obstacles
+        for obstacle in obstacles
+        {
+            obstacle.draw( ctx: ctx, camera: camera )
         }
 
         // draw fg

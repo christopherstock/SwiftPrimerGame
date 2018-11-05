@@ -9,7 +9,7 @@ class SpgSetting
     /** The global debug switch. */
     static let DEBUG_MODE                   :Bool   = true
     /** Specifies if debug rects shall be drawn for all game objects. */
-    static let DEBUG_DRAW_GAME_OBJECT_RECTS :Bool   = ( false && DEBUG_MODE )
+    static let DEBUG_DRAW_GAME_OBJECT_RECTS :Bool   = ( true && DEBUG_MODE )
 
     /** The title of the game. */
     static let TITLE                        :String = "SwiftPrimerGame"

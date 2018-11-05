@@ -3,24 +3,24 @@ import CoreGraphics
 import UIKit
 
 /**
- *  Represents the player that can be controlled by the user.
+ *  Represents a colliding obstacle object.
  */
-class SpgPlayer
+class SpgObstacle
 {
-    /** The player image. */
+    /** The obstacle image. */
     private var image :SpgImage
-    /** The rect that represents this player's bounds. */
+    /** The rect that represents this obstacle's bounds. */
     private var rect  :SpgRect
 
     /**
-     *  Inits this player.
+     *  Inits this obstacle.
      *
      *  @param startX Start position X.
      *  @param startY Start position Y.
      */
-    init( startX:Int, startY:Int )
+    init( image img:SpgImage, startX:Int, startY:Int )
     {
-        image = SpgImage.PLAYER
+        image = img
         rect  = SpgRect(
             x:      startX,
             y:      startY,
@@ -40,14 +40,14 @@ class SpgPlayer
     }
 
     /**
-     *  Draws the player onto the given drawing context.
+     *  Draws the obstacle onto the given drawing context.
      *
      *  @param ctx    The drawing context to draw onto.
      *  @param camera The current camera position.
      */
     func draw( ctx:CGContext, camera:SpgCamera ) -> Void
     {
-        // get current player draw location
+        // get current obstacle draw location
         let drawX :Int = ( rect.x - camera.scrollX )
         let drawY :Int = ( rect.y - camera.scrollY )
 
@@ -60,47 +60,11 @@ class SpgPlayer
                 y:      drawY,
                 width:  rect.width,
                 height: rect.height,
-                col:    UIColor.blue
+                col:    UIColor.red
             )
         }
 
-        // draw player image
+        // draw obstacle image
         SpgDrawing.drawImage( ctx: ctx, img: image.getImage(), x: drawX, y: drawY )
-    }
-
-    /**
-     *  Moves the player left one tick.
-     */
-    func moveLeft() -> Void
-    {
-        rect.x -= SpgSetting.PLAYER_SPEED_X
-        if ( rect.x < 0 )
-        {
-            rect.x = 0
-        }
-    }
-
-    /**
-     *  Moves the player right one tick.
-     *
-     *  @param level The level the player is situated in.
-     */
-    func moveRight( level:SpgLevel ) -> Void
-    {
-        let rightBound :Int = level.width - rect.width
-
-        rect.x += SpgSetting.PLAYER_SPEED_X
-        if ( rect.x > rightBound )
-        {
-            rect.x = rightBound
-        }
-    }
-
-    /**
-     *  Moves the player forward in the level.
-     */
-    func moveForward() -> Void
-    {
-        rect.y += SpgSetting.PLAYER_SPEED_Y
     }
 }

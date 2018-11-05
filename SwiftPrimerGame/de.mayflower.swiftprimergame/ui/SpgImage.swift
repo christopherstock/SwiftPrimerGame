@@ -22,6 +22,10 @@ class SpgImage
     /** The image for the finish line. */
     static var FINISH_LINE   :SpgImage = SpgImage( id: "finishLine"   )
 
+    /** The image for the car 1. */
+    static var CAR_1         :SpgImage = SpgImage( id: "car1"         )
+
+
     /** The internal asset ID of this image. */
     private var id    :String
     /** The native UIImage instance. */
