@@ -7,11 +7,10 @@ import UIKit
  */
 class SpgPlayer
 {
-    /** The rect that represents this player's bounds. */
-    public  var rect  :SpgRect
-
     /** The player image. */
     private var image :SpgImage
+    /** The rect that represents this player's bounds. */
+    private var rect  :SpgRect
 
     /**
      *  Inits this player.
@@ -22,13 +21,22 @@ class SpgPlayer
     public init( startX:Int, startY:Int )
     {
         image = SpgImage.PLAYER
-
-        rect = SpgRect(
+        rect  = SpgRect(
             x:      startX,
             y:      startY,
             width:  Int( image.getImage().size.width  ),
             height: Int( image.getImage().size.height )
         )
+    }
+
+    /**
+     *  Returns the game object rectangle.
+     *
+     *  @return The rect that represents the bounds of this game object.
+     */
+    public func getRect() -> SpgRect
+    {
+        return rect
     }
 
     /**

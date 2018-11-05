@@ -7,9 +7,9 @@ import QuartzCore
 class SpgEngine
 {
     /** The game instance. */
-    public  var game           :SpgGame
+    private var game           :SpgGame
     /** Manages the touch logic. */
-    public  var touch          :SpgTouch
+    private var touch          :SpgTouch
     /** The singleton instance of the view controller */
     private var viewController :SpgViewController
     /** The singleton instance of the extended UIView. */

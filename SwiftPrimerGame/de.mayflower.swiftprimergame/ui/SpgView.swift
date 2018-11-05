@@ -14,7 +14,7 @@ class SpgView : UIView
     /** A reference to the game instance. TODO remove! */
     private var game   :SpgGame!
     /** The touch instance. */
-    public var touch   :SpgTouch!
+    private var touch  :SpgTouch!
 
     /**
      *  Temporary game instance setter .. TODO remove! .. create constructor

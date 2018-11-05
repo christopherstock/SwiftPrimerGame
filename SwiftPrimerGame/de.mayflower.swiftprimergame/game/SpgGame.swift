@@ -6,12 +6,11 @@ import QuartzCore
 class SpgGame
 {
     /** The singleton level instance. */
-    private var level  :SpgLevel
+    private var level           :SpgLevel
     /** The singleton player instance. */
-    private var player :SpgPlayer
+    private var player          :SpgPlayer
     /** The singleton camera instance. */
-    private var camera :SpgCamera
-
+    private var camera          :SpgCamera
     /** Flags if the player reached the level end. */
     private var levelEndReached :Bool
 
@@ -24,7 +23,13 @@ class SpgGame
     {
         level  = SpgLevel(  width:  1000,  height: 5000 )
         player = SpgPlayer( startX: 475,   startY: SpgSetting.PLAYER_OFFSET_TOP )
-        camera = SpgCamera( level:  level, player: player, viewWidth: view.width, viewHeight: view.height )
+        camera = SpgCamera(
+            subject:     player.getRect(),
+            levelWidth:  level.width,
+            levelHeight: level.height,
+            viewWidth:   view.width,
+            viewHeight:  view.height
+        )
 
         levelEndReached = false
     }
@@ -68,7 +73,7 @@ class SpgGame
     public func render() -> Void
     {
         // check if the level end is reached
-        if ( player.rect.y >= level.height - player.rect.height )
+        if ( player.getRect().y >= level.height - player.getRect().height - SpgSetting.PLAYER_OFFSET_BOTTOM )
         {
             levelEndReached = true
         }

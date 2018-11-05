@@ -11,11 +11,8 @@ class SpgCamera
     /** The current scroll offset Y. */
     public  var scrollY    :Int
 
-    /** The level instance. */
-    private var level      :SpgLevel
-    /** The player instance. */
-    private var player     :SpgPlayer
-
+    /** The subject this camera shall focus. */
+    private var subject    :SpgRect
     /** Minimum scroll bound X */
     private var minX       :Int
     /** Maximum scroll bound X */
@@ -24,7 +21,6 @@ class SpgCamera
     private var minY       :Int
     /** Maximum scroll bound Y */
     private var maxY       :Int
-
     /** The width of the view */
     private var viewWidth  :Int
     /** The height of the view */
@@ -33,26 +29,29 @@ class SpgCamera
     /**
      *  Creates a new camera instance.
      *
-     *  @param level      The level  instance.
-     *  @param player     The player instance.
-     *  @param viewWidth  The width  of the view.
-     *  @param viewHeight The height of the view.
+     *  @param subject     The subject this camera system shall focus.
+     *  @param levelWidth  The width  of the level.
+     *  @param levelHeight The height of the level.
+     *  @param viewWidth   The width  of the view.
+     *  @param viewHeight  The height of the view.
      */
-    public init( level aLevel:SpgLevel, player aPlayer:SpgPlayer, viewWidth aViewWidth :Int, viewHeight aViewHeight :Int )
-    {
-        level      = aLevel
-        player     = aPlayer
-
+    public init(
+        subject    aSubject    :SpgRect,
+        levelWidth             :Int,
+        levelHeight            :Int,
+        viewWidth  aViewWidth  :Int,
+        viewHeight aViewHeight :Int
+    ) {
+        subject    = aSubject
         viewWidth  = aViewWidth
         viewHeight = aViewHeight
+        minX       = 0
+        maxX       = ( levelWidth  - viewWidth  )
+        minY       = 0
+        maxY       = ( levelHeight - viewHeight )
 
         scrollX    = 0
         scrollY    = 0
-
-        minX       = 0
-        maxX       = ( level.width  - viewWidth  )
-        minY       = 0
-        maxY       = ( level.height - viewHeight )
     }
 
     /**
@@ -69,7 +68,7 @@ class SpgCamera
      */
     private func updateOffsetX() -> Void
     {
-        scrollX = ( player.rect.x - ( ( viewWidth - player.rect.width ) / 2 ) )
+        scrollX = ( subject.x - ( ( viewWidth - subject.width ) / 2 ) )
         if ( scrollX < minX )
         {
             scrollX = minX
@@ -85,7 +84,7 @@ class SpgCamera
      */
     private func updateOffsetY() -> Void
     {
-        scrollY = ( player.rect.y - SpgSetting.PLAYER_OFFSET_TOP )
+        scrollY = ( subject.y - SpgSetting.PLAYER_OFFSET_TOP )
         if ( scrollY < minY )
         {
             scrollY = minY

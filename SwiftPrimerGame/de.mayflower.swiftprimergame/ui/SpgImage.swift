@@ -22,7 +22,12 @@ class SpgImage
     private init( id aId:String )
     {
         id    = aId
-        image = UIImage( named: id )!
+        image = UIImage()
+
+        if let newImage:UIImage = UIImage( named: id )
+        {
+            image = newImage
+        }
     }
 
     /**
