@@ -52,14 +52,17 @@ class SpgPlayer
         let drawY :Int = ( rect.y - camera.scrollY )
 
         // draw debug rect
-        SpgDrawing.fillRect(
-            ctx:    ctx,
-            x:      drawX,
-            y:      drawY,
-            width:  rect.width,
-            height: rect.height,
-            col:    UIColor.red
-        )
+        if ( SpgSetting.DEBUG_DRAW_GAME_OBJECT_RECTS )
+        {
+            SpgDrawing.fillRect(
+                ctx:    ctx,
+                x:      drawX,
+                y:      drawY,
+                width:  rect.width,
+                height: rect.height,
+                col:    UIColor.red
+            )
+        }
 
         // draw player image
         SpgDrawing.drawImage( ctx: ctx, img: image.getImage(), x: drawX, y: drawY )

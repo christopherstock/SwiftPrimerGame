@@ -4,7 +4,6 @@ import UIKit
  *  The main application delegate
  *
  *  TODO Find better startup than SpgViewController
- *  TODO Add debug switch for debug bg blocks
  *  TODO Offset for car to bottom
  *  TODO Add finish line
  *  TODO Add obstacles
@@ -18,7 +17,6 @@ import UIKit
  *  TODO Add alert on reaching finish line
  *  TODO Move all setting constants to plist file
  *
- *  TODO MINOR Improve static access to SpgGame instance. Enable static access to ViewController or AppDelegate
  *  TODO MINOR Limit draw area to inner bounds. (without navbar and statusbar)
  *  TODO MINOR Fix simulator lag on touch input
  *
