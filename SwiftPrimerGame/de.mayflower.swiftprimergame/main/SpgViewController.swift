@@ -9,8 +9,6 @@ class SpgViewController : UIViewController
 {
     /** The engine instance. */
     public static var engine :SpgEngine! = nil
-    /** The game instance. */
-    public static var game   :SpgGame!   = nil
 
     /**
      *  Being invoked when this view controller is initialized.
@@ -33,7 +31,6 @@ class SpgViewController : UIViewController
 
         // init engine and game
         SpgViewController.engine = SpgEngine( viewController: self )
-        SpgViewController.game   = SpgGame()
 
         // start the main loop
         SpgViewController.engine.startMainLoop()

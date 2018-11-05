@@ -11,6 +11,9 @@ class SpgEngine
     /** The height of the singleton view. */
     public  var VIEW_HEIGHT    :Int
 
+    /** The game instance. */
+    public var  game           :SpgGame
+
     /** Manages the touch logic. */
     public  var touch          :SpgTouch
     /** The singleton instance of the view controller */
@@ -25,12 +28,20 @@ class SpgEngine
      */
     public init( viewController vc :SpgViewController )
     {
+        // this is horrible!
+
         viewController = vc
+
         view           = viewController.view as! SpgView
-        touch          = SpgTouch()
 
         VIEW_WIDTH     = Int( view.frame.size.width  )
         VIEW_HEIGHT    = Int( view.frame.size.height )
+
+        game           = SpgGame( viewWidth: VIEW_WIDTH, viewHeight: VIEW_HEIGHT )
+        view.setGame( game: game )
+
+        touch          = SpgTouch()
+
     }
 
     /**
@@ -58,8 +69,8 @@ class SpgEngine
     @objc
     private func tick( displaylink: CADisplayLink ) -> Void
     {
-        SpgViewController.game.handleTouchInput( touch: touch )
-        SpgViewController.game.render()
+        game.handleTouchInput( touch: touch )
+        game.render()
 
         repaintView()
     }

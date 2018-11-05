@@ -7,42 +7,52 @@ import Foundation
 class SpgCamera
 {
     /** The current scroll offset X. */
-    public  var scrollX :Int
+    public  var scrollX    :Int
     /** The current scroll offset Y. */
-    public  var scrollY :Int
+    public  var scrollY    :Int
 
     /** The level instance. */
-    private var level   :SpgLevel
+    private var level      :SpgLevel
     /** The player instance. */
-    private var player  :SpgPlayer
+    private var player     :SpgPlayer
 
     /** Minimum scroll bound X */
-    private var minX    :Int
+    private var minX       :Int
     /** Maximum scroll bound X */
-    private var maxX    :Int
+    private var maxX       :Int
     /** Minimum scroll bound Y */
-    private var minY    :Int
+    private var minY       :Int
     /** Maximum scroll bound Y */
-    private var maxY    :Int
+    private var maxY       :Int
+
+    /** The width of the view */
+    private var viewWidth  :Int
+    /** The height of the view */
+    private var viewHeight :Int
 
     /**
      *  Creates a new camera instance.
      *
-     *  @param level  The level  instance.
-     *  @param player The player instance.
+     *  @param level      The level  instance.
+     *  @param player     The player instance.
+     *  @param viewWidth  The width  of the view.
+     *  @param viewHeight The height of the view.
      */
-    public init( level aLevel:SpgLevel, player aPlayer:SpgPlayer )
+    public init( level aLevel:SpgLevel, player aPlayer:SpgPlayer, viewWidth aViewWidth :Int, viewHeight aViewHeight :Int )
     {
-        scrollX = 0
-        scrollY = 0
+        level      = aLevel
+        player     = aPlayer
 
-        level  = aLevel
-        player = aPlayer
+        viewWidth  = aViewWidth
+        viewHeight = aViewHeight
 
-        minX   = 0
-        maxX   = ( level.width - SpgViewController.engine.VIEW_WIDTH   )
-        minY   = 0
-        maxY   = ( level.height - SpgViewController.engine.VIEW_HEIGHT )
+        scrollX    = 0
+        scrollY    = 0
+
+        minX       = 0
+        maxX       = ( level.width  - viewWidth  )
+        minY       = 0
+        maxY       = ( level.height - viewHeight )
     }
 
     /**
@@ -59,9 +69,7 @@ class SpgCamera
      */
     private func updateOffsetX() -> Void
     {
-        scrollX = (
-            player.rect.x - ( ( SpgViewController.engine.VIEW_WIDTH - player.rect.width ) / 2 )
-        )
+        scrollX = ( player.rect.x - ( ( viewWidth - player.rect.width ) / 2 ) )
         if ( scrollX < minX )
         {
             scrollX = minX

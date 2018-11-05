@@ -6,6 +6,14 @@ import Foundation
  */
 class SpgView : UIView
 {
+    /** A reference to the game instance. */
+    private var game :SpgGame!
+
+    public func setGame( game aGame:SpgGame )
+    {
+        game = aGame
+    }
+
     /**
      *  Draws all the game items on the UIView for the current game tick.
      */
@@ -18,7 +26,7 @@ class SpgView : UIView
             clearScreen( ctx: ctx )
 
             // draw game screen
-            SpgViewController.game.drawGameScreen( ctx: ctx )
+            game.drawGameScreen( ctx: ctx )
         }
     }
 
