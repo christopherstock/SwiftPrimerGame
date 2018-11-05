@@ -7,23 +7,23 @@ import Foundation
 class SpgCamera
 {
     /** The current scroll offset X. */
-    public  var scrollX :Int        = 0
+    public  var scrollX :Int
     /** The current scroll offset Y. */
-    public  var scrollY :Int        = 0
+    public  var scrollY :Int
 
     /** The level instance. */
-    private var level   :SpgLevel!  = nil
+    private var level   :SpgLevel
     /** The player instance. */
-    private var player  :SpgPlayer! = nil
+    private var player  :SpgPlayer
 
     /** Minimum scroll bound X */
-    private var minX    :Int        = 0
+    private var minX    :Int
     /** Maximum scroll bound X */
-    private var maxX    :Int        = 0
+    private var maxX    :Int
     /** Minimum scroll bound Y */
-    private var minY    :Int        = 0
+    private var minY    :Int
     /** Maximum scroll bound Y */
-    private var maxY    :Int        = 0
+    private var maxY    :Int
 
     /**
      *  Creates a new camera instance.
@@ -33,12 +33,14 @@ class SpgCamera
      */
     public init( level:SpgLevel, player:SpgPlayer )
     {
+        self.scrollX = 0
+        self.scrollY = 0
+
         self.level  = level
         self.player = player
 
         self.minX   = 0
-        self.maxX   = ( self.level.width - SpgViewController.engine.VIEW_WIDTH )
-
+        self.maxX   = ( self.level.width - SpgViewController.engine.VIEW_WIDTH   )
         self.minY   = 0
         self.maxY   = ( self.level.height - SpgViewController.engine.VIEW_HEIGHT )
     }
