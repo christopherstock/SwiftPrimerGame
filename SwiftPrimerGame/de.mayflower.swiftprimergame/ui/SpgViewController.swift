@@ -25,8 +25,14 @@ class SpgViewController : UIViewController
      *  @param title       The dialog title.
      *  @param message     The dialog message.
      *  @param buttonLabel The label for the button that closes the dialog.
+     *  @param onClose     The action to perform when the dialog is closed.
      */
-    func showAlert( title:String, message:String, buttonLabel:String ) -> Void
+    func showAlert(
+        title:       String,
+        message:     String,
+        buttonLabel: String,
+        onClose:     @escaping (UIAlertAction) -> Void
+    ) -> Void
     {
         DispatchQueue.main.async {
 
@@ -35,7 +41,13 @@ class SpgViewController : UIViewController
                 message: message,
                 preferredStyle: UIAlertController.Style.alert
             )
-            alert.addAction( UIAlertAction( title: buttonLabel, style: .default, handler: nil) )
+            alert.addAction(
+                UIAlertAction(
+                    title: buttonLabel,
+                    style: .default,
+                    handler: onClose
+                )
+            )
 
             self.present( alert, animated: true, completion: nil )
         }

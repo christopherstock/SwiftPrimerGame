@@ -7,12 +7,12 @@ import UIKit
  *  TODO Add some more obstacles ..
  *  TODO Enable moving obstacles.
  *  TODO Dynamically create UIViewController and UIView?
- *  TODO Restart game after alert dialog.
  *
  *  TODO MINOR Move all setting constants to plist file
- *  TODO MINOR Limit draw area to inner bounds. (without navbar and statusbar)
+ *  TODO MINOR Limit draw area to inner bounds? (without navbar and statusbar)
  *  TODO MINOR Fix simulator lag on touch input
  *
+ *  ASK  How to avoid initializing duplicate values in init() and reset() -> SpgGame
  *  ASK  plist file best practices?
  *  ASK  Should _ be used as parameter label
  *  ASK  How can UIImage be unboxed in constructor

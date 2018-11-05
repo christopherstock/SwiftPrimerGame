@@ -5,6 +5,8 @@ import QuartzCore
  */
 class SpgGame
 {
+    /** A reference to the view. */
+    private var view           :SpgView
     /** A reference to the view controller. */
     private var viewController :SpgViewController
     /** The singleton level instance. */
@@ -23,9 +25,12 @@ class SpgGame
      *  @param view           A reference to the view.
      *  @param touch          A reference to the touch system.
      */
-    init( viewController vc: SpgViewController, view: SpgView, touch aTouch :SpgTouch )
+    init( viewController vc: SpgViewController, view aView: SpgView, touch aTouch :SpgTouch )
     {
         viewController = vc
+        touch          = aTouch
+        view           = aView
+
         level          = SpgLevel( width:  1000,  height: 5800 )
         camera         = SpgCamera(
             subject:     level.getPlayer().getRect(),
@@ -34,7 +39,24 @@ class SpgGame
             viewWidth:   view.width,
             viewHeight:  view.height
         )
-        touch          = aTouch
+        state          = SpgGameState.RUNNING
+    }
+
+    /**
+     *  Resets the game to all initial values.
+     */
+    private func reset() -> Void
+    {
+        SpgDebug.log( "Reset the game" )
+
+        level          = SpgLevel( width:  1000,  height: 5800 )
+        camera         = SpgCamera(
+            subject:     level.getPlayer().getRect(),
+            levelWidth:  level.width,
+            levelHeight: level.height,
+            viewWidth:   view.width,
+            viewHeight:  view.height
+        )
         state          = SpgGameState.RUNNING
     }
 
@@ -68,7 +90,11 @@ class SpgGame
                 viewController.showAlert(
                     title:       "Congratulations",
                     message:     "You have reached the finish line and may now call yourself a professional iOS driver.",
-                    buttonLabel: "Ok"
+                    buttonLabel: "Restart",
+                    onClose:     {
+                        _ in
+                        self.reset()
+                    }
                 )
             }
 
@@ -77,8 +103,12 @@ class SpgGame
             {
                 viewController.showAlert(
                     title:       "Game Over",
-                    message:     "Oh no! You have collided with an obstacle! Restart the game to try again!",
-                    buttonLabel: "Ok"
+                    message:     "Oh no! You have collided with an obstacle! Try harder next time!",
+                    buttonLabel: "Try again",
+                    onClose:     {
+                        _ in
+                        self.reset()
+                    }
                 )
             }
 
