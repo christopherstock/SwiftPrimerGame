@@ -8,16 +8,6 @@ import QuartzCore
 class SpgViewController : UIViewController
 {
     /**
-     *  Being invoked when this view controller is initialized.
-     *
-     *  @param coder The coder instance.
-     */
-    required init?( coder: NSCoder )
-    {
-        super.init( coder: coder )
-    }
-
-    /**
      *  Being invoked when the view is fully loaded.
      */
     override func viewDidLoad()

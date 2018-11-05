@@ -3,14 +3,13 @@ import UIKit
 /**
  *  The main application delegate
  *
- *  TODO init() in viewController class .. remove statics
- *  TODO Remove all ? everywhere
- *  TODO Remove ! in UIImage constructor
- *  TODO Find better startup than SpgViewController
  *  TODO Redesign 'public' and 'private' everywhere
- *  TODO Offset for car to bottom
+ *  TODO Find better startup than SpgViewController
+ *
  *  TODO Add debug switch for debug bg blocks
  *  TODO Remove all ! .. everywhere
+ *
+ *  TODO Offset for car to bottom
  *  TODO Add finish line
  *  TODO Add obstacles
  *  TODO Add deco
@@ -19,6 +18,7 @@ import UIKit
  *  TODO Add sprites and sprite system
  *  TODO Add bg music
  *  TODO Add game end on reaching bottom bound etc
+ *  TODO Add alert on reaching finish line!
  *
  *  TODO MINOR Improve static access to SpgGame instance. Enable static access to ViewController or AppDelegate
  *  TODO MINOR Limit draw area to inner bounds. (without navbar and statusbar)

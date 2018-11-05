@@ -17,7 +17,7 @@ class SpgView : UIView
     public var touch   :SpgTouch!
 
     /**
-     *  Temporary game instance setter .. TODO remove! .. create constructor??
+     *  Temporary game instance setter .. TODO remove! .. create constructor
      */
     public func setGame( game aGame:SpgGame )
     {

@@ -11,6 +11,8 @@ class SpgImage
 
     /** The internal asset ID of this image. */
     private       var id     :String
+    /** The native UIImage instance. */
+    private       var image  :UIImage
 
     /**
      *  Creates a new image identifier.
@@ -19,16 +21,17 @@ class SpgImage
      */
     private init( id aId:String )
     {
-        id = aId
+        id    = aId
+        image = UIImage( named: id )!
     }
 
     /**
-     *  Returns the internal asset ID of this image.
+     *  Returns the internal UIImage instance.
      *
-     *  @return The internal asset ID.
+     *  @return The internal UIImage.
      */
-    public func getId() -> String
+    public func getImage() -> UIImage
     {
-        return id
+        return image
     }
 }

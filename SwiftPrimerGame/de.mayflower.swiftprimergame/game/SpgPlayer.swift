@@ -11,7 +11,7 @@ class SpgPlayer
     public  var rect  :SpgRect
 
     /** The player image. */
-    private var image :UIImage
+    private var image :SpgImage
 
     /**
      *  Inits this player.
@@ -21,14 +21,13 @@ class SpgPlayer
      */
     public init( startX:Int, startY:Int )
     {
-        // TODO remove !
-        image = UIImage( named: SpgImage.PLAYER.getId() )!
+        image = SpgImage.PLAYER
 
         rect = SpgRect(
             x:      startX,
             y:      startY,
-            width:  Int( image.size.width  ),
-            height: Int( image.size.height )
+            width:  Int( image.getImage().size.width  ),
+            height: Int( image.getImage().size.height )
         )
     }
 
@@ -55,7 +54,7 @@ class SpgPlayer
         )
 
         // draw player image
-        SpgDrawing.drawImage( ctx: ctx, img: image, x: drawX, y: drawY )
+        SpgDrawing.drawImage( ctx: ctx, img: image.getImage(), x: drawX, y: drawY )
     }
 
     /**
