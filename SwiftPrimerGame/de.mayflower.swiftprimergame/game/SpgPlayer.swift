@@ -30,6 +30,16 @@ class SpgPlayer
     }
 
     /**
+     *  Sets the specified image as the new player image.
+     *
+     *  @param newImage The new player image to set.
+     */
+    func setImage( newImage:SpgImage ) -> Void
+    {
+        image = newImage
+    }
+
+    /**
      *  Returns the game object rectangle.
      *
      *  @return The rect that represents the bounds of this game object.

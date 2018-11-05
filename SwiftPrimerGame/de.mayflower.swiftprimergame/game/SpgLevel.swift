@@ -189,6 +189,7 @@ class SpgLevel
                 if ( player.getRect().overlaps( rect: obstacle.getRect() ) )
                 {
                     playerCrashed = true
+                    player.setImage( newImage: SpgImage.PLAYER_CRASHED )
                 }
             }
 

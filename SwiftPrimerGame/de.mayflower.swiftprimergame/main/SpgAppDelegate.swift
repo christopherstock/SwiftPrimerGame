@@ -3,16 +3,12 @@ import UIKit
 /**
  *  The main application delegate
  *
- *  TODO Add obstacles
- *  TODO Add sprites and sprite system
- *  TODO Add bg music
  *  TODO Create parent superclass for all game objects.
  *  TODO Add alert on reaching finish line
- *  TODO Move all setting constants to plist file
- *  TODO Add class SpgLevelData for all initial level data!
+ *  TODO Add bg music
  *
+ *  TODO MINOR Move all setting constants to plist file
  *  TODO MINOR Dynamically create UIViewController and UIView?
- *
  *  TODO MINOR Limit draw area to inner bounds. (without navbar and statusbar)
  *  TODO MINOR Fix simulator lag on touch input
  *
