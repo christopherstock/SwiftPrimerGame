@@ -8,6 +8,9 @@ class SpgImage
 {
     /** The image for the player. */
     static var PLAYER        :SpgImage = SpgImage( id: "truck"        )
+
+    /** The image for the bg. */
+    static var BG            :SpgImage = SpgImage( id: "bg"           )
     /** The image for the road straight. */
     static var ROAD_STRAIGHT :SpgImage = SpgImage( id: "roadStraight" )
     /** The image for the road left. */

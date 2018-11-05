@@ -34,6 +34,14 @@ class SpgLevel
 
         player          = SpgPlayer( startX: 305, startY: SpgSetting.PLAYER_OFFSET_TOP )
         decos           = [
+            SpgDeco( image: SpgImage.BG,            startX: 0,   startY: 0    ),
+            SpgDeco( image: SpgImage.BG,            startX: 0,   startY: 904  ),
+            SpgDeco( image: SpgImage.BG,            startX: 0,   startY: 1808 ),
+            SpgDeco( image: SpgImage.BG,            startX: 0,   startY: 2712 ),
+            SpgDeco( image: SpgImage.BG,            startX: 0,   startY: 3616 ),
+            SpgDeco( image: SpgImage.BG,            startX: 0,   startY: 4520 ),
+            SpgDeco( image: SpgImage.BG,            startX: 0,   startY: 5424 ),
+
             SpgDeco( image: SpgImage.ROAD_STRAIGHT, startX: 260, startY: 0    ),
             SpgDeco( image: SpgImage.ROAD_STRAIGHT, startX: 260, startY: 391  ),
             SpgDeco( image: SpgImage.ROAD_STRAIGHT, startX: 260, startY: 782  ),
@@ -71,8 +79,11 @@ class SpgLevel
      */
     func draw( ctx:CGContext, camera:SpgCamera ) -> Void
     {
-        // draw bg
-        drawDebugBg( ctx: ctx, camera: camera )
+        if ( SpgSetting.DEBUG_DRAW_GAME_OBJECT_RECTS )
+        {
+            // draw bg
+            drawDebugBg( ctx: ctx, camera: camera )
+        }
 
         // draw decos
         for deco in decos
