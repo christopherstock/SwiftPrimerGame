@@ -59,8 +59,31 @@ class SpgGame
             // handle touch input
             level.handleTouchInput( touch: touch )
 
-            // render level
-            state = level.render()
+            // render level and determine new game state
+            let newState:SpgGameState = level.render()
+
+            // show alert dialog if player reached the finish line
+            if ( state == .RUNNING && newState == .FINISH_REACHED )
+            {
+                viewController.showAlert(
+                    title:       "Congratulations",
+                    message:     "You have reached the finish line and may now call yourself a professional iOS driver.",
+                    buttonLabel: "Ok"
+                )
+            }
+
+            // show alert dialog if player crashed
+            if ( state == .RUNNING && newState == .PLAYER_CRASHED )
+            {
+                viewController.showAlert(
+                    title:       "Game Over",
+                    message:     "Oh no! You have collided with an obstacle! Restart the game to try again!",
+                    buttonLabel: "Ok"
+                )
+            }
+
+            // assign new game state
+            state = newState
 
             // update the camera scrolling offsets
             camera.update()

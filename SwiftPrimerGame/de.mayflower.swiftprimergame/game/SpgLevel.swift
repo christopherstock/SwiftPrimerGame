@@ -63,8 +63,8 @@ class SpgLevel
         ]
 
         obstacles       = [
-            SpgObstacle( image: SpgImage.CAR_1,     startX: 425, startY: 400  ),
-            SpgObstacle( image: SpgImage.TRUCK_1,   startX: 425, startY: 400  ),
+            SpgObstacle( image: SpgImage.CAR_1,     startX: 425, startY: 250  ),
+            SpgObstacle( image: SpgImage.TRUCK_1,   startX: 305, startY: 830  ),
         ]
     }
 
