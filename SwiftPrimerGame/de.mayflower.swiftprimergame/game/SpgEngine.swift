@@ -30,9 +30,11 @@ class SpgEngine
         view.assignDimensions()
 
         game           = SpgGame( view: view )
-        view.setGame( game: game )
 
         touch          = SpgTouch()
+
+        view.setGame(  game:  game  )
+        view.setTouch( touch: touch )
     }
 
     /**

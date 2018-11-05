@@ -7,19 +7,29 @@ import Foundation
 class SpgView : UIView
 {
     /** The width of the singleton view. */
-    public var width  :Int = 0
+    public var  width  :Int = 0
     /** The height of the singleton view. */
-    public var height :Int = 0
+    public var  height :Int = 0
 
     /** A reference to the game instance. TODO remove! */
-    private var game :SpgGame!
+    private var game   :SpgGame!
+    /** The touch instance. */
+    public var touch   :SpgTouch!
 
     /**
-     *  Temporary game instance setter .. TODO remove!
+     *  Temporary game instance setter .. TODO remove! .. create constructor??
      */
     public func setGame( game aGame:SpgGame )
     {
         game = aGame
+    }
+
+    /**
+     *  Temporary touch instance setter .. TODO remove!
+     */
+    public func setTouch( touch aTouch:SpgTouch )
+    {
+        touch = aTouch
     }
 
     /**
@@ -58,8 +68,8 @@ class SpgView : UIView
             ctx:    ctx,
             x:      0,
             y:      0,
-            width:  SpgViewController.engine.VIEW_WIDTH,
-            height: SpgViewController.engine.VIEW_HEIGHT,
+            width:  width,
+            height: height,
             col:    UIColor.black
         )
     }
@@ -71,7 +81,7 @@ class SpgView : UIView
     {
         if let firstTouch:UITouch = event?.allTouches?.first
         {
-            SpgViewController.engine.touch.onTouchDown(
+            touch.onTouchDown(
                 point: firstTouch.location( in: self )
             )
         }
@@ -84,7 +94,7 @@ class SpgView : UIView
     {
         if let firstTouch:UITouch = event?.allTouches?.first
         {
-            SpgViewController.engine.touch.onTouchMove(
+            touch.onTouchMove(
                 point: firstTouch.location( in: self )
             )
         }
@@ -97,7 +107,7 @@ class SpgView : UIView
     {
         if let firstTouch:UITouch = event?.allTouches?.first
         {
-            SpgViewController.engine.touch.onTouchUp(
+            touch.onTouchUp(
                 point: firstTouch.location( in: self )
             )
         }
@@ -110,7 +120,7 @@ class SpgView : UIView
     {
         if let firstTouch:UITouch = event?.allTouches?.first
         {
-            SpgViewController.engine.touch.onTouchUp(
+            touch.onTouchUp(
                 point: firstTouch.location( in: self )
             )
         }

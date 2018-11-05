@@ -7,9 +7,6 @@ import QuartzCore
  */
 class SpgViewController : UIViewController
 {
-    /** The engine instance. */
-    public static var engine :SpgEngine! = nil
-
     /**
      *  Being invoked when this view controller is initialized.
      *
@@ -29,10 +26,8 @@ class SpgViewController : UIViewController
 
         SpgDebug.log( "Welcome to [" + SpgSetting.TITLE + "] v. [" + SpgSetting.VERSION + "]" )
 
-        // init engine and game
-        SpgViewController.engine = SpgEngine( viewController: self )
-
-        // start the main loop
-        SpgViewController.engine.startMainLoop()
+        // init engine and start main loop
+        let engine:SpgEngine = SpgEngine( viewController: self )
+        engine.startMainLoop()
     }
 }
