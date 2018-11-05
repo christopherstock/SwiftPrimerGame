@@ -26,11 +26,11 @@ class SpgEngine
     public init( viewController vc :SpgViewController )
     {
         viewController = vc
-        view           = self.viewController.view as! SpgView
+        view           = viewController.view as! SpgView
         touch          = SpgTouch()
 
-        VIEW_WIDTH     = Int( self.view.frame.size.width  )
-        VIEW_HEIGHT    = Int( self.view.frame.size.height )
+        VIEW_WIDTH     = Int( view.frame.size.width  )
+        VIEW_HEIGHT    = Int( view.frame.size.height )
     }
 
     /**
@@ -40,7 +40,7 @@ class SpgEngine
     {
         let displaylink = CADisplayLink(
             target:   self,
-            selector: #selector( self.tick )
+            selector: #selector( tick )
         )
 
         displaylink.preferredFramesPerSecond = SpgSetting.FRAMES_PER_SECOND
@@ -61,7 +61,7 @@ class SpgEngine
         SpgViewController.game.handleTouchInput( touch: touch )
         SpgViewController.game.render()
 
-        self.repaintView()
+        repaintView()
     }
 
     /**
@@ -69,6 +69,6 @@ class SpgEngine
      */
     private func repaintView() -> Void
     {
-        self.view.setNeedsDisplay()
+        view.setNeedsDisplay()
     }
 }

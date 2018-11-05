@@ -22,7 +22,7 @@ class SpgPlayer
     public init( startX:Int, startY:Int )
     {
         // TODO remove !
-        self.image = UIImage( named: SpgImage.PLAYER.getId() )!
+        image = UIImage( named: SpgImage.PLAYER.getId() )!
 
         rect = SpgRect(
             x:      startX,
@@ -44,16 +44,16 @@ class SpgPlayer
         let myImage :UIImage! = UIImage( named: SpgImage.PLAYER.getId() )
 
         // get current player draw location
-        let drawX :Int = ( self.rect.x - camera.scrollX )
-        let drawY :Int = ( self.rect.y - camera.scrollY )
+        let drawX :Int = ( rect.x - camera.scrollX )
+        let drawY :Int = ( rect.y - camera.scrollY )
 
         // draw debug rect
         SpgDrawing.fillRect(
             ctx:    ctx,
             x:      drawX,
             y:      drawY,
-            width:  self.rect.width,
-            height: self.rect.height,
+            width:  rect.width,
+            height: rect.height,
             col:    UIColor.red
         )
 
@@ -67,10 +67,10 @@ class SpgPlayer
      */
     public func moveLeft() -> Void
     {
-        self.rect.x -= SpgSetting.PLAYER_SPEED_X
-        if ( self.rect.x < 0 )
+        rect.x -= SpgSetting.PLAYER_SPEED_X
+        if ( rect.x < 0 )
         {
-            self.rect.x = 0
+            rect.x = 0
         }
     }
 
@@ -81,12 +81,12 @@ class SpgPlayer
      */
     public func moveRight( level:SpgLevel ) -> Void
     {
-        let rightBound :Int = level.width - self.rect.width
+        let rightBound :Int = level.width - rect.width
 
-        self.rect.x += SpgSetting.PLAYER_SPEED_X
-        if ( self.rect.x > rightBound )
+        rect.x += SpgSetting.PLAYER_SPEED_X
+        if ( rect.x > rightBound )
         {
-            self.rect.x = rightBound
+            rect.x = rightBound
         }
     }
 
@@ -95,6 +95,6 @@ class SpgPlayer
      */
     public func moveForward() -> Void
     {
-        self.rect.y += SpgSetting.PLAYER_SPEED_Y
+        rect.y += SpgSetting.PLAYER_SPEED_Y
     }
 }

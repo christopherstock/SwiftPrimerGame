@@ -15,7 +15,7 @@ class SpgView : UIView
         let ctx :CGContext = UIGraphicsGetCurrentContext()!
 
         // clear screen
-        self.clearScreen( ctx: ctx )
+        clearScreen( ctx: ctx )
 
         // draw game screen
         SpgViewController.game.drawGameScreen( ctx: ctx )

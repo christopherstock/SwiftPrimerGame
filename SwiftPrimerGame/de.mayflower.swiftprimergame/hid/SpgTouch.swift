@@ -7,9 +7,9 @@ import CoreGraphics
 class SpgTouch
 {
     /** Indicates swipe left. */
-    public  var swipedLeft  :Bool
+    public  var swipedLeft        :Bool
     /** Indicates swipe right. */
-    public  var swipedRight :Bool
+    public  var swipedRight       :Bool
 
     /** Stores the last touch location point. */
     private var lastTouchLocation :CGPoint?
@@ -30,9 +30,9 @@ class SpgTouch
      */
     public func onTouchDown( point:CGPoint ) -> Void
     {
-        self.lastTouchLocation = point
-        self.swipedLeft        = false
-        self.swipedRight       = false
+        lastTouchLocation = point
+        swipedLeft        = false
+        swipedRight       = false
     }
 
     /**
@@ -42,9 +42,9 @@ class SpgTouch
      */
     public func onTouchUp( point:CGPoint ) -> Void
     {
-        self.lastTouchLocation = nil
-        self.swipedLeft        = false
-        self.swipedRight       = false
+        lastTouchLocation = nil
+        swipedLeft        = false
+        swipedRight       = false
     }
 
     /**
@@ -54,21 +54,21 @@ class SpgTouch
      */
     public func onTouchMove( point:CGPoint ) -> Void
     {
-        self.swipedLeft  = false
-        self.swipedRight = false
+        swipedLeft  = false
+        swipedRight = false
 
-        if let location = self.lastTouchLocation
+        if let location = lastTouchLocation
         {
             if ( point.x < location.x )
             {
-                self.swipedLeft = true
+                swipedLeft = true
             }
             else if ( point.x > location.x )
             {
-                self.swipedRight = true
+                swipedRight = true
             }
         }
 
-        self.lastTouchLocation = point
+        lastTouchLocation = point
     }
 }

@@ -22,11 +22,11 @@ class SpgRect
      *  @param width  The rectangle width.
      *  @param height The rectangle height.
      */
-    public init( x: Int, y: Int, width: Int, height: Int )
+    public init( x aX: Int, y aY: Int, width aWidth: Int, height aHeight: Int )
     {
-        self.x      = x
-        self.y      = y
-        self.width  = width
-        self.height = height
+        x      = aX
+        y      = aY
+        width  = aWidth
+        height = aHeight
     }
 }

@@ -31,18 +31,18 @@ class SpgCamera
      *  @param level  The level  instance.
      *  @param player The player instance.
      */
-    public init( level:SpgLevel, player:SpgPlayer )
+    public init( level aLevel:SpgLevel, player aPlayer:SpgPlayer )
     {
-        self.scrollX = 0
-        self.scrollY = 0
+        scrollX = 0
+        scrollY = 0
 
-        self.level  = level
-        self.player = player
+        level  = aLevel
+        player = aPlayer
 
-        self.minX   = 0
-        self.maxX   = ( self.level.width - SpgViewController.engine.VIEW_WIDTH   )
-        self.minY   = 0
-        self.maxY   = ( self.level.height - SpgViewController.engine.VIEW_HEIGHT )
+        minX   = 0
+        maxX   = ( level.width - SpgViewController.engine.VIEW_WIDTH   )
+        minY   = 0
+        maxY   = ( level.height - SpgViewController.engine.VIEW_HEIGHT )
     }
 
     /**
@@ -50,8 +50,8 @@ class SpgCamera
      */
     public func update() -> Void
     {
-        self.updateOffsetX()
-        self.updateOffsetY()
+        updateOffsetX()
+        updateOffsetY()
     }
 
     /**
@@ -59,16 +59,16 @@ class SpgCamera
      */
     private func updateOffsetX() -> Void
     {
-        self.scrollX = (
-            self.player.rect.x - ( ( SpgViewController.engine.VIEW_WIDTH - self.player.rect.width ) / 2 )
+        scrollX = (
+            player.rect.x - ( ( SpgViewController.engine.VIEW_WIDTH - player.rect.width ) / 2 )
         )
-        if ( self.scrollX < self.minX )
+        if ( scrollX < minX )
         {
-            self.scrollX = self.minX
+            scrollX = minX
         }
-        else if ( self.scrollX > self.maxX )
+        else if ( scrollX > maxX )
         {
-            self.scrollX = self.maxX
+            scrollX = maxX
         }
     }
 
@@ -77,14 +77,14 @@ class SpgCamera
      */
     private func updateOffsetY() -> Void
     {
-        self.scrollY = ( self.player.rect.y - SpgSetting.PLAYER_OFFSET_TOP )
-        if ( self.scrollY < self.minY )
+        scrollY = ( player.rect.y - SpgSetting.PLAYER_OFFSET_TOP )
+        if ( scrollY < minY )
         {
-            self.scrollY = self.minY
+            scrollY = minY
         }
-        else if ( self.scrollY > self.maxY )
+        else if ( scrollY > maxY )
         {
-            self.scrollY = self.maxY
+            scrollY = maxY
         }
     }
 }

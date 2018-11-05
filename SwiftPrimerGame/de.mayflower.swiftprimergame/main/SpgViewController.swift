@@ -7,7 +7,6 @@ import QuartzCore
  *
  *  TODO init() in THIS class .. remove statics ?
  *
- *  TODO Remove self. everywhere
  *  TODO Remove all ! .. everywhere!
  *  TODO Remove all ? everywhere?
  *  TODO Remove ! in UIImage constructor!
@@ -33,6 +32,7 @@ import QuartzCore
  *  ASK  Should _ be used as parameter label?
  *  ASK  How can UIImage be unboxed in constructor?
  *  ASK  Documentation generator tool?
+ *  ASK  How to solve duplicate parameter and instance field names in constructor?
  */
 class SpgViewController : UIViewController
 {

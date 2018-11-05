@@ -17,9 +17,9 @@ class SpgImage
      *
      *  @param id The internal asset ID of this image.
      */
-    private init( id:String )
+    private init( id aId:String )
     {
-        self.id = id
+        id = aId
     }
 
     /**
@@ -29,6 +29,6 @@ class SpgImage
      */
     public func getId() -> String
     {
-        return self.id
+        return id
     }
 }

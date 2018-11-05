@@ -18,10 +18,10 @@ class SpgLevel
      *  @param width  Desired level width.
      *  @param height Desired level height.
      */
-    public init( width:Int, height:Int )
+    public init( width w:Int, height h:Int )
     {
-        self.width  = width
-        self.height = height
+        width  = w
+        height = h
     }
 
     /**
@@ -40,10 +40,10 @@ class SpgLevel
 
         var toggleColor    :Bool = false
 
-        while ( drawY < self.height )
+        while ( drawY < height )
         {
             drawX = 0
-            while ( drawX < self.width )
+            while ( drawX < width )
             {
                 SpgDrawing.fillRect(
                     ctx:    ctx,

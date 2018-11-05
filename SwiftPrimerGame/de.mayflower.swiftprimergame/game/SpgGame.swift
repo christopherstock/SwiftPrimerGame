@@ -20,9 +20,9 @@ class SpgGame
      */
     init()
     {
-        level  = SpgLevel(  width: 1000, height: 5000 )
-        player = SpgPlayer( startX: 475, startY: SpgSetting.PLAYER_OFFSET_TOP )
-        camera = SpgCamera( level: self.level, player: self.player )
+        level  = SpgLevel(  width:  1000,  height: 5000                         )
+        player = SpgPlayer( startX: 475,   startY: SpgSetting.PLAYER_OFFSET_TOP )
+        camera = SpgCamera( level:  level, player: player                       )
 
         levelEndReached = false
     }
@@ -34,8 +34,8 @@ class SpgGame
      */
     public func drawGameScreen( ctx:CGContext ) -> Void
     {
-        self.level.draw(  ctx: ctx, camera: camera )
-        self.player.draw( ctx: ctx, camera: camera )
+        level.draw(  ctx: ctx, camera: camera )
+        player.draw( ctx: ctx, camera: camera )
     }
 
     /**
@@ -46,16 +46,16 @@ class SpgGame
     public func handleTouchInput( touch:SpgTouch ) -> Void
     {
         // only move if the level end is not reached
-        if ( !self.levelEndReached )
+        if ( !levelEndReached )
         {
             // move player horizontally
             if ( touch.swipedLeft )
             {
-                self.player.moveLeft()
+                player.moveLeft()
             }
             else if ( touch.swipedRight )
             {
-                self.player.moveRight( level: self.level )
+                player.moveRight( level: level )
             }
         }
     }
@@ -66,18 +66,18 @@ class SpgGame
     public func render() -> Void
     {
         // check if the level end is reached
-        if ( self.player.rect.y >= self.level.height - self.player.rect.height )
+        if ( player.rect.y >= level.height - player.rect.height )
         {
-            self.levelEndReached = true
+            levelEndReached = true
         }
 
         // move player forward if the level end is not reached
-        if ( !self.levelEndReached )
+        if ( !levelEndReached )
         {
-            self.player.moveForward()
+            player.moveForward()
         }
 
         // update the camera scrolling offsets
-        self.camera.update()
+        camera.update()
     }
 }
