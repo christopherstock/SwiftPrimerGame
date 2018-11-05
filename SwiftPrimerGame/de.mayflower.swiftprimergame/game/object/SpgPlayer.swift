@@ -8,17 +8,6 @@ import UIKit
 class SpgPlayer : SpgGameObject
 {
     /**
-     *  Inits this player.
-     *
-     *  @param startX Start position X.
-     *  @param startY Start position Y.
-     */
-    init( startX:Int, startY:Int )
-    {
-        super.init( image: SpgImage.PLAYER, startX: startX, startY: startY )
-    }
-
-    /**
      *  Sets the specified image as the new player image.
      *
      *  @param newImage The new player image to set.
@@ -26,45 +15,6 @@ class SpgPlayer : SpgGameObject
     func setImage( newImage:SpgImage ) -> Void
     {
         image = newImage
-    }
-
-    /**
-     *  Returns the game object rectangle.
-     *
-     *  @return The rect that represents the bounds of this game object.
-     */
-    func getRect() -> SpgRect
-    {
-        return rect
-    }
-
-    /**
-     *  Draws the player onto the given drawing context.
-     *
-     *  @param ctx    The drawing context to draw onto.
-     *  @param camera The current camera position.
-     */
-    func draw( ctx:CGContext, camera:SpgCamera ) -> Void
-    {
-        // get current player draw location
-        let drawX :Int = ( rect.x - camera.scrollX )
-        let drawY :Int = ( rect.y - camera.scrollY )
-
-        // draw debug rect
-        if ( SpgSetting.DEBUG_DRAW_GAME_OBJECT_RECTS )
-        {
-            SpgDrawing.fillRect(
-                ctx:    ctx,
-                x:      drawX,
-                y:      drawY,
-                width:  rect.width,
-                height: rect.height,
-                col:    UIColor.blue
-            )
-        }
-
-        // draw player image
-        SpgDrawing.drawImage( ctx: ctx, img: image.getImage(), x: drawX, y: drawY )
     }
 
     /**
@@ -98,7 +48,7 @@ class SpgPlayer : SpgGameObject
     /**
      *  Moves the player forward in the level.
      */
-    func moveForward() -> Void
+    func moveDown() -> Void
     {
         rect.y += SpgSetting.PLAYER_SPEED_Y
     }

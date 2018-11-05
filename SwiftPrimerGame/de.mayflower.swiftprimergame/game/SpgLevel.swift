@@ -14,7 +14,7 @@ class SpgLevel
 
     /** Flags if the player reached the level end. */
     private var levelEndReached :Bool
-    /** Flags if the player has crashed. */
+    /** Flags if the player has crashed TODO to player. */
     private var playerCrashed   :Bool
 
     /** The singleton player instance. */
@@ -37,7 +37,11 @@ class SpgLevel
         levelEndReached = false
         playerCrashed   = false
 
-        player          = SpgPlayer( startX: 305, startY: SpgSetting.PLAYER_OFFSET_TOP )
+        player          = SpgPlayer(
+            image:  SpgImage.PLAYER_PRISTINE,
+            startX: 305,
+            startY: SpgSetting.PLAYER_OFFSET_TOP
+        )
         decos           = [
             SpgDeco( image: SpgImage.BG,            startX: 0,   startY: 0    ),
             SpgDeco( image: SpgImage.BG,            startX: 0,   startY: 904  ),
@@ -160,6 +164,8 @@ class SpgLevel
         // only move if the level end is not reached and the player did not crash
         if ( !levelEndReached && !playerCrashed )
         {
+            // TODO to player
+
             // move player horizontally
             if ( touch.swipedLeft )
             {
@@ -181,7 +187,7 @@ class SpgLevel
         if ( !levelEndReached && !playerCrashed )
         {
             // move player forward
-            player.moveForward()
+            player.moveDown()
 
             // check if the player crashed
             for obstacle in obstacles

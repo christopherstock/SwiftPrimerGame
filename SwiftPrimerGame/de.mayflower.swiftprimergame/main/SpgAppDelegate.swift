@@ -3,7 +3,6 @@ import UIKit
 /**
  *  The main application delegate
  *
- *  TODO Create parent superclass and new package for all game objects.
  *  TODO Add alert on reaching finish line
  *  TODO Add bg music
  *
