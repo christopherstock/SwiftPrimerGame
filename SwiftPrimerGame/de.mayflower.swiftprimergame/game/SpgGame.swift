@@ -19,7 +19,7 @@ class SpgGame
     {
         level  = SpgLevel( width:  1000,  height: 5000 )
         camera = SpgCamera(
-            subject:     level.player.getRect(),
+            subject:     level.getPlayer().getRect(),
             levelWidth:  level.width,
             levelHeight: level.height,
             viewWidth:   view.width,

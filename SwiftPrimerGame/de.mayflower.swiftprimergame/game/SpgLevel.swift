@@ -11,11 +11,11 @@ class SpgLevel
     var width  :Int
     /** The height of the accessable area. */
     var height :Int
-    /** The singleton player instance. */
-    var player :SpgPlayer
 
     /** Flags if the player reached the level end. */
     private var levelEndReached :Bool
+    /** The singleton player instance. */
+    private var player          :SpgPlayer
 
     /**
      *  Creates a new level instance.
@@ -27,8 +27,18 @@ class SpgLevel
     {
         width           = aWidth
         height          = aHeight
-        player          = SpgPlayer( startX: 475, startY: SpgSetting.PLAYER_OFFSET_TOP )
         levelEndReached = false
+        player          = SpgPlayer( startX: 475, startY: SpgSetting.PLAYER_OFFSET_TOP )
+    }
+
+    /**
+     *  Delivers the player instance.
+     *
+     *  @return This level's player.
+     */
+    func getPlayer() -> SpgPlayer
+    {
+        return player
     }
 
     /**
@@ -52,7 +62,7 @@ class SpgLevel
      *  @param ctx    The drawing context to draw onto.
      *  @param camera The current camera position.
      */
-    func drawDebugBg( ctx:CGContext, camera:SpgCamera )
+    private func drawDebugBg( ctx:CGContext, camera:SpgCamera )
     {
         let SEGMENT_WIDTH  :Int = 100
         let SEGMENT_HEIGHT :Int = 100
