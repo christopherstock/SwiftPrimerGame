@@ -16,20 +16,15 @@ class SpgGame
     private var levelEndReached :Bool
 
     /**
-     *  Inits all game components from scratch.
+     *  Inits all game components.
      */
-    init( x: Int )
+    init()
     {
         level  = SpgLevel(  width: 1000, height: 5000 )
-        player = SpgPlayer( startX: x, startY: 0 )
+        player = SpgPlayer( startX: 475, startY: SpgSetting.PLAYER_OFFSET_TOP )
         camera = SpgCamera( level: self.level, player: self.player )
 
         levelEndReached = false
-    }
-
-    convenience init()
-    {
-        self.init( x: 475 )
     }
 
     /**

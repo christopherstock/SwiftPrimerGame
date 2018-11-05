@@ -2,17 +2,26 @@ import Foundation
 import CoreGraphics
 
 /**
- *  Manages the touch input.
+ *  The touch system that manages the touch input.
  */
 class SpgTouch
 {
     /** Indicates swipe left. */
-    public  var swipedLeft  :Bool = false
+    public  var swipedLeft        :Bool
     /** Indicates swipe right. */
-    public  var swipedRight :Bool = false
+    public  var swipedRight       :Bool
 
     /** Stores the last touch location point. */
-    private var lastTouchLocation :CGPoint! = nil
+    private var lastTouchLocation :CGPoint?
+
+    /**
+     *  Creates a new instance of the touch system.
+     */
+    public init()
+    {
+        swipedLeft  = false
+        swipedRight = false
+    }
 
     /**
      *  Being invoked when the touch is down.
@@ -48,13 +57,13 @@ class SpgTouch
         self.swipedLeft  = false
         self.swipedRight = false
 
-        if ( self.lastTouchLocation != nil )
+        if let location = self.lastTouchLocation
         {
-            if ( point.x < self.lastTouchLocation.x )
+            if ( point.x < location.x )
             {
                 self.swipedLeft = true
             }
-            else if ( point.x > self.lastTouchLocation.x )
+            else if ( point.x > location.x )
             {
                 self.swipedRight = true
             }

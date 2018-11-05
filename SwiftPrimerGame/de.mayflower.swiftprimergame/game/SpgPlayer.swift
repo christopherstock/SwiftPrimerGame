@@ -21,6 +21,7 @@ class SpgPlayer
      */
     public init( startX:Int, startY:Int )
     {
+        // TODO remove !
         self.image = UIImage( named: SpgImage.PLAYER.getId() )!
 
         rect = SpgRect(

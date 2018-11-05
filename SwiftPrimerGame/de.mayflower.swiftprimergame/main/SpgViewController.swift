@@ -5,9 +5,20 @@ import QuartzCore
 /**
  *  The main view controller holding the singleton UIView.
  *
+ *  TODO init() in THIS class
  *  TODO Remove self. everywhere
+ *  TODO Remove all ! .. everywhere!
+ *  TODO Remove all ? everywhere?
+ *  TODO Remove ! in UIImage constructor!
+ *  TODO Find better startup than SpgViewController ?
  *  TODO Remove redundant variable initializers everywhere!
- *  TODO Add image system.
+ *  TODO Redesign 'public' and 'private' everywhere!
+ *  TODO Offset for car to bottom!
+ *  TODO Add debug switch for debug bg blocks.
+ *
+ *  TODO Add finish line!
+ *  TODO Add obstacles!
+ *  TODO Add image system. Done?
  *  TODO Add images for game objects.
  *  TODO Add sprites and sprite system.
  *  TODO Add bg music.
