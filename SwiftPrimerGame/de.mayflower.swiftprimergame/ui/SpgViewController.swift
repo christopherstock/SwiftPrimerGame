@@ -1,6 +1,4 @@
 import UIKit
-import Foundation
-import QuartzCore
 
 /**
  *  The main view controller holding the singleton UIView.

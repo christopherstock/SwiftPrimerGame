@@ -1,5 +1,3 @@
-import QuartzCore
-
 /**
  *  Represents a rectangle in 2D space.
  */

@@ -6,10 +6,9 @@ import UIKit
  *  TODO Add bg music
  *  TODO Add some more obstacles ..
  *  TODO Enable moving obstacles.
- *  TODO Remove all obsolete imports!
- *  TODO Find shortcut for focusing editor panel.
  *
  *  TODO MINOR Level data to class SpgLevelData.
+ *  TODO MINOR Restart game after alert dialog.
  *  TODO MINOR Move all setting constants to plist file
  *  TODO MINOR Dynamically create UIViewController and UIView?
  *  TODO MINOR Limit draw area to inner bounds. (without navbar and statusbar)

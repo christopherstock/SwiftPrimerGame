@@ -1,6 +1,3 @@
-import Foundation
-import QuartzCore
-
 /**
  *  Contains all settings of the game as static values.
  */

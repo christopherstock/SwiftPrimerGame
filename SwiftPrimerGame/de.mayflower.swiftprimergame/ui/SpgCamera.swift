@@ -1,6 +1,3 @@
-import UIKit
-import Foundation
-
 /**
  *  The camera calculates the scroll offsets X and Y.
  */

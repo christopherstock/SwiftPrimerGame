@@ -1,6 +1,3 @@
-import UIKit
-import Foundation
-
 /**
  *  The debug system that wraps debug logs.
  */

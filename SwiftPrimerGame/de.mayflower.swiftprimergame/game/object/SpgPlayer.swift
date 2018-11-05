@@ -1,7 +1,3 @@
-import Foundation
-import CoreGraphics
-import UIKit
-
 /**
  *  Represents the player that can be controlled by the user.
  */

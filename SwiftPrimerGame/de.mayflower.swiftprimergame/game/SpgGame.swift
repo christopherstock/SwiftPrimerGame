@@ -6,15 +6,15 @@ import QuartzCore
 class SpgGame
 {
     /** A reference to the view controller. */
-    private var viewController  :SpgViewController
+    private var viewController :SpgViewController
     /** The singleton level instance. */
-    private var level           :SpgLevel
+    private var level          :SpgLevel
     /** The singleton camera instance. */
-    private var camera          :SpgCamera
+    private var camera         :SpgCamera
     /** The touch system. */
-    private var touch           :SpgTouch
+    private var touch          :SpgTouch
     /** Specifies the current game state. */
-    private var state           :SpgGameState
+    private var state          :SpgGameState
 
     /**
      *  Inits all game components.
