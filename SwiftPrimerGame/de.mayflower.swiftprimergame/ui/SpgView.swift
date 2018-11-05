@@ -12,13 +12,14 @@ class SpgView : UIView
     override func draw( _ rect:CGRect )
     {
         // get drawing context
-        let ctx :CGContext = UIGraphicsGetCurrentContext()!
+        if let ctx :CGContext = UIGraphicsGetCurrentContext()
+        {
+            // clear screen
+            clearScreen( ctx: ctx )
 
-        // clear screen
-        clearScreen( ctx: ctx )
-
-        // draw game screen
-        SpgViewController.game.drawGameScreen( ctx: ctx )
+            // draw game screen
+            SpgViewController.game.drawGameScreen( ctx: ctx )
+        }
     }
 
     /**
@@ -43,9 +44,12 @@ class SpgView : UIView
      */
     override func touchesBegan( _ touches: Set<UITouch>, with event: UIEvent? )
     {
-        SpgViewController.engine.touch.onTouchDown(
-            point: event!.allTouches!.first!.location( in: self )
-        )
+        if let firstTouch:UITouch = event?.allTouches?.first
+        {
+            SpgViewController.engine.touch.onTouchDown(
+                point: firstTouch.location( in: self )
+            )
+        }
     }
 
     /**
@@ -53,9 +57,12 @@ class SpgView : UIView
      */
     override func touchesMoved( _ touches: Set<UITouch>, with event: UIEvent? )
     {
-        SpgViewController.engine.touch.onTouchMove(
-            point: event!.allTouches!.first!.location( in: self )
-        )
+        if let firstTouch:UITouch = event?.allTouches?.first
+        {
+            SpgViewController.engine.touch.onTouchMove(
+                point: firstTouch.location( in: self )
+            )
+        }
     }
 
     /**
@@ -63,18 +70,24 @@ class SpgView : UIView
      */
     override func touchesEnded( _ touches: Set<UITouch>, with event: UIEvent? )
     {
-        SpgViewController.engine.touch.onTouchUp(
-            point: event!.allTouches!.first!.location( in: self )
-        )
+        if let firstTouch:UITouch = event?.allTouches?.first
+        {
+            SpgViewController.engine.touch.onTouchUp(
+                point: firstTouch.location( in: self )
+            )
+        }
     }
 
     /**
      *  Being invoked from the system when a touch operation is cancelled.
      */
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?)
+    override func touchesCancelled( _ touches: Set<UITouch>, with event: UIEvent? )
     {
-        SpgViewController.engine.touch.onTouchUp(
-            point: event!.allTouches!.first!.location( in: self )
-        )
+        if let firstTouch:UITouch = event?.allTouches?.first
+        {
+            SpgViewController.engine.touch.onTouchUp(
+                point: firstTouch.location( in: self )
+            )
+        }
     }
 }
