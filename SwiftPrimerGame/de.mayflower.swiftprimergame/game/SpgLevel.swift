@@ -11,6 +11,11 @@ class SpgLevel
     var width  :Int
     /** The height of the accessable area. */
     var height :Int
+    /** The singleton player instance. */
+    var player :SpgPlayer
+
+    /** Flags if the player reached the level end. */
+    private var levelEndReached :Bool
 
     /**
      *  Creates a new level instance.
@@ -18,10 +23,12 @@ class SpgLevel
      *  @param width  Desired level width.
      *  @param height Desired level height.
      */
-    init( width w:Int, height h:Int )
+    init( width aWidth:Int, height aHeight:Int )
     {
-        width  = w
-        height = h
+        width           = aWidth
+        height          = aHeight
+        player          = SpgPlayer( startX: 475, startY: SpgSetting.PLAYER_OFFSET_TOP )
+        levelEndReached = false
     }
 
     /**
@@ -31,6 +38,21 @@ class SpgLevel
      *  @param camera The current camera position.
      */
     func draw( ctx:CGContext, camera:SpgCamera ) -> Void
+    {
+        // draw bg
+        drawDebugBg( ctx: ctx, camera: camera )
+
+        // draw fg
+        player.draw( ctx: ctx, camera: camera )
+    }
+
+    /**
+     *  Draws the debug background as a checkered debug field.
+     *
+     *  @param ctx    The drawing context to draw onto.
+     *  @param camera The current camera position.
+     */
+    func drawDebugBg( ctx:CGContext, camera:SpgCamera )
     {
         let SEGMENT_WIDTH  :Int = 100
         let SEGMENT_HEIGHT :Int = 100
@@ -61,6 +83,46 @@ class SpgLevel
             toggleColor = !toggleColor
 
             drawY += SEGMENT_HEIGHT
+        }
+    }
+
+    /**
+     *  Considers the current touch input events.
+     *
+     *  @param touch The instance of the touch input.
+     */
+    func handleTouchInput( touch:SpgTouch ) -> Void
+    {
+        // only move if the level end is not reached
+        if ( !levelEndReached )
+        {
+            // move player horizontally
+            if ( touch.swipedLeft )
+            {
+                player.moveLeft()
+            }
+            else if ( touch.swipedRight )
+            {
+                player.moveRight( level: self )
+            }
+        }
+    }
+
+    /**
+     *  Renders the level for one tick of the game logic.
+     */
+    func render() -> Void
+    {
+        // check if the level end is reached
+        if ( player.getRect().y >= height - player.getRect().height - SpgSetting.PLAYER_OFFSET_BOTTOM )
+        {
+            levelEndReached = true
+        }
+
+        // move player forward if the level end is not reached
+        if ( !levelEndReached )
+        {
+            player.moveForward()
         }
     }
 }

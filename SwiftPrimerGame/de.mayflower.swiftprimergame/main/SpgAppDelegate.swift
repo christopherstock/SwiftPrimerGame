@@ -3,17 +3,12 @@ import UIKit
 /**
  *  The main application delegate
  *
- *  TODO Find better startup than SpgViewController
- *  TODO Offset for car to bottom
  *  TODO Add finish line
  *  TODO Add obstacles
  *  TODO Add deco
- *  TODO Add image system. Done
- *  TODO Add images for game objects
  *  TODO Add sprites and sprite system
  *  TODO Add bg music
  *  TODO Create parent superclass for all game objects.
- *  TODO Add game end on reaching bottom bound etc
  *  TODO Add alert on reaching finish line
  *  TODO Move all setting constants to plist file
  *

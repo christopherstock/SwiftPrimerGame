@@ -7,12 +7,8 @@ class SpgGame
 {
     /** The singleton level instance. */
     private var level           :SpgLevel
-    /** The singleton player instance. */
-    private var player          :SpgPlayer
     /** The singleton camera instance. */
     private var camera          :SpgCamera
-    /** Flags if the player reached the level end. */
-    private var levelEndReached :Bool
 
     /**
      *  Inits all game components.
@@ -21,17 +17,14 @@ class SpgGame
      */
     init( view: SpgView )
     {
-        level  = SpgLevel(  width:  1000,  height: 5000 )
-        player = SpgPlayer( startX: 475,   startY: SpgSetting.PLAYER_OFFSET_TOP )
+        level  = SpgLevel( width:  1000,  height: 5000 )
         camera = SpgCamera(
-            subject:     player.getRect(),
+            subject:     level.player.getRect(),
             levelWidth:  level.width,
             levelHeight: level.height,
             viewWidth:   view.width,
             viewHeight:  view.height
         )
-
-        levelEndReached = false
     }
 
     /**
@@ -42,7 +35,6 @@ class SpgGame
     func drawGameScreen( ctx:CGContext ) -> Void
     {
         level.draw(  ctx: ctx, camera: camera )
-        player.draw( ctx: ctx, camera: camera )
     }
 
     /**
@@ -52,19 +44,8 @@ class SpgGame
      */
     func handleTouchInput( touch:SpgTouch ) -> Void
     {
-        // only move if the level end is not reached
-        if ( !levelEndReached )
-        {
-            // move player horizontally
-            if ( touch.swipedLeft )
-            {
-                player.moveLeft()
-            }
-            else if ( touch.swipedRight )
-            {
-                player.moveRight( level: level )
-            }
-        }
+        // propagate to level
+        level.handleTouchInput( touch: touch )
     }
 
     /**
@@ -72,17 +53,8 @@ class SpgGame
      */
     func render() -> Void
     {
-        // check if the level end is reached
-        if ( player.getRect().y >= level.height - player.getRect().height - SpgSetting.PLAYER_OFFSET_BOTTOM )
-        {
-            levelEndReached = true
-        }
-
-        // move player forward if the level end is not reached
-        if ( !levelEndReached )
-        {
-            player.moveForward()
-        }
+        // render level
+        level.render()
 
         // update the camera scrolling offsets
         camera.update()
