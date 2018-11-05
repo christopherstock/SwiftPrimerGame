@@ -5,7 +5,8 @@ import QuartzCore
 /**
  *  The main view controller holding the singleton UIView.
  *
- *  TODO init() in THIS class
+ *  TODO init() in THIS class .. remove statics ?
+ *
  *  TODO Remove self. everywhere
  *  TODO Remove all ! .. everywhere!
  *  TODO Remove all ? everywhere?
@@ -58,9 +59,6 @@ class SpgViewController : UIViewController
         super.viewDidLoad()
 
         SpgDebug.log( "Welcome to [" + SpgSetting.TITLE + "] v. [" + SpgSetting.VERSION + "]" )
-
-SpgDebug.log( self.view.frame.size.width  )
-SpgDebug.log( self.view.frame.size.height )
 
         // init engine and game
         SpgViewController.engine = SpgEngine( viewController: self )

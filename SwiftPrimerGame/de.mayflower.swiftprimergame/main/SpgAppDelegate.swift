@@ -4,7 +4,7 @@ import UIKit
  *  The main application delegate.
  */
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate
+class SpgAppDelegate: UIResponder, UIApplicationDelegate
 {
     /** The UI window instance. */
     var window: UIWindow?
@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     -> Bool
     {
         // Override point for customization after application launch.
+        SpgDebug.log( "SpgAppDelegate.application being invoked" )
 
         return true
     }
@@ -29,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
      */
     func applicationWillResignActive( _ application: UIApplication )
     {
+        SpgDebug.log( "SpgAppDelegate.applicationWillResignActive being invoked" )
     }
 
     /**
@@ -36,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
      */
     func applicationDidEnterBackground( _ application: UIApplication )
     {
+        SpgDebug.log( "SpgAppDelegate.applicationDidEnterBackground being invoked" )
     }
 
     /**
@@ -43,6 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
      */
     func applicationWillEnterForeground( _ application: UIApplication )
     {
+        SpgDebug.log( "SpgAppDelegate.applicationWillEnterForeground being invoked" )
     }
 
     /**
@@ -50,6 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
      */
     func applicationDidBecomeActive( _ application: UIApplication )
     {
+        SpgDebug.log( "SpgAppDelegate.applicationDidBecomeActive being invoked" )
     }
 
     /**
@@ -57,5 +62,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate
      */
     func applicationWillTerminate( _ application: UIApplication )
     {
+        SpgDebug.log( "SpgAppDelegate.applicationWillTerminate being invoked" )
     }
 }

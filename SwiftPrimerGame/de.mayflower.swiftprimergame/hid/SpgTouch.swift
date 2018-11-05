@@ -7,9 +7,9 @@ import CoreGraphics
 class SpgTouch
 {
     /** Indicates swipe left. */
-    public  var swipedLeft        :Bool
+    public  var swipedLeft  :Bool
     /** Indicates swipe right. */
-    public  var swipedRight       :Bool
+    public  var swipedRight :Bool
 
     /** Stores the last touch location point. */
     private var lastTouchLocation :CGPoint?
