@@ -42,4 +42,18 @@ class SpgDrawing
         ctx.addRect( CGRect( x: x, y: y, width: width, height: height ) )
         ctx.fillPath()
     }
+
+    /**
+     *  Draws an image on the specified location.
+     *
+     *  @param ctx The context to draw onto.
+     *  @param img The image to draw.
+     *  @param x   The location x for the image to draw.
+     *  @param y   The location y for the image to draw.
+     */
+    public static func drawImage( ctx:CGContext, img:UIImage, x:Int, y:Int )
+    {
+        let imagePoint :CGPoint  = CGPoint( x: x, y: y )
+        img.draw( at: imagePoint )
+    }
 }

@@ -40,9 +40,6 @@ class SpgPlayer
      */
     public func draw( ctx:CGContext, camera:SpgCamera ) -> Void
     {
-        // get player image
-        let myImage :UIImage! = UIImage( named: SpgImage.PLAYER.getId() )
-
         // get current player draw location
         let drawX :Int = ( rect.x - camera.scrollX )
         let drawY :Int = ( rect.y - camera.scrollY )
@@ -58,8 +55,7 @@ class SpgPlayer
         )
 
         // draw player image
-        let imagePoint :CGPoint  = CGPoint( x: drawX, y: drawY )
-        myImage?.draw( at: imagePoint )
+        SpgDrawing.drawImage( ctx: ctx, img: image, x: drawX, y: drawY )
     }
 
     /**

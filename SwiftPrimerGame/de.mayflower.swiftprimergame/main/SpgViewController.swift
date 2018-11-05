@@ -4,35 +4,6 @@ import QuartzCore
 
 /**
  *  The main view controller holding the singleton UIView.
- *
- *  TODO init() in THIS class .. remove statics ?
- *
- *  TODO Remove all ! .. everywhere!
- *  TODO Remove all ? everywhere?
- *  TODO Remove ! in UIImage constructor!
- *  TODO Add drawImage to SpgDrawing!
- *  TODO Find better startup than SpgViewController ?
- *  TODO Redesign 'public' and 'private' everywhere!
- *  TODO Offset for car to bottom!
- *  TODO Add debug switch for debug bg blocks.
- *
- *  TODO Add finish line!
- *  TODO Add obstacles!
- *  TODO Add deco?
- *  TODO Add image system. Done?
- *  TODO Add images for game objects.
- *  TODO Add sprites and sprite system.
- *  TODO Add bg music.
- *  TODO Add game end on reaching bottom bound etc.
- *
- *  TODO MINOR Fix simulator lag on touch input.
- *  TODO MINOR Improve static access to SpgGame instance? Enable static access to ViewController or AppDelegate?
- *  TODO MINOR Limit draw area to inner bounds? (without navbar and statusbar)
- *
- *  ASK  Should _ be used as parameter label?
- *  ASK  How can UIImage be unboxed in constructor?
- *  ASK  Documentation generator tool?
- *  ASK  How to solve duplicate parameter and instance field names in constructor?
  */
 class SpgViewController : UIViewController
 {
