@@ -12,6 +12,8 @@ import UIKit
  *  TODO Add alert on reaching finish line
  *  TODO Move all setting constants to plist file
  *
+ *  TODO MINOR Dynamically create UIViewController and UIView?
+ *
  *  TODO MINOR Limit draw area to inner bounds. (without navbar and statusbar)
  *  TODO MINOR Fix simulator lag on touch input
  *

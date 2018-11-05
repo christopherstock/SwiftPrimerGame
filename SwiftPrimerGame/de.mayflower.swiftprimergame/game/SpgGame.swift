@@ -6,9 +6,9 @@ import QuartzCore
 class SpgGame
 {
     /** The singleton level instance. */
-    private var level           :SpgLevel
+    private var level  :SpgLevel
     /** The singleton camera instance. */
-    private var camera          :SpgCamera
+    private var camera :SpgCamera
 
     /**
      *  Inits all game components.

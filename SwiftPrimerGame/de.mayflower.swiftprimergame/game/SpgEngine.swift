@@ -22,16 +22,16 @@ class SpgEngine
      */
     init( viewController vc :SpgViewController )
     {
-        // this is horrible!
+        // this is horrible! TODO Try dynamic view and viewController creation!
 
         viewController = vc
+
+        touch          = SpgTouch()
 
         view           = viewController.view as! SpgView
         view.assignDimensions()
 
         game           = SpgGame( view: view )
-
-        touch          = SpgTouch()
 
         view.setGame(  game:  game  )
         view.setTouch( touch: touch )
