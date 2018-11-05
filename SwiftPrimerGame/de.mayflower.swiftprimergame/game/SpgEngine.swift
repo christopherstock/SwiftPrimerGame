@@ -6,14 +6,14 @@ import QuartzCore
  */
 class SpgEngine
 {
-    /** The game instance. */
-    private var game           :SpgGame
-    /** Manages the touch logic. */
-    private var touch          :SpgTouch
     /** The singleton instance of the view controller */
     private var viewController :SpgViewController
+    /** Manages the touch logic. */
+    private var touch          :SpgTouch
     /** The singleton instance of the extended UIView. */
     private var view           :SpgView
+    /** The game instance. */
+    private var game           :SpgGame
 
     /**
      *  Inits all game components from scratch.
@@ -31,7 +31,7 @@ class SpgEngine
         view           = viewController.view as! SpgView
         view.assignDimensions()
 
-        game           = SpgGame( view: view )
+        game           = SpgGame( viewController: vc, view: view, touch: touch )
 
         view.setGame(  game:  game  )
         view.setTouch( touch: touch )
@@ -62,9 +62,7 @@ class SpgEngine
     @objc
     private func tick( displaylink: CADisplayLink ) -> Void
     {
-        game.handleTouchInput( touch: touch )
         game.render()
-
         repaintView()
     }
 

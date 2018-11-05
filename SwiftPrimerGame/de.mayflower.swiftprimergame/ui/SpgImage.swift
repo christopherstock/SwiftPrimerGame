@@ -26,6 +26,38 @@ class SpgImage
 
     /** The image for the 1st car. */
     static var CAR_1           :SpgImage = SpgImage( id: "car1"          )
+    /** The image for the 2nd car. */
+    static var CAR_2           :SpgImage = SpgImage( id: "car2"          )
+    /** The image for the 3rd car. */
+    static var CAR_3           :SpgImage = SpgImage( id: "car3"          )
+    /** The image for the 4th car. */
+    static var CAR_4           :SpgImage = SpgImage( id: "car4"          )
+    /** The image for the 1st truck. */
+    static var TRUCK_1         :SpgImage = SpgImage( id: "truck1"        )
+    /** The image for the 2nd truck. */
+    static var TRUCK_2         :SpgImage = SpgImage( id: "truck2"        )
+    /** The image for the 3rd truck. */
+    static var TRUCK_3         :SpgImage = SpgImage( id: "truck3"        )
+    /** The image for the 1st tree. */
+    static var TREE_1          :SpgImage = SpgImage( id: "tree1"         )
+    /** The image for the 2nd tree. */
+    static var TREE_2          :SpgImage = SpgImage( id: "tree2"         )
+    /** The image for the 3rd tree. */
+    static var TREE_3          :SpgImage = SpgImage( id: "tree3"         )
+    /** The image for the 4th tree. */
+    static var TREE_4          :SpgImage = SpgImage( id: "tree4"         )
+    /** The image for the 5th tree. */
+    static var TREE_5          :SpgImage = SpgImage( id: "tree5"         )
+    /** The image for the 6th tree. */
+    static var TREE_6          :SpgImage = SpgImage( id: "tree6"         )
+    /** The image for the 7th tree. */
+    static var TREE_7          :SpgImage = SpgImage( id: "tree7"         )
+    /** The image for the 8th tree. */
+    static var TREE_8          :SpgImage = SpgImage( id: "tree8"         )
+    /** The image for the 9th tree. */
+    static var TREE_9          :SpgImage = SpgImage( id: "tree9"         )
+    /** The image for the water. */
+    static var WATER           :SpgImage = SpgImage( id: "water"         )
 
     /** The internal asset ID of this image. */
     private var id    :String

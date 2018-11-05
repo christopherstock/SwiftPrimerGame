@@ -5,26 +5,37 @@ import QuartzCore
  */
 class SpgGame
 {
+    /** A reference to the view controller. */
+    private var viewController  :SpgViewController
     /** The singleton level instance. */
-    private var level  :SpgLevel
+    private var level           :SpgLevel
     /** The singleton camera instance. */
-    private var camera :SpgCamera
+    private var camera          :SpgCamera
+    /** The touch system. */
+    private var touch           :SpgTouch
+    /** Specifies the current game state. */
+    private var state           :SpgGameState
 
     /**
      *  Inits all game components.
      *
-     *  @param view A reference to the view.
+     *  @param viewController A reference to the view controller.
+     *  @param view           A reference to the view.
+     *  @param touch          A reference to the touch system.
      */
-    init( view: SpgView )
+    init( viewController vc: SpgViewController, view: SpgView, touch aTouch :SpgTouch )
     {
-        level  = SpgLevel( width:  1000,  height: 5800 )
-        camera = SpgCamera(
+        viewController = vc
+        level          = SpgLevel( width:  1000,  height: 5800 )
+        camera         = SpgCamera(
             subject:     level.getPlayer().getRect(),
             levelWidth:  level.width,
             levelHeight: level.height,
             viewWidth:   view.width,
             viewHeight:  view.height
         )
+        touch          = aTouch
+        state          = SpgGameState.RUNNING
     }
 
     /**
@@ -34,18 +45,7 @@ class SpgGame
      */
     func drawGameScreen( ctx:CGContext ) -> Void
     {
-        level.draw(  ctx: ctx, camera: camera )
-    }
-
-    /**
-     *  Considers the current touch input events.
-     *
-     *  @param touch The instance of the touch input.
-     */
-    func handleTouchInput( touch:SpgTouch ) -> Void
-    {
-        // propagate to level
-        level.handleTouchInput( touch: touch )
+        level.draw( ctx: ctx, camera: camera )
     }
 
     /**
@@ -53,10 +53,17 @@ class SpgGame
      */
     func render() -> Void
     {
-        // render level
-        level.render()
+        // only render if the level end is not reached yet and if the player didn't crash
+        if ( state == .RUNNING )
+        {
+            // handle touch input
+            level.handleTouchInput( touch: touch )
 
-        // update the camera scrolling offsets
-        camera.update()
+            // render level
+            state = level.render()
+
+            // update the camera scrolling offsets
+            camera.update()
+        }
     }
 }

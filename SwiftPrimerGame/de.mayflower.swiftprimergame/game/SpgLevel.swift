@@ -12,17 +12,12 @@ class SpgLevel
     /** The height of the accessable area. */
     var height :Int
 
-    /** Flags if the player reached the level end. */
-    private var levelEndReached :Bool
-    /** Flags if the player has crashed TODO to player. */
-    private var playerCrashed   :Bool
-
     /** The singleton player instance. */
-    private var player          :SpgPlayer
+    private var player    :SpgPlayer
     /** The decoration objects. */
-    private var decos           :[SpgDeco]
+    private var decos     :[SpgDeco]
     /** The obstacles. */
-    private var obstacles       :[SpgObstacle]
+    private var obstacles :[SpgObstacle]
 
     /**
      *  Creates a new level instance.
@@ -34,8 +29,6 @@ class SpgLevel
     {
         width           = aWidth
         height          = aHeight
-        levelEndReached = false
-        playerCrashed   = false
 
         player          = SpgPlayer(
             image:  SpgImage.PLAYER_PRISTINE,
@@ -70,7 +63,8 @@ class SpgLevel
         ]
 
         obstacles       = [
-            SpgObstacle( image: SpgImage.CAR_1,     startX: 405, startY: 400  ),
+            SpgObstacle( image: SpgImage.CAR_1,     startX: 425, startY: 400  ),
+            SpgObstacle( image: SpgImage.TRUCK_1,   startX: 425, startY: 400  ),
         ]
     }
 
@@ -161,49 +155,44 @@ class SpgLevel
      */
     func handleTouchInput( touch:SpgTouch ) -> Void
     {
-        // only move if the level end is not reached and the player did not crash
-        if ( !levelEndReached && !playerCrashed )
+        // move player horizontally
+        if ( touch.swipedLeft )
         {
-            // TODO to player
-
-            // move player horizontally
-            if ( touch.swipedLeft )
-            {
-                player.moveLeft()
-            }
-            else if ( touch.swipedRight )
-            {
-                player.moveRight( level: self )
-            }
+            player.moveLeft()
+        }
+        else if ( touch.swipedRight )
+        {
+            player.moveRight( level: self )
         }
     }
 
     /**
      *  Renders the level for one tick of the game logic.
+     *
+     *  @return The new game state after performing this tick.
      */
-    func render() -> Void
+    func render() -> SpgGameState
     {
-        // move player forward if the level end is not reached and if the player did not crash
-        if ( !levelEndReached && !playerCrashed )
+        // move player forward
+        player.moveDown()
+
+        // check if the player crashed
+        for obstacle in obstacles
         {
-            // move player forward
-            player.moveDown()
-
-            // check if the player crashed
-            for obstacle in obstacles
+            if ( player.getRect().overlaps( rect: obstacle.getRect() ) )
             {
-                if ( player.getRect().overlaps( rect: obstacle.getRect() ) )
-                {
-                    playerCrashed = true
-                    player.setImage( newImage: SpgImage.PLAYER_CRASHED )
-                }
-            }
+                player.setImage( newImage: SpgImage.PLAYER_CRASHED )
 
-            // check if the level end is reached now
-            if ( player.getRect().y >= height - player.getRect().height - SpgSetting.PLAYER_OFFSET_BOTTOM )
-            {
-                levelEndReached = true
+                return .PLAYER_CRASHED
             }
         }
+
+        // check if the level end is reached now
+        if ( player.getRect().y >= height - player.getRect().height - SpgSetting.PLAYER_OFFSET_BOTTOM )
+        {
+            return .FINISH_REACHED
+        }
+
+        return .RUNNING
     }
 }

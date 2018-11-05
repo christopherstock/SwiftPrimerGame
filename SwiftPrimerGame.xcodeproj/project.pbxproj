@@ -29,6 +29,7 @@
 		E9DEFB5A21873F7500D68D0A /* SpgImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFB5921873F7400D68D0A /* SpgImage.swift */; };
 		E9E8FDC9219093F300933C40 /* SpgObstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E8FDC8219093F300933C40 /* SpgObstacle.swift */; };
 		E9E8FDCC2190AE4500933C40 /* SpgGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E8FDCB2190AE4500933C40 /* SpgGameObject.swift */; };
+		E9E8FDCE2190C9AC00933C40 /* SpgGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E8FDCD2190C9AC00933C40 /* SpgGameState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		E9DEFB5921873F7400D68D0A /* SpgImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgImage.swift; sourceTree = "<group>"; };
 		E9E8FDC8219093F300933C40 /* SpgObstacle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgObstacle.swift; sourceTree = "<group>"; };
 		E9E8FDCB2190AE4500933C40 /* SpgGameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgGameObject.swift; sourceTree = "<group>"; };
+		E9E8FDCD2190C9AC00933C40 /* SpgGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgGameState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,10 +171,11 @@
 		E9DEFACF218243A800D68D0A /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				E941AA7F2181EC54001EEDEB /* SpgView.swift */,
 				E9DEFB502186E7ED00D68D0A /* SpgCamera.swift */,
 				E941AA812181F541001EEDEB /* SpgDrawing.swift */,
 				E9DEFB5921873F7400D68D0A /* SpgImage.swift */,
+				E941AA7F2181EC54001EEDEB /* SpgView.swift */,
+				E90FCE2A2181DBD4001F4808 /* SpgViewController.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -181,7 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				E90FCE282181DBD4001F4808 /* SpgAppDelegate.swift */,
-				E90FCE2A2181DBD4001F4808 /* SpgViewController.swift */,
 				E9DEFAD12182516F00D68D0A /* SpgSetting.swift */,
 			);
 			path = main;
@@ -201,6 +203,7 @@
 				E9E8FDCA2190ADF000933C40 /* object */,
 				E9DEFB4E2186D12A00D68D0A /* SpgEngine.swift */,
 				E941AA8321822F7E001EEDEB /* SpgGame.swift */,
+				E9E8FDCD2190C9AC00933C40 /* SpgGameState.swift */,
 				E9DEFB4C2186CBBC00D68D0A /* SpgLevel.swift */,
 			);
 			path = game;
@@ -218,10 +221,10 @@
 		E9E8FDCA2190ADF000933C40 /* object */ = {
 			isa = PBXGroup;
 			children = (
-				E9DEFB4A2184FB2F00D68D0A /* SpgPlayer.swift */,
 				E92F92CE21907A10002B6053 /* SpgDeco.swift */,
-				E9E8FDC8219093F300933C40 /* SpgObstacle.swift */,
 				E9E8FDCB2190AE4500933C40 /* SpgGameObject.swift */,
+				E9E8FDC8219093F300933C40 /* SpgObstacle.swift */,
+				E9DEFB4A2184FB2F00D68D0A /* SpgPlayer.swift */,
 			);
 			path = object;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				E90FCE2B2181DBD4001F4808 /* SpgViewController.swift in Sources */,
 				E9DEFB562187127700D68D0A /* SpgRect.swift in Sources */,
 				E9DEFB4F2186D12A00D68D0A /* SpgEngine.swift in Sources */,
+				E9E8FDCE2190C9AC00933C40 /* SpgGameState.swift in Sources */,
 				E941AA802181EC54001EEDEB /* SpgView.swift in Sources */,
 				E9DEFB4D2186CBBC00D68D0A /* SpgLevel.swift in Sources */,
 				E941AA822181F541001EEDEB /* SpgDrawing.swift in Sources */,
