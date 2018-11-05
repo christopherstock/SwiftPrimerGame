@@ -8,9 +8,9 @@ import UIKit
 class SpgPlayer
 {
     /** The player image. */
-    private var image :SpgImage
+    private var image    :SpgImage
     /** The rect that represents this player's bounds. */
-    private var rect  :SpgRect
+    private var rect     :SpgRect
 
     /**
      *  Inits this player.

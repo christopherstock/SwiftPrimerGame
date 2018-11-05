@@ -29,4 +29,21 @@ class SpgRect
         width  = aWidth
         height = aHeight
     }
+
+    /**
+     *  Checks if this rect overlaps a different rect.
+     *
+     *  @param rect The rect to check overlapping.
+     *
+     *  @return If this rect overlaps the specified rect.
+     */
+    func overlaps( rect:SpgRect ) -> Bool
+    {
+        return (
+               x          <  rect.x + rect.width
+            && y          <  rect.y + rect.height
+            && x + width  >= rect.x
+            && y + height >= rect.y
+        )
+    }
 }

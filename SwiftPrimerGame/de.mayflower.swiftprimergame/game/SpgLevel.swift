@@ -14,6 +14,8 @@ class SpgLevel
 
     /** Flags if the player reached the level end. */
     private var levelEndReached :Bool
+    /** Flags if the player has crashed. */
+    private var playerCrashed   :Bool
 
     /** The singleton player instance. */
     private var player          :SpgPlayer
@@ -33,6 +35,7 @@ class SpgLevel
         width           = aWidth
         height          = aHeight
         levelEndReached = false
+        playerCrashed   = false
 
         player          = SpgPlayer( startX: 305, startY: SpgSetting.PLAYER_OFFSET_TOP )
         decos           = [
@@ -154,8 +157,8 @@ class SpgLevel
      */
     func handleTouchInput( touch:SpgTouch ) -> Void
     {
-        // only move if the level end is not reached
-        if ( !levelEndReached )
+        // only move if the level end is not reached and the player did not crash
+        if ( !levelEndReached && !playerCrashed )
         {
             // move player horizontally
             if ( touch.swipedLeft )
@@ -174,16 +177,26 @@ class SpgLevel
      */
     func render() -> Void
     {
-        // check if the level end is reached
-        if ( player.getRect().y >= height - player.getRect().height - SpgSetting.PLAYER_OFFSET_BOTTOM )
+        // move player forward if the level end is not reached and if the player did not crash
+        if ( !levelEndReached && !playerCrashed )
         {
-            levelEndReached = true
-        }
-
-        // move player forward if the level end is not reached
-        if ( !levelEndReached )
-        {
+            // move player forward
             player.moveForward()
+
+            // check if the player crashed
+            for obstacle in obstacles
+            {
+                if ( player.getRect().overlaps( rect: obstacle.getRect() ) )
+                {
+                    playerCrashed = true
+                }
+            }
+
+            // check if the level end is reached now
+            if ( player.getRect().y >= height - player.getRect().height - SpgSetting.PLAYER_OFFSET_BOTTOM )
+            {
+                levelEndReached = true
+            }
         }
     }
 }
