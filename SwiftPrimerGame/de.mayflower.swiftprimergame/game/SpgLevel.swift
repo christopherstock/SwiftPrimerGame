@@ -14,8 +14,11 @@ class SpgLevel
 
     /** Flags if the player reached the level end. */
     private var levelEndReached :Bool
+
     /** The singleton player instance. */
     private var player          :SpgPlayer
+    /** The deco objects. */
+    private var decos           :[SpgDeco]
 
     /**
      *  Creates a new level instance.
@@ -28,7 +31,26 @@ class SpgLevel
         width           = aWidth
         height          = aHeight
         levelEndReached = false
-        player          = SpgPlayer( startX: 475, startY: SpgSetting.PLAYER_OFFSET_TOP )
+
+        player          = SpgPlayer( startX: 305, startY: SpgSetting.PLAYER_OFFSET_TOP )
+        decos           = [
+            SpgDeco( image: SpgImage.ROAD_STRAIGHT, startX: 260, startY: 0    ),
+            SpgDeco( image: SpgImage.ROAD_STRAIGHT, startX: 260, startY: 391  ),
+            SpgDeco( image: SpgImage.ROAD_STRAIGHT, startX: 260, startY: 782  ),
+            SpgDeco( image: SpgImage.ROAD_RIGHT,    startX: 260, startY: 1173 ),
+            SpgDeco( image: SpgImage.ROAD_RIGHT,    startX: 460, startY: 1564 ),
+            SpgDeco( image: SpgImage.ROAD_STRAIGHT, startX: 660, startY: 1955 ),
+            SpgDeco( image: SpgImage.ROAD_STRAIGHT, startX: 660, startY: 2346 ),
+            SpgDeco( image: SpgImage.BRIDGE,        startX: 660, startY: 2737 ),
+            SpgDeco( image: SpgImage.ROAD_STRAIGHT, startX: 660, startY: 3187 ),
+            SpgDeco( image: SpgImage.ROAD_LEFT,     startX: 460, startY: 3578 ),
+            SpgDeco( image: SpgImage.ROAD_LEFT,     startX: 260, startY: 3969 ),
+            SpgDeco( image: SpgImage.ROAD_STRAIGHT, startX: 260, startY: 4360 ),
+            SpgDeco( image: SpgImage.BRIDGE,        startX: 260, startY: 4751 ),
+            SpgDeco( image: SpgImage.ROAD_STRAIGHT, startX: 260, startY: 5201 ),
+            SpgDeco( image: SpgImage.ROAD_STRAIGHT, startX: 260, startY: 5592 ),
+            SpgDeco( image: SpgImage.FINISH_LINE,   startX: 260, startY: 5469 ),
+        ]
     }
 
     /**
@@ -51,6 +73,12 @@ class SpgLevel
     {
         // draw bg
         drawDebugBg( ctx: ctx, camera: camera )
+
+        // draw decos
+        for deco in decos
+        {
+            deco.draw( ctx: ctx, camera: camera )
+        }
 
         // draw fg
         player.draw( ctx: ctx, camera: camera )

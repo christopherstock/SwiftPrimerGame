@@ -60,7 +60,7 @@ class SpgDeco
                 y:      drawY,
                 width:  rect.width,
                 height: rect.height,
-                col:    UIColor.red
+                col:    UIColor.blue
             )
         }
 
