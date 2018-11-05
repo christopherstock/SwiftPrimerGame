@@ -7,11 +7,6 @@ import UIKit
  */
 class SpgPlayer : SpgGameObject
 {
-    /** The player image. */
-    private var image    :SpgImage
-    /** The rect that represents this player's bounds. */
-    private var rect     :SpgRect
-
     /**
      *  Inits this player.
      *
@@ -20,13 +15,7 @@ class SpgPlayer : SpgGameObject
      */
     init( startX:Int, startY:Int )
     {
-        image = SpgImage.PLAYER
-        rect  = SpgRect(
-            x:      startX,
-            y:      startY,
-            width:  Int( image.getImage().size.width  ),
-            height: Int( image.getImage().size.height )
-        )
+        super.init( image: SpgImage.PLAYER, startX: startX, startY: startY )
     }
 
     /**

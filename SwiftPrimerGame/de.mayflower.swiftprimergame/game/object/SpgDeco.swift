@@ -7,26 +7,16 @@ import UIKit
  */
 class SpgDeco : SpgGameObject
 {
-    /** The deco image. */
-    private var image :SpgImage
-    /** The rect that represents this deco's bounds. */
-    private var rect  :SpgRect
-
     /**
-     *  Inits this deco.
+     *  Inits this decoration.
      *
+     *  @param image  The image that represents this decoration.
      *  @param startX Start position X.
      *  @param startY Start position Y.
      */
-    init( image img:SpgImage, startX:Int, startY:Int )
+    override init( image:SpgImage, startX:Int, startY:Int )
     {
-        image = img
-        rect  = SpgRect(
-            x:      startX,
-            y:      startY,
-            width:  Int( image.getImage().size.width  ),
-            height: Int( image.getImage().size.height )
-        )
+        super.init( image: image, startX: startX, startY: startY )
     }
 
     /**

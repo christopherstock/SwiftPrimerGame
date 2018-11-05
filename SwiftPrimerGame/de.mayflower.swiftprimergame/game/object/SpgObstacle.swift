@@ -7,26 +7,16 @@ import UIKit
  */
 class SpgObstacle : SpgGameObject
 {
-    /** The obstacle image. */
-    private var image :SpgImage
-    /** The rect that represents this obstacle's bounds. */
-    private var rect  :SpgRect
-
     /**
      *  Inits this obstacle.
      *
+     *  @param image  The image that represents this obstacle.
      *  @param startX Start position X.
      *  @param startY Start position Y.
      */
-    init( image img:SpgImage, startX:Int, startY:Int )
+    override init( image:SpgImage, startX:Int, startY:Int )
     {
-        image = img
-        rect  = SpgRect(
-            x:      startX,
-            y:      startY,
-            width:  Int( image.getImage().size.width  ),
-            height: Int( image.getImage().size.height )
-        )
+        super.init( image: image, startX: startX, startY: startY )
     }
 
     /**
