@@ -5,7 +5,7 @@ import UIKit
 /**
  *  Represents the player that can be controlled by the user.
  */
-class SpgPlayer
+class SpgPlayer : SpgGameObject
 {
     /** The player image. */
     private var image    :SpgImage

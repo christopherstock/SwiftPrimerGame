@@ -5,7 +5,7 @@ import UIKit
 /**
  *  Represents a colliding obstacle object.
  */
-class SpgObstacle
+class SpgObstacle : SpgGameObject
 {
     /** The obstacle image. */
     private var image :SpgImage

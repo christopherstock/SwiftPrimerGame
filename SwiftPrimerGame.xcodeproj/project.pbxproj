@@ -28,6 +28,7 @@
 		E9DEFB562187127700D68D0A /* SpgRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFB552187127700D68D0A /* SpgRect.swift */; };
 		E9DEFB5A21873F7500D68D0A /* SpgImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DEFB5921873F7400D68D0A /* SpgImage.swift */; };
 		E9E8FDC9219093F300933C40 /* SpgObstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E8FDC8219093F300933C40 /* SpgObstacle.swift */; };
+		E9E8FDCC2190AE4500933C40 /* SpgGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E8FDCB2190AE4500933C40 /* SpgGameObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		E9DEFB552187127700D68D0A /* SpgRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgRect.swift; sourceTree = "<group>"; };
 		E9DEFB5921873F7400D68D0A /* SpgImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgImage.swift; sourceTree = "<group>"; };
 		E9E8FDC8219093F300933C40 /* SpgObstacle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgObstacle.swift; sourceTree = "<group>"; };
+		E9E8FDCB2190AE4500933C40 /* SpgGameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgGameObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 				E9DEFB4A2184FB2F00D68D0A /* SpgPlayer.swift */,
 				E92F92CE21907A10002B6053 /* SpgDeco.swift */,
 				E9E8FDC8219093F300933C40 /* SpgObstacle.swift */,
+				E9E8FDCB2190AE4500933C40 /* SpgGameObject.swift */,
 			);
 			path = object;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 			files = (
 				E941AA8421822F7E001EEDEB /* SpgGame.swift in Sources */,
 				E9DEFB4B2184FB2F00D68D0A /* SpgPlayer.swift in Sources */,
+				E9E8FDCC2190AE4500933C40 /* SpgGameObject.swift in Sources */,
 				E9DEFAD52182F0E800D68D0A /* SpgTouch.swift in Sources */,
 				E9E8FDC9219093F300933C40 /* SpgObstacle.swift in Sources */,
 				E9DEFB5A21873F7500D68D0A /* SpgImage.swift in Sources */,

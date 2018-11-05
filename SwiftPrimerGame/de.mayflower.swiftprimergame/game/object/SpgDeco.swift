@@ -5,7 +5,7 @@ import UIKit
 /**
  *  Represents a non-colliding decoration object.
  */
-class SpgDeco
+class SpgDeco : SpgGameObject
 {
     /** The deco image. */
     private var image :SpgImage
