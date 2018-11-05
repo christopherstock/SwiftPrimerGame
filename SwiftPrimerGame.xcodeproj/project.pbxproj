@@ -196,12 +196,10 @@
 		E9DEFB492184FB0D00D68D0A /* game */ = {
 			isa = PBXGroup;
 			children = (
+				E9E8FDCA2190ADF000933C40 /* object */,
 				E9DEFB4E2186D12A00D68D0A /* SpgEngine.swift */,
 				E941AA8321822F7E001EEDEB /* SpgGame.swift */,
-				E9DEFB4A2184FB2F00D68D0A /* SpgPlayer.swift */,
 				E9DEFB4C2186CBBC00D68D0A /* SpgLevel.swift */,
-				E92F92CE21907A10002B6053 /* SpgDeco.swift */,
-				E9E8FDC8219093F300933C40 /* SpgObstacle.swift */,
 			);
 			path = game;
 			sourceTree = "<group>";
@@ -213,6 +211,16 @@
 				E9DEFB552187127700D68D0A /* SpgRect.swift */,
 			);
 			path = util;
+			sourceTree = "<group>";
+		};
+		E9E8FDCA2190ADF000933C40 /* object */ = {
+			isa = PBXGroup;
+			children = (
+				E9DEFB4A2184FB2F00D68D0A /* SpgPlayer.swift */,
+				E92F92CE21907A10002B6053 /* SpgDeco.swift */,
+				E9E8FDC8219093F300933C40 /* SpgObstacle.swift */,
+			);
+			path = object;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
