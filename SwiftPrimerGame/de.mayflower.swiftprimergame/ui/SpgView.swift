@@ -6,12 +6,29 @@ import Foundation
  */
 class SpgView : UIView
 {
-    /** A reference to the game instance. */
+    /** The width of the singleton view. */
+    public var width  :Int = 0
+    /** The height of the singleton view. */
+    public var height :Int = 0
+
+    /** A reference to the game instance. TODO remove! */
     private var game :SpgGame!
 
+    /**
+     *  Temporary game instance setter .. TODO remove!
+     */
     public func setGame( game aGame:SpgGame )
     {
         game = aGame
+    }
+
+    /**
+     *  Assigns the view width and height from the current frame size.
+     */
+    public func assignDimensions()
+    {
+        width  = Int( frame.size.width  )
+        height = Int( frame.size.height )
     }
 
     /**

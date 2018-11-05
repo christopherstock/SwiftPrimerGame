@@ -6,14 +6,8 @@ import QuartzCore
  */
 class SpgEngine
 {
-    /** The width of the singleton view. */
-    public  var VIEW_WIDTH     :Int
-    /** The height of the singleton view. */
-    public  var VIEW_HEIGHT    :Int
-
     /** The game instance. */
-    public var  game           :SpgGame
-
+    public  var game           :SpgGame
     /** Manages the touch logic. */
     public  var touch          :SpgTouch
     /** The singleton instance of the view controller */
@@ -33,15 +27,12 @@ class SpgEngine
         viewController = vc
 
         view           = viewController.view as! SpgView
+        view.assignDimensions()
 
-        VIEW_WIDTH     = Int( view.frame.size.width  )
-        VIEW_HEIGHT    = Int( view.frame.size.height )
-
-        game           = SpgGame( viewWidth: VIEW_WIDTH, viewHeight: VIEW_HEIGHT )
+        game           = SpgGame( view: view )
         view.setGame( game: game )
 
         touch          = SpgTouch()
-
     }
 
     /**

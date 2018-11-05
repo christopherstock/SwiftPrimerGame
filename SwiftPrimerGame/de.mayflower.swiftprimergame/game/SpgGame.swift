@@ -18,14 +18,13 @@ class SpgGame
     /**
      *  Inits all game components.
      *
-     *  @param viewWidth  The width  of the view.
-     *  @param viewHeight The height of the view.
+     *  @param view A reference to the view.
      */
-    init( viewWidth: Int, viewHeight: Int )
+    init( view: SpgView )
     {
         level  = SpgLevel(  width:  1000,  height: 5000 )
         player = SpgPlayer( startX: 475,   startY: SpgSetting.PLAYER_OFFSET_TOP )
-        camera = SpgCamera( level:  level, player: player, viewWidth: viewWidth, viewHeight: viewHeight )
+        camera = SpgCamera( level:  level, player: player, viewWidth: view.width, viewHeight: view.height )
 
         levelEndReached = false
     }
