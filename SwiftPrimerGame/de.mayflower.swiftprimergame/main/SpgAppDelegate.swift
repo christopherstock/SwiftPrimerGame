@@ -6,14 +6,14 @@ import UIKit
  *  TODO Add bg music
  *  TODO Add some more obstacles ..
  *  TODO Enable moving obstacles.
+ *  TODO Dynamically create UIViewController and UIView?
+ *  TODO Restart game after alert dialog.
  *
- *  TODO MINOR Level data to class SpgLevelData.
- *  TODO MINOR Restart game after alert dialog.
  *  TODO MINOR Move all setting constants to plist file
- *  TODO MINOR Dynamically create UIViewController and UIView?
  *  TODO MINOR Limit draw area to inner bounds. (without navbar and statusbar)
  *  TODO MINOR Fix simulator lag on touch input
  *
+ *  ASK  plist file best practices?
  *  ASK  Should _ be used as parameter label
  *  ASK  How can UIImage be unboxed in constructor
  *  ASK  Documentation generator tool

@@ -30,6 +30,7 @@
 		E9E8FDC9219093F300933C40 /* SpgObstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E8FDC8219093F300933C40 /* SpgObstacle.swift */; };
 		E9E8FDCC2190AE4500933C40 /* SpgGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E8FDCB2190AE4500933C40 /* SpgGameObject.swift */; };
 		E9E8FDCE2190C9AC00933C40 /* SpgGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E8FDCD2190C9AC00933C40 /* SpgGameState.swift */; };
+		E9E8FDD12190E50000933C40 /* SpgLevelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E8FDD02190E50000933C40 /* SpgLevelData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		E9E8FDC8219093F300933C40 /* SpgObstacle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgObstacle.swift; sourceTree = "<group>"; };
 		E9E8FDCB2190AE4500933C40 /* SpgGameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgGameObject.swift; sourceTree = "<group>"; };
 		E9E8FDCD2190C9AC00933C40 /* SpgGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgGameState.swift; sourceTree = "<group>"; };
+		E9E8FDD02190E50000933C40 /* SpgLevelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpgLevelData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,10 +203,10 @@
 			isa = PBXGroup;
 			children = (
 				E9E8FDCA2190ADF000933C40 /* object */,
+				E9E8FDCF2190E4A100933C40 /* level */,
 				E9DEFB4E2186D12A00D68D0A /* SpgEngine.swift */,
 				E941AA8321822F7E001EEDEB /* SpgGame.swift */,
 				E9E8FDCD2190C9AC00933C40 /* SpgGameState.swift */,
-				E9DEFB4C2186CBBC00D68D0A /* SpgLevel.swift */,
 			);
 			path = game;
 			sourceTree = "<group>";
@@ -227,6 +229,15 @@
 				E9DEFB4A2184FB2F00D68D0A /* SpgPlayer.swift */,
 			);
 			path = object;
+			sourceTree = "<group>";
+		};
+		E9E8FDCF2190E4A100933C40 /* level */ = {
+			isa = PBXGroup;
+			children = (
+				E9DEFB4C2186CBBC00D68D0A /* SpgLevel.swift */,
+				E9E8FDD02190E50000933C40 /* SpgLevelData.swift */,
+			);
+			path = level;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +376,7 @@
 				E9E8FDCC2190AE4500933C40 /* SpgGameObject.swift in Sources */,
 				E9DEFAD52182F0E800D68D0A /* SpgTouch.swift in Sources */,
 				E9E8FDC9219093F300933C40 /* SpgObstacle.swift in Sources */,
+				E9E8FDD12190E50000933C40 /* SpgLevelData.swift in Sources */,
 				E9DEFB5A21873F7500D68D0A /* SpgImage.swift in Sources */,
 				E9DEFB512186E7ED00D68D0A /* SpgCamera.swift in Sources */,
 				E90FCE2B2181DBD4001F4808 /* SpgViewController.swift in Sources */,
