@@ -39,7 +39,7 @@ class SpgGame
      *
      *  @param ctx The current drawing context.
      */
-    public func drawGameScreen( ctx:CGContext ) -> Void
+    func drawGameScreen( ctx:CGContext ) -> Void
     {
         level.draw(  ctx: ctx, camera: camera )
         player.draw( ctx: ctx, camera: camera )
@@ -50,7 +50,7 @@ class SpgGame
      *
      *  @param touch The instance of the touch input.
      */
-    public func handleTouchInput( touch:SpgTouch ) -> Void
+    func handleTouchInput( touch:SpgTouch ) -> Void
     {
         // only move if the level end is not reached
         if ( !levelEndReached )
@@ -70,7 +70,7 @@ class SpgGame
     /**
      *  Renders one tick of the game logic.
      */
-    public func render() -> Void
+    func render() -> Void
     {
         // check if the level end is reached
         if ( player.getRect().y >= level.height - player.getRect().height - SpgSetting.PLAYER_OFFSET_BOTTOM )

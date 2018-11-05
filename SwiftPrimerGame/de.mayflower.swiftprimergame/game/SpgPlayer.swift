@@ -18,7 +18,7 @@ class SpgPlayer
      *  @param startX Start position X.
      *  @param startY Start position Y.
      */
-    public init( startX:Int, startY:Int )
+    init( startX:Int, startY:Int )
     {
         image = SpgImage.PLAYER
         rect  = SpgRect(
@@ -34,7 +34,7 @@ class SpgPlayer
      *
      *  @return The rect that represents the bounds of this game object.
      */
-    public func getRect() -> SpgRect
+    func getRect() -> SpgRect
     {
         return rect
     }
@@ -45,7 +45,7 @@ class SpgPlayer
      *  @param ctx    The drawing context to draw onto.
      *  @param camera The current camera position.
      */
-    public func draw( ctx:CGContext, camera:SpgCamera ) -> Void
+    func draw( ctx:CGContext, camera:SpgCamera ) -> Void
     {
         // get current player draw location
         let drawX :Int = ( rect.x - camera.scrollX )
@@ -68,7 +68,7 @@ class SpgPlayer
     /**
      *  Moves the player left one tick.
      */
-    public func moveLeft() -> Void
+    func moveLeft() -> Void
     {
         rect.x -= SpgSetting.PLAYER_SPEED_X
         if ( rect.x < 0 )
@@ -82,7 +82,7 @@ class SpgPlayer
      *
      *  @param level The level the player is situated in.
      */
-    public func moveRight( level:SpgLevel ) -> Void
+    func moveRight( level:SpgLevel ) -> Void
     {
         let rightBound :Int = level.width - rect.width
 
@@ -96,7 +96,7 @@ class SpgPlayer
     /**
      *  Moves the player forward in the level.
      */
-    public func moveForward() -> Void
+    func moveForward() -> Void
     {
         rect.y += SpgSetting.PLAYER_SPEED_Y
     }

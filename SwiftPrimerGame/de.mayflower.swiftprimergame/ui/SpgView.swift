@@ -7,9 +7,9 @@ import Foundation
 class SpgView : UIView
 {
     /** The width of the singleton view. */
-    public var  width  :Int = 0
+    var  width  :Int = 0
     /** The height of the singleton view. */
-    public var  height :Int = 0
+    var  height :Int = 0
 
     /** A reference to the game instance. TODO remove! */
     private var game   :SpgGame!
@@ -19,7 +19,7 @@ class SpgView : UIView
     /**
      *  Temporary game instance setter .. TODO remove! .. create constructor
      */
-    public func setGame( game aGame:SpgGame )
+    func setGame( game aGame:SpgGame )
     {
         game = aGame
     }
@@ -27,7 +27,7 @@ class SpgView : UIView
     /**
      *  Temporary touch instance setter .. TODO remove!
      */
-    public func setTouch( touch aTouch:SpgTouch )
+    func setTouch( touch aTouch:SpgTouch )
     {
         touch = aTouch
     }
@@ -35,7 +35,7 @@ class SpgView : UIView
     /**
      *  Assigns the view width and height from the current frame size.
      */
-    public func assignDimensions()
+    func assignDimensions()
     {
         width  = Int( frame.size.width  )
         height = Int( frame.size.height )
@@ -62,7 +62,7 @@ class SpgView : UIView
      *
      *  @param ctx The current drawing context.
      */
-    private func clearScreen( ctx:CGContext ) -> Void
+    func clearScreen( ctx:CGContext ) -> Void
     {
         SpgDrawing.fillRect(
             ctx:    ctx,

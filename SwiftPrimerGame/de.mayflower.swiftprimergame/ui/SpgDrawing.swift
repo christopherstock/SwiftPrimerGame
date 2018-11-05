@@ -16,7 +16,7 @@ class SpgDrawing
      *  @param height The height of the rectangle to draw.
      *  @param col    The color for the drawing operation.
      */
-    public static func drawRect( ctx:CGContext, x:Int, y:Int, width:Int, height:Int, col:UIColor )
+    static func drawRect( ctx:CGContext, x:Int, y:Int, width:Int, height:Int, col:UIColor )
     {
         ctx.beginPath()
         ctx.setStrokeColor( col.cgColor )
@@ -35,7 +35,7 @@ class SpgDrawing
      *  @param height The height of the rectangle to draw.
      *  @param col    The color for the drawing operation.
      */
-    public static func fillRect( ctx:CGContext, x:Int, y:Int, width:Int, height:Int, col:UIColor )
+    static func fillRect( ctx:CGContext, x:Int, y:Int, width:Int, height:Int, col:UIColor )
     {
         ctx.beginPath()
         ctx.setFillColor( col.cgColor )
@@ -51,7 +51,7 @@ class SpgDrawing
      *  @param x   The location x for the image to draw.
      *  @param y   The location y for the image to draw.
      */
-    public static func drawImage( ctx:CGContext, img:UIImage, x:Int, y:Int )
+    static func drawImage( ctx:CGContext, img:UIImage, x:Int, y:Int )
     {
         let imagePoint :CGPoint  = CGPoint( x: x, y: y )
         img.draw( at: imagePoint )

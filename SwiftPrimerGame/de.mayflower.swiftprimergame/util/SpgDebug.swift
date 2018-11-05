@@ -12,7 +12,7 @@ class SpgDebug
      *
      *  @param msg The message or any debug object to log.
      */
-    public static func log( _ msg:Any )
+    static func log( _ msg:Any )
     {
         if ( SpgSetting.DEBUG_MODE )
         {

@@ -8,9 +8,9 @@ import UIKit
 class SpgLevel
 {
     /** The width of the accessable area. */
-    public var width  :Int
+    var width  :Int
     /** The height of the accessable area. */
-    public var height :Int
+    var height :Int
 
     /**
      *  Creates a new level instance.
@@ -18,7 +18,7 @@ class SpgLevel
      *  @param width  Desired level width.
      *  @param height Desired level height.
      */
-    public init( width w:Int, height h:Int )
+    init( width w:Int, height h:Int )
     {
         width  = w
         height = h
@@ -30,7 +30,7 @@ class SpgLevel
      *  @param ctx    The drawing context to draw onto.
      *  @param camera The current camera position.
      */
-    public func draw( ctx:CGContext, camera:SpgCamera ) -> Void
+    func draw( ctx:CGContext, camera:SpgCamera ) -> Void
     {
         let SEGMENT_WIDTH  :Int = 100
         let SEGMENT_HEIGHT :Int = 100

@@ -6,13 +6,13 @@ import QuartzCore
 class SpgRect
 {
     /** The rectangle location X. */
-    public var x      :Int
+    var x      :Int
     /** The rectangle location Y. */
-    public var y      :Int
+    var y      :Int
     /** The rectangle width. */
-    public var width  :Int
+    var width  :Int
     /** The rectangle height. */
-    public var height :Int
+    var height :Int
 
     /**
      *  Creates a new rectangle in 2D space.
@@ -22,7 +22,7 @@ class SpgRect
      *  @param width  The rectangle width.
      *  @param height The rectangle height.
      */
-    public init( x aX: Int, y aY: Int, width aWidth: Int, height aHeight: Int )
+    init( x aX: Int, y aY: Int, width aWidth: Int, height aHeight: Int )
     {
         x      = aX
         y      = aY

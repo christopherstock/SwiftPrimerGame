@@ -7,19 +7,19 @@ import UIKit
 class SpgImage
 {
     /** The image for the player. */
-    public static var PLAYER :SpgImage = SpgImage( id: "truck" )
+    static var PLAYER :SpgImage = SpgImage( id: "truck" )
 
     /** The internal asset ID of this image. */
-    private       var id     :String
+    private var id    :String
     /** The native UIImage instance. */
-    private       var image  :UIImage
+    private var image :UIImage
 
     /**
      *  Creates a new image identifier.
      *
      *  @param id The internal asset ID of this image.
      */
-    private init( id aId:String )
+    init( id aId:String )
     {
         id    = aId
         image = UIImage()
@@ -35,7 +35,7 @@ class SpgImage
      *
      *  @return The internal UIImage.
      */
-    public func getImage() -> UIImage
+    func getImage() -> UIImage
     {
         return image
     }

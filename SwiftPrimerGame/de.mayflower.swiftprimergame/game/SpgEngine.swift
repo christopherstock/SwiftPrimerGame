@@ -20,7 +20,7 @@ class SpgEngine
      *
      *  @param vc The singleton view controller instance.
      */
-    public init( viewController vc :SpgViewController )
+    init( viewController vc :SpgViewController )
     {
         // this is horrible!
 
@@ -40,7 +40,7 @@ class SpgEngine
     /**
      *  Starts the main loop that acts as the application's main thread.
      */
-    public func startMainLoop() -> Void
+    func startMainLoop() -> Void
     {
         let displaylink = CADisplayLink(
             target:   self,

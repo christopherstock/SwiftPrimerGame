@@ -7,9 +7,9 @@ import Foundation
 class SpgCamera
 {
     /** The current scroll offset X. */
-    public  var scrollX    :Int
+    var scrollX :Int
     /** The current scroll offset Y. */
-    public  var scrollY    :Int
+    var scrollY :Int
 
     /** The subject this camera shall focus. */
     private var subject    :SpgRect
@@ -35,7 +35,7 @@ class SpgCamera
      *  @param viewWidth   The width  of the view.
      *  @param viewHeight  The height of the view.
      */
-    public init(
+    init(
         subject    aSubject    :SpgRect,
         levelWidth             :Int,
         levelHeight            :Int,
@@ -57,7 +57,7 @@ class SpgCamera
     /**
      *  Updates the current scroll offsets.
      */
-    public func update() -> Void
+    func update() -> Void
     {
         updateOffsetX()
         updateOffsetY()

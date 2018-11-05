@@ -3,12 +3,8 @@ import UIKit
 /**
  *  The main application delegate
  *
- *  TODO Redesign 'public' and 'private' for all methods
- *
  *  TODO Find better startup than SpgViewController
- *
  *  TODO Add debug switch for debug bg blocks
- *
  *  TODO Offset for car to bottom
  *  TODO Add finish line
  *  TODO Add obstacles
@@ -30,6 +26,7 @@ import UIKit
  *  ASK  How can UIImage be unboxed in constructor
  *  ASK  Documentation generator tool
  *  ASK  How to solve duplicate parameter and instance field names in constructor
+ *  ASK  Best practice for using: open, public, internal, fileprivate, private
  */
 @UIApplicationMain
 class SpgAppDelegate: UIResponder, UIApplicationDelegate
