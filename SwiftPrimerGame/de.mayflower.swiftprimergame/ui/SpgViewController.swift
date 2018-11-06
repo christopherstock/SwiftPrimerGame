@@ -14,6 +14,10 @@ class SpgViewController : UIViewController
 
         SpgDebug.log( "Welcome to [" + SpgSetting.TITLE + "] v. [" + SpgSetting.VERSION + "]" )
 
+        // play bg sound
+        let sound:SpgSound = SpgSound()
+        sound.playBgSound()
+
         // init engine and start main loop
         let engine:SpgEngine = SpgEngine( viewController: self )
         engine.startMainLoop()
