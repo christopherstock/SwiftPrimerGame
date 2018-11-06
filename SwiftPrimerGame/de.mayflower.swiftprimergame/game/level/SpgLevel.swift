@@ -145,13 +145,16 @@ class SpgLevel
         player.moveDown()
 
         // check if the player crashed
-        for obstacle in obstacles
+        if ( !SpgSetting.DEBUG_DISABLE_COLLISIONS )
         {
-            if ( player.getRect().overlaps( rect: obstacle.getRect() ) )
+            for obstacle in obstacles
             {
-                player.setImage( newImage: SpgImage.PLAYER_CRASHED )
+                if ( player.getRect().overlaps( rect: obstacle.getRect() ) )
+                {
+                    player.setImage( newImage: SpgImage.PLAYER_CRASHED )
 
-                return .PLAYER_CRASHED
+                    return .PLAYER_CRASHED
+                }
             }
         }
 

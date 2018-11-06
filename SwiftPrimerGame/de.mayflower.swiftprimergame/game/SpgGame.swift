@@ -6,17 +6,17 @@ import QuartzCore
 class SpgGame
 {
     /** A reference to the view. */
-    private var view           :SpgView
+    private var view   :SpgView
     /** A reference to the view controller. */
-    private var viewController :SpgViewController
+    private var vc     :SpgViewController
     /** The singleton level instance. */
-    private var level          :SpgLevel
+    private var level  :SpgLevel
     /** The singleton camera instance. */
-    private var camera         :SpgCamera
+    private var camera :SpgCamera
     /** The touch system. */
-    private var touch          :SpgTouch
+    private var touch  :SpgTouch
     /** Specifies the current game state. */
-    private var state          :SpgGameState
+    private var state  :SpgGameState
 
     /**
      *  Inits all game components.
@@ -25,39 +25,39 @@ class SpgGame
      *  @param view           A reference to the view.
      *  @param touch          A reference to the touch system.
      */
-    init( viewController vc: SpgViewController, view aView: SpgView, touch aTouch :SpgTouch )
+    init( viewController: SpgViewController, view aView: SpgView, touch aTouch :SpgTouch )
     {
-        viewController = vc
-        touch          = aTouch
-        view           = aView
+        vc     = viewController
+        view   = aView
+        touch  = aTouch
 
-        level          = SpgLevel( width:  1000,  height: 5800 )
-        camera         = SpgCamera(
+        level  = SpgLevel( width:  1000,  height: 5800 )
+        camera = SpgCamera(
             subject:     level.getPlayer().getRect(),
             levelWidth:  level.width,
             levelHeight: level.height,
             viewWidth:   view.width,
             viewHeight:  view.height
         )
-        state          = SpgGameState.RUNNING
+        state  = SpgGameState.RUNNING
     }
 
     /**
      *  Resets the game to all initial values.
      */
-    private func reset() -> Void
+    func reset() -> Void
     {
         SpgDebug.log( "Reset the game" )
 
-        level          = SpgLevel( width:  1000,  height: 5800 )
-        camera         = SpgCamera(
+        level  = SpgLevel( width:  1000,  height: 5800 )
+        camera = SpgCamera(
             subject:     level.getPlayer().getRect(),
             levelWidth:  level.width,
             levelHeight: level.height,
             viewWidth:   view.width,
             viewHeight:  view.height
         )
-        state          = SpgGameState.RUNNING
+        state  = SpgGameState.RUNNING
     }
 
     /**
@@ -87,7 +87,7 @@ class SpgGame
             // show alert dialog if player reached the finish line
             if ( state == .RUNNING && newState == .FINISH_REACHED )
             {
-                viewController.showAlert(
+                vc.showAlert(
                     title:       "Congratulations",
                     message:     "You have reached the finish line and may now call yourself a professional iOS driver.",
                     buttonLabel: "Restart",
@@ -101,7 +101,7 @@ class SpgGame
             // show alert dialog if player crashed
             if ( state == .RUNNING && newState == .PLAYER_CRASHED )
             {
-                viewController.showAlert(
+                vc.showAlert(
                     title:       "Game Over",
                     message:     "Oh no! You have collided with an obstacle! Try harder next time!",
                     buttonLabel: "Try again",

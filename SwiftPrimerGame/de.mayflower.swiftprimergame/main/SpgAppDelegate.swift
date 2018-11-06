@@ -4,7 +4,6 @@ import UIKit
  *  The main application delegate
  *
  *  TODO Add bg music
- *  TODO Add some more obstacles ..
  *  TODO Enable moving obstacles.
  *  TODO Dynamically create UIViewController and UIView?
  *
@@ -12,7 +11,7 @@ import UIKit
  *  TODO MINOR Limit draw area to inner bounds? (without navbar and statusbar)
  *  TODO MINOR Fix simulator lag on touch input
  *
- *  ASK  How to avoid initializing duplicate values in init() and reset() -> SpgGame
+ *  ASK  How to avoid initializing duplicate values in init() and reset() -> SpgGame: https://stackoverflow.com/questions/37903782/how-to-prevent-duplicate-code-when-initializing-variables
  *  ASK  plist file best practices?
  *  ASK  Should _ be used as parameter label
  *  ASK  How can UIImage be unboxed in constructor

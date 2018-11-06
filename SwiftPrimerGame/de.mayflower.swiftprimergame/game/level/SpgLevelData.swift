@@ -13,7 +13,7 @@ class SpgLevelData
         return SpgPlayer(
             image:  SpgImage.PLAYER_PRISTINE,
             startX: 305,
-            startY: SpgSetting.PLAYER_OFFSET_TOP
+            startY: SpgSetting.PLAYER_START_Y
         )
     }
 
@@ -60,8 +60,30 @@ class SpgLevelData
     func createObstacles() -> [SpgObstacle]
     {
         return [
-            SpgObstacle( image: SpgImage.CAR_1,     startX: 425, startY: 250  ),
-            SpgObstacle( image: SpgImage.TRUCK_1,   startX: 305, startY: 830  ),
+            SpgObstacle( image: SpgImage.CAR_1,     startX: 425,  startY: 250  ),
+            SpgObstacle( image: SpgImage.TRUCK_1,   startX: 305,  startY: 830  ),
+
+            SpgObstacle( image: SpgImage.TREE_1,    startX: 35,   startY: 100  ),
+            SpgObstacle( image: SpgImage.TREE_1,    startX: 35,   startY: 400  ),
+            SpgObstacle( image: SpgImage.TREE_1,    startX: 35,   startY: 700  ),
+            SpgObstacle( image: SpgImage.TREE_1,    startX: 35,   startY: 1000 ),
+
+            SpgObstacle( image: SpgImage.TREE_2,    startX: 600,  startY: 100  ),
+            SpgObstacle( image: SpgImage.TREE_2,    startX: 600,  startY: 400  ),
+            SpgObstacle( image: SpgImage.TREE_2,    startX: 600,  startY: 700  ),
+            SpgObstacle( image: SpgImage.TREE_2,    startX: 600,  startY: 1000 ),
+
+            SpgObstacle( image: SpgImage.TREE_3,    startX: 190,  startY: 1300 ),
+            SpgObstacle( image: SpgImage.TREE_3,    startX: 330,  startY: 1600 ),
+            SpgObstacle( image: SpgImage.TREE_3,    startX: 470,  startY: 1900 ),
+            SpgObstacle( image: SpgImage.TREE_3,    startX: 470,  startY: 2200 ),
+            SpgObstacle( image: SpgImage.TREE_3,    startX: 470,  startY: 2500 ),
+
+            SpgObstacle( image: SpgImage.TREE_4,    startX: 450,  startY: 3200 ),
+            SpgObstacle( image: SpgImage.TREE_4,    startX: 430,  startY: 3470 ),
+
+            SpgObstacle( image: SpgImage.WATER,     startX: -364, startY: 2830 ),
+            SpgObstacle( image: SpgImage.WATER,     startX: 960,  startY: 2830 ),
         ]
     }
 }

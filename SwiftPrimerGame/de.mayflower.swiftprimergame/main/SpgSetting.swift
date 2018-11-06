@@ -7,6 +7,8 @@ class SpgSetting
     static let DEBUG_MODE                   :Bool   = true
     /** Specifies if debug rects shall be drawn for all game objects. */
     static let DEBUG_DRAW_GAME_OBJECT_RECTS :Bool   = ( true && DEBUG_MODE )
+    /** Specifies if collisions shall be disabled. */
+    static let DEBUG_DISABLE_COLLISIONS     :Bool   = ( true && DEBUG_MODE )
 
     /** The title of the game. */
     static let TITLE                        :String = "SwiftPrimerGame"
@@ -15,6 +17,9 @@ class SpgSetting
 
     /** The desired frames per second for the UIView to redraw. */
     static let FRAMES_PER_SECOND            :Int    = 20
+
+    /** The player's start position Y. */
+    static let PLAYER_START_Y               :Int    = ( DEBUG_MODE ? 1500 : 50 )
 
     /** The player's moving speed in horizontal direction. */
     static let PLAYER_SPEED_X               :Int    = 5
