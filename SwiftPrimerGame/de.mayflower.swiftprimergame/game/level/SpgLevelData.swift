@@ -60,8 +60,8 @@ class SpgLevelData
     func createObstacles() -> [SpgObstacle]
     {
         return [
-            SpgObstacle( image: SpgImage.CAR_1,     startX: 425,  startY: 250  ),
-            SpgObstacle( image: SpgImage.TRUCK_1,   startX: 305,  startY: 830  ),
+            SpgObstacle( image: SpgImage.CAR_1,     startX: 435,  startY: 250, movement: SpgObstacleMovement.UP   ),
+            SpgObstacle( image: SpgImage.TRUCK_1,   startX: 305,  startY: 650, movement: SpgObstacleMovement.DOWN ),
 
             SpgObstacle( image: SpgImage.TREE_1,    startX: 35,   startY: 100  ),
             SpgObstacle( image: SpgImage.TREE_1,    startX: 35,   startY: 400  ),

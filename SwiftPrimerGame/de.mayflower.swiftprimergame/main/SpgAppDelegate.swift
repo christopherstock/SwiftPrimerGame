@@ -3,7 +3,6 @@ import UIKit
 /**
  *  The main application delegate
  *
- *  TODO Enable moving obstacles.
  *  TODO Dynamically create UIViewController and UIView?
  *
  *  TODO MINOR Move all setting constants to plist file

@@ -144,6 +144,12 @@ class SpgLevel
         // move player forward
         player.moveDown()
 
+        // move all obstacles
+        for obstacle in obstacles
+        {
+            obstacle.move()
+        }
+
         // check if the player crashed
         if ( !SpgSetting.DEBUG_DISABLE_COLLISIONS )
         {
