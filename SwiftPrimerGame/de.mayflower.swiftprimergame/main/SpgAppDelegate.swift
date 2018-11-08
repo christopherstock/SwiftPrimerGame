@@ -28,6 +28,14 @@ class SpgAppDelegate: UIResponder, UIApplicationDelegate
     {
         SpgDebug.log( "SpgAppDelegate.application being invoked" )
 
+        // create view controller
+        let mainController = SpgViewController()
+
+        // create ui window and set the view controller as the root view controller
+        window = UIWindow( frame: UIScreen.main.bounds )
+        window?.rootViewController = mainController
+        window?.makeKeyAndVisible()
+
         return true
     }
 
