@@ -10,13 +10,19 @@ class SpgViewController : UIViewController
      */
     override func viewDidLoad()
     {
+        // invoke super constructor
         super.viewDidLoad()
 
+        // acclaim
         SpgDebug.log( "Welcome to [" + SpgSetting.TITLE + "] v. [" + SpgSetting.VERSION + "]" )
 
-        // play bg sound
-        let sound:SpgSound = SpgSound()
-        sound.playBgSound()
+        // play bg sound if enabled
+        if ( !SpgSetting.DEBUG_MUTE )
+        {
+            // play bg sound
+            let sound:SpgSound = SpgSound()
+            sound.playBgSound()
+        }
 
         // init engine and start main loop
         let engine:SpgEngine = SpgEngine( viewController: self )

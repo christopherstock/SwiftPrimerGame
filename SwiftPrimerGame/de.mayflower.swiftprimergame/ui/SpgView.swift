@@ -6,14 +6,39 @@ import UIKit
 class SpgView : UIView
 {
     /** The width of the singleton view. */
-    var  width  :Int = 0
+    var width  :Int = 0
     /** The height of the singleton view. */
-    var  height :Int = 0
+    var height :Int = 0
+    /** The touch instance. */
+    var touch  :SpgTouch
 
     /** A reference to the game instance. TODO remove! */
-    private var game   :SpgGame!
-    /** The touch instance. */
-    private var touch  :SpgTouch!
+    private var game  :SpgGame!
+
+    /**
+     *  Creates a new UI View with the given position and size.
+     *
+     *  @param frame Specifies the drawable area on the screen.
+     *  @param touch The touch instance.
+     */
+    init( frame:CGRect, touch aTouch:SpgTouch )
+    {
+        width  = Int( frame.size.width  )
+        height = Int( frame.size.height )
+        touch  = aTouch
+
+        super.init( frame: frame )
+
+        SpgDebug.log( "Assigned view dimensions [" + String( width ) + "][" + String( height ) + "]" )
+    }
+
+    /**
+     *  Required initializer though overridden init.
+     */
+    required init?( coder aDecoder: NSCoder )
+    {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     /**
      *  Temporary game instance setter .. TODO remove! .. create constructor
@@ -24,24 +49,9 @@ class SpgView : UIView
     }
 
     /**
-     *  Temporary touch instance setter .. TODO remove!
-     */
-    func setTouch( touch aTouch:SpgTouch )
-    {
-        touch = aTouch
-    }
-
-    /**
-     *  Assigns the view width and height from the current frame size.
-     */
-    func assignDimensions()
-    {
-        width  = Int( frame.size.width  )
-        height = Int( frame.size.height )
-    }
-
-    /**
      *  Draws all the game items on the UIView for the current game tick.
+     *
+     *  @param rect The rectangle of the drawable area.
      */
     override func draw( _ rect:CGRect )
     {

@@ -22,19 +22,29 @@ class SpgEngine
      */
     init( viewController vc :SpgViewController )
     {
-        // this is horrible! TODO Try dynamic view and viewController creation!
-
+        // reference view controller
         viewController = vc
 
-        touch          = SpgTouch()
+        // create touch instance
+        touch = SpgTouch()
 
-        view           = viewController.view as! SpgView
-        view.assignDimensions()
+        // create UIView and add to view controller
+        view = SpgView(
+            frame: CGRect(
+                x: 0,
+                y: 0,
+                width: vc.view.frame.size.width,
+                height: vc.view.frame.size.height
+            ),
+            touch: touch
+        )
+        viewController.view.addSubview( view )
 
-        game           = SpgGame( viewController: vc, view: view, touch: touch )
+        // create game instance
+        game = SpgGame( viewController: vc, view: view, touch: touch )
 
+        // add game reference to view
         view.setGame(  game:  game  )
-        view.setTouch( touch: touch )
     }
 
     /**
